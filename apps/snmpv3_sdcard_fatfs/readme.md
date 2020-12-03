@@ -1,6 +1,6 @@
 ---
 parent: Harmony 3 TCP/IP Application for SAM E5X Family
-title: TCP/IP SNMP SDSPI Application
+title: TCP/IP SNMP SDMMC FATFS Application
 has_children: true
 has_toc: false
 ---

@@ -1,6 +1,6 @@
 ---
 grand_parent:  Harmony 3 TCP/IP Application for SAM E5X Family
-parent: TCP/IP Berkeley TCP Client
+parent: TCP/IP TCP Client
 title: Hardware Configuration
 nav_order: 2
 has_children: false
@@ -8,7 +8,7 @@ has_toc: false
 ---
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
-# TCP/IP Berkeley TCP Client Hardware Configuration
+# TCP/IP TCP Client Hardware Configuration
 
 This is the following section describes the hardware configuration used for this application demonstration.
 

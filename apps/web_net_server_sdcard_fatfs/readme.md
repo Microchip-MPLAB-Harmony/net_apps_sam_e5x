@@ -1,12 +1,12 @@
 ---
 parent: Harmony 3 TCP/IP Application for SAM E5X Family
-title: TCP/IP Web NET Server SDSPI Application
+title: TCP/IP Web NET Server SDMMC Application
 has_children: true
 has_toc: false
 ---
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
-# TCP/IP WEB-NET Server SDCARD Application
+# TCP/IP WEB-NET Server SDMMC Application
 
 The Web Net Server SDCard configuration demonstrates creating an HTTP web server on a Microchip evaluation board. The FAT FS File System is used for storing the web pages on an external SD Card.
 

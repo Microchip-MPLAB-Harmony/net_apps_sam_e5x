@@ -1,6 +1,6 @@
 ---
 parent: Harmony 3 TCP/IP Application for SAM E5X Family
-title: TCP/IP Iperf Application
+title: TCP/IP IPERF Application
 has_children: true
 has_toc: false
 ---

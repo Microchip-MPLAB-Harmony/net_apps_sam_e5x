@@ -149,20 +149,20 @@
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_tcp_client/readme.html",
     "relUrl": "/apps/tcpip_tcp_client/readme.html"
   },"25": {
-    "doc": "TCP/IP Web NET Server SDSPI Application",
-    "title": "TCP/IP WEB-NET Server SDCARD Application",
+    "doc": "TCP/IP Web Server SDMMC Application",
+    "title": "TCP/IP WEB Server SDCARD Application",
     "content": "The Web Net Server SDCard configuration demonstrates creating an HTTP web server on a Microchip evaluation board. The FAT FS File System is used for storing the web pages on an external SD Card. This demonstration uses the HTTP_NET server which supports encrypted communication through the NET_PRES layer and an external service provider for TLS support. ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_server_sdcard_fatfs/readme.html#tcpip-web-net-server-sdcard-application",
-    "relUrl": "/apps/web_server_sdcard_fatfs/readme.html#tcpip-web-net-server-sdcard-application"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_server_sdcard_fatfs/readme.html#tcpip-web-server-sdcard-application",
+    "relUrl": "/apps/web_server_sdcard_fatfs/readme.html#tcpip-web-server-sdcard-application"
   },"26": {
-    "doc": "TCP/IP Web NET Server SDSPI Application",
+    "doc": "TCP/IP Web Server SDMMC Application",
     "title": "Development kits",
     "content": "The following table provides links to the documentation to the Web Net Server Application on SAM E5X family on FreeRTOS. | Development Kit | . | SAM E5X Starter Kit MHC Configuration | . | SAM E5X Starter Kit Hardware Configuration | . | SAM E5X Starter Kit Run Application | . ",
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_server_sdcard_fatfs/readme.html#development-kits",
     "relUrl": "/apps/web_server_sdcard_fatfs/readme.html#development-kits"
   },"27": {
-    "doc": "TCP/IP Web NET Server SDSPI Application",
-    "title": "TCP/IP Web NET Server SDSPI Application",
+    "doc": "TCP/IP Web Server SDMMC Application",
+    "title": "TCP/IP Web Server SDMMC Application",
     "content": ". ",
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_server_sdcard_fatfs/readme.html",
     "relUrl": "/apps/web_server_sdcard_fatfs/readme.html"
@@ -275,38 +275,38 @@
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/berkeley_udp_relay/readme.html",
     "relUrl": "/apps/berkeley_udp_relay/readme.html"
   },"46": {
-    "doc": "TCP/IP SNMP SDSPI Application",
+    "doc": "TCP/IP SNMP SDMMC FATFS Application",
     "title": "TCP/IP SNMP SDCARD Application",
     "content": "The Microchip SNMP Server is a multi-lingual implementation, which supports SNMPv1, V2c, and V3 server features simultaneously. The SNMP Server is implemented to address the requirements of embedded applications and works with both IPv4 and IPv6 addresses. ",
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/snmpv3_sdcard_fatfs/readme.html#tcpip-snmp-sdcard-application",
     "relUrl": "/apps/snmpv3_sdcard_fatfs/readme.html#tcpip-snmp-sdcard-application"
   },"47": {
-    "doc": "TCP/IP SNMP SDSPI Application",
+    "doc": "TCP/IP SNMP SDMMC FATFS Application",
     "title": "Development kits",
     "content": "The following table provides links to the documentation to the SNMP Application on SAM E5X family on FreeRTOS. | Development Kit | . | SAM E5X Starter Kit MHC Configuration | . | SAM E5X Starter Kit Hardware Configuration | . | SAM E5X Starter Kit Run Application | . ",
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/snmpv3_sdcard_fatfs/readme.html#development-kits",
     "relUrl": "/apps/snmpv3_sdcard_fatfs/readme.html#development-kits"
   },"48": {
-    "doc": "TCP/IP SNMP SDSPI Application",
-    "title": "TCP/IP SNMP SDSPI Application",
+    "doc": "TCP/IP SNMP SDMMC FATFS Application",
+    "title": "TCP/IP SNMP SDMMC FATFS Application",
     "content": ". ",
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/snmpv3_sdcard_fatfs/readme.html",
     "relUrl": "/apps/snmpv3_sdcard_fatfs/readme.html"
   },"49": {
-    "doc": "TCP/IP Web NET Server SDSPI Application",
-    "title": "TCP/IP WEB-NET Server SDCARD Application",
+    "doc": "TCP/IP Web NET Server SDMMC Application",
+    "title": "TCP/IP WEB-NET Server SDMMC Application",
     "content": "The Web Net Server SDCard configuration demonstrates creating an HTTP web server on a Microchip evaluation board. The FAT FS File System is used for storing the web pages on an external SD Card. This demonstration uses the HTTP_NET server which supports encrypted communication through the NET_PRES layer and an external service provider for TLS support. ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_net_server_sdcard_fatfs/readme.html#tcpip-web-net-server-sdcard-application",
-    "relUrl": "/apps/web_net_server_sdcard_fatfs/readme.html#tcpip-web-net-server-sdcard-application"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_net_server_sdcard_fatfs/readme.html#tcpip-web-net-server-sdmmc-application",
+    "relUrl": "/apps/web_net_server_sdcard_fatfs/readme.html#tcpip-web-net-server-sdmmc-application"
   },"50": {
-    "doc": "TCP/IP Web NET Server SDSPI Application",
+    "doc": "TCP/IP Web NET Server SDMMC Application",
     "title": "Development kits",
     "content": "The following table provides links to the documentation to the Web Net Server Application on SAM E5X family on FreeRTOS. | Development Kit | . | SAM E5X Starter Kit MHC Configuration | . | SAM E5X Starter Kit Hardware Configuration | . | SAM E5X Starter Kit Run Application | . ",
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_net_server_sdcard_fatfs/readme.html#development-kits",
     "relUrl": "/apps/web_net_server_sdcard_fatfs/readme.html#development-kits"
   },"51": {
-    "doc": "TCP/IP Web NET Server SDSPI Application",
-    "title": "TCP/IP Web NET Server SDSPI Application",
+    "doc": "TCP/IP Web NET Server SDMMC Application",
+    "title": "TCP/IP Web NET Server SDMMC Application",
     "content": ". ",
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_net_server_sdcard_fatfs/readme.html",
     "relUrl": "/apps/web_net_server_sdcard_fatfs/readme.html"
@@ -401,20 +401,20 @@
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_ftp_server_usb_fatfs/readme.html",
     "relUrl": "/apps/web_ftp_server_usb_fatfs/readme.html"
   },"67": {
-    "doc": "TCP/IP Iperf Application",
+    "doc": "TCP/IP IPERF Application",
     "title": "TCP/IP Iperf Application",
     "content": "Iperf is a standard networking tool that helps to measure networking bandwidth and performance. The iperf demo creates an application that can be used for running iperf and measuring the network performance. ",
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/iperf_demo/readme.html#tcpip-iperf-application",
     "relUrl": "/apps/iperf_demo/readme.html#tcpip-iperf-application"
   },"68": {
-    "doc": "TCP/IP Iperf Application",
+    "doc": "TCP/IP IPERF Application",
     "title": "Development kits",
     "content": "The following table provides links to the documentation to the Iperf Application on SAM E5X family on both bare metal and FreeRTOS. | Development Kit | . | SAM E5X Starter Kit MHC Configuration | . | SAM E5X Starter Kit Hardware Configuration | . | SAM E5X Starter Kit Run Application | . ",
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/iperf_demo/readme.html#development-kits",
     "relUrl": "/apps/iperf_demo/readme.html#development-kits"
   },"69": {
-    "doc": "TCP/IP Iperf Application",
-    "title": "TCP/IP Iperf Application",
+    "doc": "TCP/IP IPERF Application",
+    "title": "TCP/IP IPERF Application",
     "content": ". ",
     "url": "http://localhost:4000/net_apps_sam_e5x/apps/iperf_demo/readme.html",
     "relUrl": "/apps/iperf_demo/readme.html"
@@ -438,10 +438,10 @@
     "relUrl": "/apps/tcpip_tcp_demo_at24mac/readme.html"
   },"73": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP Web Net Server NVM MPFS Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_net_server_nvm_mpfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/web_net_server_nvm_mpfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_net_server_nvm_mpfs/docs/readme_hardware_configuration.html#tcpip-web-net-server-nvm-mpfs-hardware-configuration",
+    "relUrl": "/apps/web_net_server_nvm_mpfs/docs/readme_hardware_configuration.html#tcpip-web-net-server-nvm-mpfs-hardware-configuration"
   },"74": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -462,10 +462,10 @@
     "relUrl": "/apps/web_ftp_server_usb_fatfs/docs/readme_hardware_configuration.html"
   },"77": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP IPERF Application Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/iperf_demo/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/iperf_demo/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/iperf_demo/docs/readme_hardware_configuration.html#tcpip-iperf-application-hardware-configuration",
+    "relUrl": "/apps/iperf_demo/docs/readme_hardware_configuration.html#tcpip-iperf-application-hardware-configuration"
   },"78": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -474,10 +474,10 @@
     "relUrl": "/apps/iperf_demo/docs/readme_hardware_configuration.html"
   },"79": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP SNMP SDMMC FATFS Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/snmpv3_sdcard_fatfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/snmpv3_sdcard_fatfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/snmpv3_sdcard_fatfs/docs/readme_hardware_configuration.html#tcpip-snmp-sdmmc-fatfs-hardware-configuration",
+    "relUrl": "/apps/snmpv3_sdcard_fatfs/docs/readme_hardware_configuration.html#tcpip-snmp-sdmmc-fatfs-hardware-configuration"
   },"80": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -486,10 +486,10 @@
     "relUrl": "/apps/snmpv3_sdcard_fatfs/docs/readme_hardware_configuration.html"
   },"81": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP Web NET Server SDMMC FATFS Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_net_server_sdcard_fatfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/web_net_server_sdcard_fatfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_net_server_sdcard_fatfs/docs/readme_hardware_configuration.html#tcpip-web-net-server-sdmmc-fatfs-hardware-configuration",
+    "relUrl": "/apps/web_net_server_sdcard_fatfs/docs/readme_hardware_configuration.html#tcpip-web-net-server-sdmmc-fatfs-hardware-configuration"
   },"82": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -498,10 +498,10 @@
     "relUrl": "/apps/web_net_server_sdcard_fatfs/docs/readme_hardware_configuration.html"
   },"83": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP WEB-NET and FTP Server Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_ftp_server_mpfs_fatfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/web_ftp_server_mpfs_fatfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_ftp_server_mpfs_fatfs/docs/readme_hardware_configuration.html#tcpip-web-net-and-ftp-server-hardware-configuration",
+    "relUrl": "/apps/web_ftp_server_mpfs_fatfs/docs/readme_hardware_configuration.html#tcpip-web-net-and-ftp-server-hardware-configuration"
   },"84": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -510,10 +510,10 @@
     "relUrl": "/apps/web_ftp_server_mpfs_fatfs/docs/readme_hardware_configuration.html"
   },"85": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP Berkeley UDP Server Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/berkeley_udp_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/berkeley_udp_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/berkeley_udp_server/docs/readme_hardware_configuration.html#tcpip-berkeley-udp-server-hardware-configuration",
+    "relUrl": "/apps/berkeley_udp_server/docs/readme_hardware_configuration.html#tcpip-berkeley-udp-server-hardware-configuration"
   },"86": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -522,10 +522,10 @@
     "relUrl": "/apps/berkeley_udp_server/docs/readme_hardware_configuration.html"
   },"87": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP TCP and UDP Client Server Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_client_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/tcpip_client_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_client_server/docs/readme_hardware_configuration.html#tcpip-tcp-and-udp-client-server-hardware-configuration",
+    "relUrl": "/apps/tcpip_client_server/docs/readme_hardware_configuration.html#tcpip-tcp-and-udp-client-server-hardware-configuration"
   },"88": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -534,10 +534,10 @@
     "relUrl": "/apps/tcpip_client_server/docs/readme_hardware_configuration.html"
   },"89": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP Web Server NVM MPFS Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_server_nvm_mpfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/web_server_nvm_mpfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_server_nvm_mpfs/docs/readme_hardware_configuration.html#tcpip-web-server-nvm-mpfs-hardware-configuration",
+    "relUrl": "/apps/web_server_nvm_mpfs/docs/readme_hardware_configuration.html#tcpip-web-server-nvm-mpfs-hardware-configuration"
   },"90": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -546,10 +546,10 @@
     "relUrl": "/apps/web_server_nvm_mpfs/docs/readme_hardware_configuration.html"
   },"91": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP UDP Server Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_udp_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/tcpip_udp_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_udp_server/docs/readme_hardware_configuration.html#tcpip-udp-server-hardware-configuration",
+    "relUrl": "/apps/tcpip_udp_server/docs/readme_hardware_configuration.html#tcpip-udp-server-hardware-configuration"
   },"92": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -558,10 +558,10 @@
     "relUrl": "/apps/tcpip_udp_server/docs/readme_hardware_configuration.html"
   },"93": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP Berkeley UDP Relay Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/berkeley_udp_relay/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/berkeley_udp_relay/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/berkeley_udp_relay/docs/readme_hardware_configuration.html#tcpip-berkeley-udp-relay-hardware-configuration",
+    "relUrl": "/apps/berkeley_udp_relay/docs/readme_hardware_configuration.html#tcpip-berkeley-udp-relay-hardware-configuration"
   },"94": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -570,10 +570,10 @@
     "relUrl": "/apps/berkeley_udp_relay/docs/readme_hardware_configuration.html"
   },"95": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP TCP Client Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_tcp_client/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/tcpip_tcp_client/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_tcp_client/docs/readme_hardware_configuration.html#tcpip-tcp-client-hardware-configuration",
+    "relUrl": "/apps/tcpip_tcp_client/docs/readme_hardware_configuration.html#tcpip-tcp-client-hardware-configuration"
   },"96": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -582,10 +582,10 @@
     "relUrl": "/apps/tcpip_tcp_client/docs/readme_hardware_configuration.html"
   },"97": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP Web Server SDMMC FATFS Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_server_sdcard_fatfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/web_server_sdcard_fatfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/web_server_sdcard_fatfs/docs/readme_hardware_configuration.html#tcpip-web-server-sdmmc-fatfs-hardware-configuration",
+    "relUrl": "/apps/web_server_sdcard_fatfs/docs/readme_hardware_configuration.html#tcpip-web-server-sdmmc-fatfs-hardware-configuration"
   },"98": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -594,10 +594,10 @@
     "relUrl": "/apps/web_server_sdcard_fatfs/docs/readme_hardware_configuration.html"
   },"99": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP UDP Client Server Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_udp_client_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/tcpip_udp_client_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_udp_client_server/docs/readme_hardware_configuration.html#tcpip-udp-client-server-hardware-configuration",
+    "relUrl": "/apps/tcpip_udp_client_server/docs/readme_hardware_configuration.html#tcpip-udp-client-server-hardware-configuration"
   },"100": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -618,10 +618,10 @@
     "relUrl": "/apps/berkeley_udp_client/docs/readme_hardware_configuration.html"
   },"103": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP TCP Client Server Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_tcp_client_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/tcpip_tcp_client_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_tcp_client_server/docs/readme_hardware_configuration.html#tcpip-tcp-client-server-hardware-configuration",
+    "relUrl": "/apps/tcpip_tcp_client_server/docs/readme_hardware_configuration.html#tcpip-tcp-client-server-hardware-configuration"
   },"104": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -630,10 +630,10 @@
     "relUrl": "/apps/tcpip_tcp_client_server/docs/readme_hardware_configuration.html"
   },"105": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP TCP WolfSSL Client Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/wolfssl_tcp_client/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/wolfssl_tcp_client/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/wolfssl_tcp_client/docs/readme_hardware_configuration.html#tcpip-tcp-wolfssl-client-hardware-configuration",
+    "relUrl": "/apps/wolfssl_tcp_client/docs/readme_hardware_configuration.html#tcpip-tcp-wolfssl-client-hardware-configuration"
   },"106": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -642,10 +642,10 @@
     "relUrl": "/apps/wolfssl_tcp_client/docs/readme_hardware_configuration.html"
   },"107": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP UDP Client Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_udp_client/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/tcpip_udp_client/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_udp_client/docs/readme_hardware_configuration.html#tcpip-udp-client-hardware-configuration",
+    "relUrl": "/apps/tcpip_udp_client/docs/readme_hardware_configuration.html#tcpip-udp-client-hardware-configuration"
   },"108": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -666,10 +666,10 @@
     "relUrl": "/apps/berkeley_tcp_server/docs/readme_hardware_configuration.html"
   },"111": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP TCP Client Using ATMAC Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_tcp_demo_at24mac/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/tcpip_tcp_demo_at24mac/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_tcp_demo_at24mac/docs/readme_hardware_configuration.html#tcpip-tcp-client-using-atmac-hardware-configuration",
+    "relUrl": "/apps/tcpip_tcp_demo_at24mac/docs/readme_hardware_configuration.html#tcpip-tcp-client-using-atmac-hardware-configuration"
   },"112": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -678,10 +678,10 @@
     "relUrl": "/apps/tcpip_tcp_demo_at24mac/docs/readme_hardware_configuration.html"
   },"113": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP TCP WolfSSL Server Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/wolfssl_tcp_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/wolfssl_tcp_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/wolfssl_tcp_server/docs/readme_hardware_configuration.html#tcpip-tcp-wolfssl-server-hardware-configuration",
+    "relUrl": "/apps/wolfssl_tcp_server/docs/readme_hardware_configuration.html#tcpip-tcp-wolfssl-server-hardware-configuration"
   },"114": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -690,10 +690,10 @@
     "relUrl": "/apps/wolfssl_tcp_server/docs/readme_hardware_configuration.html"
   },"115": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP TCP Server Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_tcp_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/tcpip_tcp_server/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/tcpip_tcp_server/docs/readme_hardware_configuration.html#tcpip-tcp-server-hardware-configuration",
+    "relUrl": "/apps/tcpip_tcp_server/docs/readme_hardware_configuration.html#tcpip-tcp-server-hardware-configuration"
   },"116": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -702,10 +702,10 @@
     "relUrl": "/apps/tcpip_tcp_server/docs/readme_hardware_configuration.html"
   },"117": {
     "doc": "Hardware Configuration",
-    "title": "TCP/IP Berkeley TCP Client Hardware Configuration",
+    "title": "TCP/IP SNMP NVM MPFS Hardware Configuration",
     "content": "This is the following section describes the hardware configuration used for this application demonstration. | This section describes the required default hardware configuration use USB device as on board debugger and programmer for this application demonstration. | No hardware related configuration or jumper setting changes are necessary . | Refer to the SAM E54 Ethernet Starter Kit User Guide . | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector | . | . ",
-    "url": "http://localhost:4000/net_apps_sam_e5x/apps/snmpv3_nvm_mpfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration",
-    "relUrl": "/apps/snmpv3_nvm_mpfs/docs/readme_hardware_configuration.html#tcpip-berkeley-tcp-client-hardware-configuration"
+    "url": "http://localhost:4000/net_apps_sam_e5x/apps/snmpv3_nvm_mpfs/docs/readme_hardware_configuration.html#tcpip-snmp-nvm-mpfs-hardware-configuration",
+    "relUrl": "/apps/snmpv3_nvm_mpfs/docs/readme_hardware_configuration.html#tcpip-snmp-nvm-mpfs-hardware-configuration"
   },"118": {
     "doc": "Hardware Configuration",
     "title": "Hardware Configuration",
@@ -1603,7 +1603,7 @@
   },"267": {
     "doc": "Harmony 3 TCP/IP Application for SAM E5X Family",
     "title": "Harmony 3 TCP/IP Application for SAM E5X Family",
-    "content": "[![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com) # Harmony 3 TCP/IP Application for SAM E5X Family MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC microcontroller and microprocessor devices. Refer to the following links for more information. - [Microchip 32-bit MCUs](https://www.microchip.com/design-centers/32-bit) - [Microchip 32-bit MPUs](https://www.microchip.com/design-centers/32-bit-mpus) - [Microchip MPLAB® X IDE](https://www.microchip.com/mplab/mplab-x-ide) - [Microchip MPLAB® Harmony](https://www.microchip.com/mplab/mplab-harmony) - [Microchip MPLAB® Harmony Pages](https://microchip-mplab-harmony.github.io/) This repository contains the MPLAB® Harmony 3 Network Package (Net). The Net repo provides a free fast to market TCP/IP stack for Microchip 32-bit SAM and PIC microprocessor devices. The repo contains multiple applications that demonstrate communication over TCP/IP using well known protocols like TCP, UDP, HTTP, SMTP, etc. Refer to the following links for release notes, training materials, and interface reference information. - [Release Notes](release_notes.md) - [MPLAB® Harmony License](/net_apps_sam_e5x/mplab_harmony_license.html) To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz_da) and then click **Clone** button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki). ## Contents Summary | Folder | Description | --- | --- | apps | Demonstration of TCP/IP SAM E5X Applications | docs | Documents TCP/IP Application in html format for offline viewing. Use [github pages](https://microchip-mplab-harmony.github.io/net_apps_pic32mz_da/) of this repository for viewing it online. | ## Code Examples The following applications are provided to demonstrate the typical or interesting usage models of one or more peripheral libraries. | Name | Description | ---- | ----------- |berkeley_tcp_client | [TCP/IP Berkeley TCP Client Application](/net_apps_sam_e5x/apps/berkeley_tcp_client/readme.html) |berkeley_tcp_server | [TCP/IP Berkeley TCP Server Application](/net_apps_sam_e5x/apps/berkeley_tcp_server/readme.html) |berkeley_udp_client | [TCP/IP Berkeley UDP Client Application](/net_apps_sam_e5x/apps/berkeley_udp_client/readme.html) |berkeley_udp_server | [TCP/IP Berkeley UDP Server Application](/net_apps_sam_e5x/apps/berkeley_udp_server/readme.html) |berkeley_udp_relay | [TCP/IP Berkeley UDP Relay Application](/net_apps_sam_e5x/apps/berkeley_udp_relay/readme.html) |iperf_demo | [TCP/IP IPERF Demo Applications](/net_apps_sam_e5x/apps/iperf_demo/readme.html) |tcpip_tcp_client | [TCP/IP TCP Client Application](/net_apps_sam_e5x/apps/tcpip_tcp_client/readme.html) |tcpip_tcp_client_server | [TCP/IP TCP Client Server Application](/net_apps_sam_e5x/apps/tcpip_tcp_client_server/readme.html) |tcpip_client_server | [TCP/IP Client Server Application](/net_apps_sam_e5x/apps/tcpip_client_server/readme.html) |tcpip_tcp_demo_at24mac | TCP/IP TCP Client with AT24MAC Application](apps/tcpip_tcp_demo_at24mac/readme.md) |tcpip_tcp_server | [TCP/IP TCP Server Application](/net_apps_sam_e5x/apps/tcpip_tcp_server/readme.html) |tcpip_udp_client | [TCP/IP UDP Client Application](/net_apps_sam_e5x/apps/tcpip_udp_client/readme.html) |tcpip_udp_server | [TCP/IP UDP Server Application](/net_apps_sam_e5x/apps/tcpip_udp_server/readme.html) |tcpip_udp_client_server | [TCP/IP UDP Client Server Application](/net_apps_sam_e5x/apps/tcpip_udp_client_server/readme.html) |snmpv3_nvm_mpfs | [TCP/IP SNMP & Secure Web Server NVM MPFS Application](/net_apps_sam_e5x/apps/snmpv3_nvm_mpfs/readme.html) |snmpv3_sdcard_fatfs | [TCP/IP SNMP & Secure Web Server SDCARD with FATFS Application](/net_apps_sam_e5x/apps/snmpv3_sdcard_fatfs/readme.html) |web_ftp_server_mpfs_fatfs | [TCP/IP Secure WEB & FTP Server NVM MPFS & SDCARD FATFS Application](/net_apps_sam_e5x/apps/web_ftp_server_mpfs_fatfs/readme.html)|web_ftp_server_usb_fatfs | [TCP/IP Secure WEB & FTP Server NVM MPFS & USB FATFS Application](/net_apps_sam_e5x/apps/web_ftp_server_usb_fatfs/readme.html)|web_net_server_nvm_mpfs | [TCP/IP Secure WEB Server NVM MPFS Application](/net_apps_sam_e5x/apps/web_net_server_nvm_mpfs/readme.html)|web_net_server_sdcard_fatfs | [TCP/IP Secure WEB Server SDCARD FATFS Application](/net_apps_sam_e5x/apps/web_net_server_sdcard_fatfs/readme.html)|web_server_nvm_mpfs | [TCP/IP WEB Server NVM MPFS Application](/net_apps_sam_e5x/apps/web_server_nvm_mpfs/readme.html)|web_server_sdcard_fatfs | [TCP/IP WEB Server SDCARD FATFS Application](/net_apps_sam_e5x/apps/web_server_sdcard_fatfs/readme.html)|wolfssl_tcp_client | [TCP/IP Secured TCP Client Application](/net_apps_sam_e5x/apps/wolfssl_tcp_client/readme.html)|wolfssl_tcp_server | [TCP/IP Secured TCP Server Application](/net_apps_sam_e5x/apps/wolfssl_tcp_server/readme.html)| ## TCP/IP New Application This following link guides through the steps to create a new TCP/IP application using MPLAB® Harmony 3 modules. [Create TCP/IP New Application Example](https://github.com/Microchip-MPLAB-Harmony/net/wiki/Create-your-first-tcpip-application) ## TCP/IP Migration from H2 to H3 Application This following link guides through the steps to migrate a TCP/IP application from H2 to H3. [H2 to H3 Migration](https://github.com/Microchip-MPLAB-Harmony/net/wiki/H2-to-H3-Migration) [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/blob/master/mplab_harmony_license.md) [![Latest release](https://img.shields.io/github/release/Microchip-MPLAB-Harmony/net_apps_sam_e5x.svg)](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/releases/latest) [![Latest release date](https://img.shields.io/github/release-date/Microchip-MPLAB-Harmony/net_apps_sam_e5x.svg)](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/releases/latest) [![Commit activity](https://img.shields.io/github/commit-activity/y/Microchip-MPLAB-Harmony/net_apps_sam_e5x.svg)](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/graphs/commit-activity) [![Contributors](https://img.shields.io/github/contributors-anon/Microchip-MPLAB-Harmony/net_apps_sam_e5x.svg)]() ____ [![Follow us on Youtube](https://img.shields.io/badge/Youtube-Follow%20us%20on%20Youtube-red.svg)](https://www.youtube.com/user/MicrochipTechnology) [![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20us%20on%20LinkedIn-blue.svg)](https://www.linkedin.com/company/microchip-technology) [![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/microchiptechnology/) [![Follow us on Twitter](https://img.shields.io/twitter/follow/MicrochipTech.svg?style=social)](https://twitter.com/MicrochipTech) [![](https://img.shields.io/github/stars/Microchip-MPLAB-Harmony/net_apps_sam_e5x.svg?style=social)]() [![](https://img.shields.io/github/watchers/Microchip-MPLAB-Harmony/net_apps_sam_e5x.svg?style=social)]() ",
+    "content": "[![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com) # Harmony 3 TCP/IP Application for SAM E5X Family MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC microcontroller and microprocessor devices. Refer to the following links for more information. - [Microchip 32-bit MCUs](https://www.microchip.com/design-centers/32-bit) - [Microchip 32-bit MPUs](https://www.microchip.com/design-centers/32-bit-mpus) - [Microchip MPLAB® X IDE](https://www.microchip.com/mplab/mplab-x-ide) - [Microchip MPLAB® Harmony](https://www.microchip.com/mplab/mplab-harmony) - [Microchip MPLAB® Harmony Pages](https://microchip-mplab-harmony.github.io/) This repository contains the MPLAB® Harmony 3 Network Package (Net). The Net repo provides a free fast to market TCP/IP stack for Microchip 32-bit SAM and PIC microprocessor devices. The repo contains multiple applications that demonstrate communication over TCP/IP using well known protocols like TCP, UDP, HTTP, SMTP, etc. Refer to the following links for release notes, training materials, and interface reference information. - [Release Notes](release_notes.md) - [MPLAB® Harmony License](/net_apps_sam_e5x/mplab_harmony_license.html) To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz_da) and then click **Clone** button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki). ## Contents Summary | Folder | Description | --- | --- | apps | Demonstration of TCP/IP SAM E5X Applications | docs | Documents TCP/IP Application in html format for offline viewing. Use [github pages](https://microchip-mplab-harmony.github.io/net_apps_pic32mz_da/) of this repository for viewing it online. | ## Code Examples The following applications are provided to demonstrate the typical or interesting usage models of one or more peripheral libraries. | Name | Description | ---- | ----------- |berkeley_tcp_client | [TCP/IP Berkeley TCP Client Application](/net_apps_sam_e5x/apps/berkeley_tcp_client/readme.html) |berkeley_tcp_server | [TCP/IP Berkeley TCP Server Application](/net_apps_sam_e5x/apps/berkeley_tcp_server/readme.html) |berkeley_udp_client | [TCP/IP Berkeley UDP Client Application](/net_apps_sam_e5x/apps/berkeley_udp_client/readme.html) |berkeley_udp_server | [TCP/IP Berkeley UDP Server Application](/net_apps_sam_e5x/apps/berkeley_udp_server/readme.html) |berkeley_udp_relay | [TCP/IP Berkeley UDP Relay Application](/net_apps_sam_e5x/apps/berkeley_udp_relay/readme.html) |iperf_demo | [TCP/IP IPERF Demo Applications](/net_apps_sam_e5x/apps/iperf_demo/readme.html) |tcpip_tcp_client | [TCP/IP TCP Client Application](/net_apps_sam_e5x/apps/tcpip_tcp_client/readme.html) |tcpip_tcp_client_server | [TCP/IP TCP Client Server Application](/net_apps_sam_e5x/apps/tcpip_tcp_client_server/readme.html) |tcpip_client_server | [TCP/IP Client Server Application](/net_apps_sam_e5x/apps/tcpip_client_server/readme.html) |tcpip_tcp_demo_at24mac | [TCP/IP TCP Client with AT24MAC Application](/net_apps_sam_e5x/apps/tcpip_tcp_demo_at24mac/readme.html) |tcpip_tcp_server | [TCP/IP TCP Server Application](/net_apps_sam_e5x/apps/tcpip_tcp_server/readme.html) |tcpip_udp_client | [TCP/IP UDP Client Application](/net_apps_sam_e5x/apps/tcpip_udp_client/readme.html) |tcpip_udp_server | [TCP/IP UDP Server Application](/net_apps_sam_e5x/apps/tcpip_udp_server/readme.html) |tcpip_udp_client_server | [TCP/IP UDP Client Server Application](/net_apps_sam_e5x/apps/tcpip_udp_client_server/readme.html) |snmpv3_nvm_mpfs | [TCP/IP SNMP & Secure Web Server NVM MPFS Application](/net_apps_sam_e5x/apps/snmpv3_nvm_mpfs/readme.html) |snmpv3_sdcard_fatfs | [TCP/IP SNMP & Secure Web Server SDCARD with FATFS Application](/net_apps_sam_e5x/apps/snmpv3_sdcard_fatfs/readme.html) |web_ftp_server_mpfs_fatfs | [TCP/IP Secure WEB & FTP Server NVM MPFS & SDCARD FATFS Application](/net_apps_sam_e5x/apps/web_ftp_server_mpfs_fatfs/readme.html)|web_ftp_server_usb_fatfs | [TCP/IP Secure WEB & FTP Server NVM MPFS & USB FATFS Application](/net_apps_sam_e5x/apps/web_ftp_server_usb_fatfs/readme.html)|web_net_server_nvm_mpfs | [TCP/IP Secure WEB Server NVM MPFS Application](/net_apps_sam_e5x/apps/web_net_server_nvm_mpfs/readme.html)|web_net_server_sdcard_fatfs | [TCP/IP Secure WEB Server SDCARD FATFS Application](/net_apps_sam_e5x/apps/web_net_server_sdcard_fatfs/readme.html)|web_server_nvm_mpfs | [TCP/IP WEB Server NVM MPFS Application](/net_apps_sam_e5x/apps/web_server_nvm_mpfs/readme.html)|web_server_sdcard_fatfs | [TCP/IP WEB Server SDCARD FATFS Application](/net_apps_sam_e5x/apps/web_server_sdcard_fatfs/readme.html)|wolfssl_tcp_client | [TCP/IP Secured TCP Client Application](/net_apps_sam_e5x/apps/wolfssl_tcp_client/readme.html)|wolfssl_tcp_server | [TCP/IP Secured TCP Server Application](/net_apps_sam_e5x/apps/wolfssl_tcp_server/readme.html)| ## TCP/IP New Application This following link guides through the steps to create a new TCP/IP application using MPLAB® Harmony 3 modules. [Create TCP/IP New Application Example](https://github.com/Microchip-MPLAB-Harmony/net/wiki/Create-your-first-tcpip-application) ## TCP/IP Migration from H2 to H3 Application This following link guides through the steps to migrate a TCP/IP application from H2 to H3. [H2 to H3 Migration](https://github.com/Microchip-MPLAB-Harmony/net/wiki/H2-to-H3-Migration) [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/blob/master/mplab_harmony_license.md) [![Latest release](https://img.shields.io/github/release/Microchip-MPLAB-Harmony/net_apps_sam_e5x.svg)](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/releases/latest) [![Latest release date](https://img.shields.io/github/release-date/Microchip-MPLAB-Harmony/net_apps_sam_e5x.svg)](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/releases/latest) [![Commit activity](https://img.shields.io/github/commit-activity/y/Microchip-MPLAB-Harmony/net_apps_sam_e5x.svg)](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/graphs/commit-activity) [![Contributors](https://img.shields.io/github/contributors-anon/Microchip-MPLAB-Harmony/net_apps_sam_e5x.svg)]() ____ [![Follow us on Youtube](https://img.shields.io/badge/Youtube-Follow%20us%20on%20Youtube-red.svg)](https://www.youtube.com/user/MicrochipTechnology) [![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20us%20on%20LinkedIn-blue.svg)](https://www.linkedin.com/company/microchip-technology) [![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/microchiptechnology/) [![Follow us on Twitter](https://img.shields.io/twitter/follow/MicrochipTech.svg?style=social)](https://twitter.com/MicrochipTech) [![](https://img.shields.io/github/stars/Microchip-MPLAB-Harmony/net_apps_sam_e5x.svg?style=social)]() [![](https://img.shields.io/github/watchers/Microchip-MPLAB-Harmony/net_apps_sam_e5x.svg?style=social)]() ",
     "url": "http://localhost:4000/net_apps_sam_e5x/",
     "relUrl": "/"
   }
