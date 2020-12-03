@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: tcpipNbns}
+children:
+- type: ElementPosition
+  attributes: {x: '90', y: '86', id: tcpipNbns}

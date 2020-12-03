@@ -61,7 +61,7 @@ static int          dnsInitCount = 0;       // module initialization count
 
 static void                 _DNSNotifyClients(TCPIP_DNS_DCPT* pDnsDcpt, TCPIP_DNS_HASH_ENTRY* pDnsHE, TCPIP_DNS_EVENT_TYPE evType);
 static void                 _DNSPutString(uint8_t **putbuf, const char* string);
-static int                  _DNS_ReadName(TCPIP_DNS_RX_DATA* srcBuff, TCPIP_DNS_RX_DATA* pktBuff, char* nameBuff, int buffSize);
+static int                  _DNS_ReadName(TCPIP_DNS_RR_PROCESS* pProc, char* nameBuff, int buffSize);
 static int                  _DNS_ProcessRR(TCPIP_DNS_DCPT* pDnsDcpt, TCPIP_DNS_RR_PROCESS* pProc, TCPIP_DNS_RR_TYPE rrType);
 static void                 _DNSInitRxData(TCPIP_DNS_RX_DATA* rxData, uint8_t* buffer, int bufferSize);
 static bool                 _DNSGetData(TCPIP_DNS_RX_DATA* srcBuff, void *destBuff, int bytes);
@@ -133,8 +133,8 @@ static const char* _DNSDbg_EvNameTbl[] =
     "skt error",    // TCPIP_DNS_DBG_EVENT_SOCKET_ERROR
     "no if",        // TCPIP_DNS_DBG_EVENT_NO_INTERFACE
     // debug events
-    "xtraxt error",     // TCPIP_DNS_DBG_EVENT_RR_XTRACT_ERROR 
-    "id error",         // TCPIP_DNS_DBG_EVENT_RR_ID_ERROR 
+    "xtract error",     // TCPIP_DNS_DBG_EVENT_RR_XTRACT_ERROR 
+    "str error",        // TCPIP_DNS_DBG_EVENT_RR_STRUCT_ERROR 
     "no RRs",           // TCPIP_DNS_DBG_EVENT_RR_NO_RECORDS 
     "rr miss",          // TCPIP_DNS_DBG_EVENT_RR_MISMATCH
     "rr data err",      // TCPIP_DNS_DBG_EVENT_RR_DATA_ERROR
@@ -1552,7 +1552,6 @@ static void _DNSInitRxData(TCPIP_DNS_RX_DATA* rxData, uint8_t* buffer, int buffe
 
 static int _DNS_ProcessRR(TCPIP_DNS_DCPT* pDnsDcpt, TCPIP_DNS_RR_PROCESS* pProc, TCPIP_DNS_RR_TYPE rrType)
 {
-    TCPIP_DNS_RX_DATA pktData;   // used for compressed searches
     TCPIP_DNS_HASH_ENTRY* dnsHE;
     int nameLen;
     TCPIP_DNS_DBG_EVENT_TYPE evDbgType = TCPIP_DNS_DBG_EVENT_NONE;
@@ -1587,8 +1586,7 @@ static int _DNS_ProcessRR(TCPIP_DNS_DCPT* pDnsDcpt, TCPIP_DNS_RR_PROCESS* pProc,
 
     while(nRR--)
     {
-        _DNSInitRxData(&pktData, pProc->dnsPacket, pProc->dnsPacketSize);
-        nameLen = _DNS_ReadName(pProc->dnsRxData, &pktData, nameBuffer, sizeof(nameBuffer) - 1);
+        nameLen = _DNS_ReadName(pProc, nameBuffer, sizeof(nameBuffer) - 1);
         if(nameLen <= 0)
         {   // error retrieveing the question name ?
             evDbgType = TCPIP_DNS_DBG_EVENT_RR_XTRACT_ERROR; 
@@ -1601,19 +1599,11 @@ static int _DNS_ProcessRR(TCPIP_DNS_DCPT* pDnsDcpt, TCPIP_DNS_RR_PROCESS* pProc,
         dnsHE = _DNSHashEntryFromTransactionId(pDnsDcpt, nameBuffer, pProc->dnsHeader->TransactionID.Val);
         if(dnsHE == 0)
         {   // not ours?
-            if(rrType == TCPIP_DNS_RR_TYPE_ADDITIONAL)
-            {   // it's OK for additional RR could carry different names
-                if(pProc->dnsHE != 0)
-                {   // if already have proper names for this, we could use the data
-                    dnsHE = pProc->dnsHE;
-                }
-                // else leave dnsHE == 0
+            if(pProc->dnsHE != 0)
+            {   // if already have proper names for this, we could use the data
+                dnsHE = pProc->dnsHE;
             }
-            else
-            {   // error if not ours
-                evDbgType = TCPIP_DNS_DBG_EVENT_RR_ID_ERROR;
-                break;
-            }
+            // else leave dnsHE == 0
         }
 
         if(dnsHE != 0)
@@ -1640,7 +1630,7 @@ static int _DNS_ProcessRR(TCPIP_DNS_DCPT* pDnsDcpt, TCPIP_DNS_RR_PROCESS* pProc,
         {   // skip the Question Type and Class
             if(!_DNSGetData(pProc->dnsRxData, 0, 4))
             {
-                evDbgType = TCPIP_DNS_DBG_EVENT_RR_XTRACT_ERROR;
+                evDbgType = TCPIP_DNS_DBG_EVENT_RR_STRUCT_ERROR;
                 break;
             }
         }
@@ -1823,15 +1813,15 @@ static void _DNSPutString(uint8_t** wrPtr, const char* string)
 // Each label consists of a length prefix byte, followed by the label bytes.
 // At the end of the string, a zero length label is found as termination.
 // If name compression is used, this function will automatically detect the pointer
-// pktBuff is pointing to the initial DNS packet for assembling compressed names
 // 
 // returns the size of the assembled name or -1 if error
-static int _DNS_ReadName(TCPIP_DNS_RX_DATA* srcBuff, TCPIP_DNS_RX_DATA* pktBuff, char* nameBuff, int buffSize)
+static int _DNS_ReadName(TCPIP_DNS_RR_PROCESS* pProc, char* nameBuff, int buffSize)
 {
     uint8_t labelLen, offset;
     uint16_t labelOffset;
     int     copyLen, discardLen, avlblLen, nameLen;
     char    *wPtr, *ePtr;
+    TCPIP_DNS_RX_DATA   pktBuff;    // for compressed names
 
     if(nameBuff != 0 && buffSize != 0)
     {
@@ -1844,7 +1834,8 @@ static int _DNS_ReadName(TCPIP_DNS_RX_DATA* srcBuff, TCPIP_DNS_RX_DATA* pktBuff,
         wPtr = 0;
     }
 
-    TCPIP_DNS_RX_DATA* xtractBuff = srcBuff;
+
+    TCPIP_DNS_RX_DATA* xtractBuff = pProc->dnsRxData;
     bool nameFail = false;
     nameLen = 0;
 
@@ -1875,18 +1866,17 @@ static int _DNS_ReadName(TCPIP_DNS_RX_DATA* srcBuff, TCPIP_DNS_RX_DATA* pktBuff,
             }
 
             labelOffset += offset; 
-            if(pktBuff->rdPtr + labelOffset > pktBuff->endPtr)
+            // jump with absolute offset in the DNS packet
+            xtractBuff = &pktBuff;
+            _DNSInitRxData(xtractBuff, pProc->dnsPacket, pProc->dnsPacketSize);
+            if(!_DNSGetData(xtractBuff, 0, labelOffset))
             {   // overflow ?
                 nameFail = true;
                 break;
             }
-            else
-            {
-                pktBuff->rdPtr += labelOffset;
-                xtractBuff = pktBuff;
-                // jump to the offset
-                continue;
-            }
+
+            // jump to the offset
+            continue;
         }
 
         if(wPtr != 0)
@@ -1920,6 +1910,7 @@ static int _DNS_ReadName(TCPIP_DNS_RX_DATA* srcBuff, TCPIP_DNS_RX_DATA* pktBuff,
             if(wPtr < ePtr)
             {
                 *wPtr++ = '.';
+                nameLen++;
             }
         }
         if(discardLen != 0)
@@ -1943,12 +1934,11 @@ static int _DNS_ReadName(TCPIP_DNS_RX_DATA* srcBuff, TCPIP_DNS_RX_DATA* pktBuff,
     {
         if(wPtr != nameBuff && *(wPtr - 1) == '.')
         {
-            *(wPtr - 1) = 0;  // remove the last '.' 
+            wPtr--; // remove the last '.' 
+            nameLen--;
         }
-        else
-        {
-            *wPtr = 0;  // end the nameBuff properly
-        }
+
+        *wPtr = 0;  // end the nameBuff properly
     }
 
 

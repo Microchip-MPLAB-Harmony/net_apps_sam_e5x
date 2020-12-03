@@ -1,0 +1,13 @@
+configName: sam_e54_xpro_iar
+folderName: ''
+format_version: v1.0
+frameworkPath: D:\11_Repo\01_H3\h3
+processor: ATSAME54P20A
+projectName: tcpip_tcp_server
+settings:
+  PackageFilter: bsp;core;crypto;csp;net;net;net;net;net;net;net;net;touch;usb;wireless;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: OVERWRITE
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.4.70\atdf\ATSAME54P20A.atdf

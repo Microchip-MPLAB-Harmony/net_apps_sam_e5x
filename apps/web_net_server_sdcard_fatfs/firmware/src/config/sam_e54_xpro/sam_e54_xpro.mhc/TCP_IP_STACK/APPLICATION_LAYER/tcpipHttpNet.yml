@@ -1,0 +1,22 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: tcpipHttpNet}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: TCPIP_HTTP_NET_HEAP_SIZE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tcpipHttpNet, value: '4944'}
+  - type: Integer
+    attributes: {id: TCPIP_HTTP_NET_LISTEN_PORT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '443'}
+- type: ElementPosition
+  attributes: {x: '247', y: '174', id: tcpipHttpNet}
