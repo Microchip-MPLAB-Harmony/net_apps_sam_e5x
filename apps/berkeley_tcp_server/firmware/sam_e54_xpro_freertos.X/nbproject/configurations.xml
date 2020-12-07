@@ -569,7 +569,7 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_e54_xpro_freertos/harmony-manifest-failure.yml</itemPath>
-      <itemPath>..\src\config\sam_e54_xpro_freertos\harmony-manifest-success.yml</itemPath>
+      <itemPath>../src/config/sam_e54_xpro_freertos/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -1000,7 +1000,7 @@
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
         <property key="preprocessor-macros" value=""/>
-        <property key="remove-unused-sections" value="false"/>
+        <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
         <property key="serial-origin" value=""/>
@@ -1021,7 +1021,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e54_xpro_freertos;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
+                  value="../src;../src/config/sam_e54_xpro_freertos;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
