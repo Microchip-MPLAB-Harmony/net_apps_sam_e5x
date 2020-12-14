@@ -1,0 +1,13 @@
+configName: sam_e54_xpro
+folderName: ''
+format_version: v1.0
+frameworkPath: ../../..
+processor: ATSAME54P20A
+projectName: ''
+settings:
+  PackageFilter: audio;bsp;bt;core;crypto;cryptoauthlib;csp;csp_apps_sam_9x60;expresslogic_threadx;gfx;motor_control;net;net;net;net;net;net;net;net;net;usb;wireless;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: ALL
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.4.70\atdf\ATSAME54P20A.atdf
