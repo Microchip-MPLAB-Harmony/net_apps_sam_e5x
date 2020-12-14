@@ -33,6 +33,15 @@ children:
       - type: User
         attributes: {value: 'true'}
   - type: Boolean
+    attributes: {id: TCPIP_AUTOCONFIG_ENABLE_HTTP_SERVER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Boolean
     attributes: {id: TCPIP_AUTOCONFIG_ENABLE_NBNS}
     children:
     - type: Values

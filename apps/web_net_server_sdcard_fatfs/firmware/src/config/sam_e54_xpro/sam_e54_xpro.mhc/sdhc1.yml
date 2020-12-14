@@ -5,6 +5,13 @@ children:
 - type: Symbols
   children:
   - type: Boolean
+    attributes: {id: SDCARD_EMMCEN}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_sdmmc_0, value: 'false'}
+  - type: Boolean
     attributes: {id: SDCARD_SDCDEN}
     children:
     - type: Values

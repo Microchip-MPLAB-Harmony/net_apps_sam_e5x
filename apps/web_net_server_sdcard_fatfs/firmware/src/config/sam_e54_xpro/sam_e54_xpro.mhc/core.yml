@@ -1352,6 +1352,69 @@ children:
       - type: Dynamic
         attributes: {id: core, value: PA11}
   - type: String
+    attributes: {id: PORT_GROUP_0_PAD_12}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PA12}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PAD_13}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PA13}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PAD_14}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PA14}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PAD_15}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PA15}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PAD_17}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PA17}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PAD_18}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PA18}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PAD_19}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PA19}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PAD_20}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PA20}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PAD_21}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PA21}
+  - type: String
     attributes: {id: PORT_GROUP_0_PAD_8}
     children:
     - type: Values
@@ -1541,6 +1604,48 @@ children:
       - type: Dynamic
         attributes: {id: core, value: PB11}
   - type: String
+    attributes: {id: PORT_GROUP_1_PAD_18}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PB18}
+  - type: String
+    attributes: {id: PORT_GROUP_1_PAD_19}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PB19}
+  - type: String
+    attributes: {id: PORT_GROUP_1_PAD_20}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PB20}
+  - type: String
+    attributes: {id: PORT_GROUP_1_PAD_21}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PB21}
+  - type: String
+    attributes: {id: PORT_GROUP_1_PAD_24}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PB24}
+  - type: String
+    attributes: {id: PORT_GROUP_1_PAD_25}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PB25}
+  - type: String
     attributes: {id: PORT_GROUP_1_PAD_31}
     children:
     - type: Values
@@ -1667,12 +1772,33 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '0x240000'}
   - type: String
+    attributes: {id: PORT_GROUP_2_PAD_11}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PC11}
+  - type: String
+    attributes: {id: PORT_GROUP_2_PAD_12}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PC12}
+  - type: String
     attributes: {id: PORT_GROUP_2_PAD_18}
     children:
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: core, value: PC18}
+  - type: String
+    attributes: {id: PORT_GROUP_2_PAD_20}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PC20}
   - type: String
     attributes: {id: PORT_GROUP_2_PAD_21}
     children:
@@ -1750,6 +1876,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
+  - type: String
+    attributes: {id: PORT_GROUP_3_PAD_20}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PD20}
   - type: String
     attributes: {id: PORT_GROUP_3_PINCFG20}
     children:
@@ -2074,6 +2207,8 @@ children:
     children:
     - type: Values
       children:
+      - type: Dynamic
+        attributes: {id: core, value: '1024'}
       - type: User
         attributes: {value: '184960'}
   - type: Integer

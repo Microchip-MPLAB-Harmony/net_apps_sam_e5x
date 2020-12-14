@@ -10,22 +10,29 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: '64250'}
+        attributes: {value: '65536'}
   - type: Integer
     attributes: {id: TCPIP_STACK_HEAP_SIZE_RECOMMEND}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tcpipStack, value: '62'}
+        attributes: {id: tcpipStack, value: '59'}
   - type: Boolean
-    attributes: {id: TCPIP_STACK_INTERFACE_CHANGE_SIGNALING}
+    attributes: {id: TCPIP_STACK_SYS_RANDOM_H2_ADAPTER}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tcpipStack, value: 'true'}
+  - type: File
+    attributes: {id: TCPIP_SYS_RTOS_TASK}
     children:
     - type: Attributes
       children:
       - type: Boolean
-        attributes: {id: visible}
+        attributes: {id: enabled}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
 - type: ElementPosition
   attributes: {x: '209', y: '9', id: tcpipStack}
