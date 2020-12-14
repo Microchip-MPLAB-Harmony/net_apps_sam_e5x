@@ -63,7 +63,7 @@
 TaskHandle_t xAPP_Tasks;
 
 void _APP_Tasks(  void *pvParameters  )
-{
+{   
     while(1)
     {
         APP_Tasks();
@@ -77,6 +77,16 @@ void _DRV_MIIM_Task(  void *pvParameters  )
     while(1)
     {
         DRV_MIIM_Tasks(sysObj.drvMiim);
+        vTaskDelay(1 / portTICK_PERIOD_MS);
+    }
+}
+
+
+void _NET_PRES_Tasks(  void *pvParameters  )
+{
+    while(1)
+    {
+        NET_PRES_Tasks(sysObj.netPres);
         vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
@@ -98,16 +108,6 @@ void _DRV_MEMORY_0_Tasks(  void *pvParameters  )
     {
         DRV_MEMORY_Tasks(sysObj.drvMemory0);
         vTaskDelay(DRV_MEMORY_RTOS_DELAY_IDX0 / portTICK_PERIOD_MS);
-    }
-}
-
-
-void _NET_PRES_Tasks(  void *pvParameters  )
-{
-    while(1)
-    {
-        NET_PRES_Tasks(sysObj.netPres);
-        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
