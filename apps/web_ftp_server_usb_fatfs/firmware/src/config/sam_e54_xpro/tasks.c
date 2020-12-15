@@ -96,11 +96,11 @@ SYS_FS_Tasks();
     DRV_USBFSV1_Tasks(sysObj.drvUSBFSV1Object);
 
 
-NET_PRES_Tasks(sysObj.netPres);
-
-
-
 TCPIP_STACK_Task(sysObj.tcpip);
+
+
+
+NET_PRES_Tasks(sysObj.netPres);
 
 
 
