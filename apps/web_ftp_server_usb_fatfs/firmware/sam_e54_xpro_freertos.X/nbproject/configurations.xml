@@ -993,7 +993,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.4.67"/>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.5.87"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
