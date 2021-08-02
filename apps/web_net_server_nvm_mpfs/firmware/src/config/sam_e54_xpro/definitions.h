@@ -58,14 +58,14 @@
 #include "system/int/sys_int.h"
 #include "system/ports/sys_ports.h"
 #include "system/cache/sys_cache.h"
+#include "system/reset/sys_reset.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
 #include "library/tcpip/tcpip.h"
-#include "driver/gmac/drv_gmac.h"
-#include "driver/miim/drv_miim.h"
 #include "system/sys_time_h2_adapter.h"
 #include "system/sys_random_h2_adapter.h"
 #include "peripheral/sercom/usart/plib_sercom2_usart.h"
+#include "driver/gmac/drv_gmac.h"
 #include "peripheral/evsys/plib_evsys.h"
 #include "system/command/sys_command.h"
 #include "peripheral/port/plib_port.h"
@@ -73,6 +73,7 @@
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/mpu/plib_mpu.h"
 #include "peripheral/cmcc/plib_cmcc.h"
+#include "driver/miim/drv_miim.h"
 #include "wolfssl/wolfcrypt/port/pic32/crypt_wolfcryptcb.h"
 #include "net_pres/pres/net_pres.h"
 #include "net_pres/pres/net_pres_encryptionproviderapi.h"
@@ -94,6 +95,9 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* CPU clock frequency */
+#define CPU_CLOCK_FREQUENCY 120000000
 
 // *****************************************************************************
 // *****************************************************************************
@@ -187,22 +191,22 @@ void SYS_Tasks ( void );
 // Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
-    
+
 // *****************************************************************************
 /* System Objects
-        
+
 Summary:
     Structure holding the system's object handles
-        
+
 Description:
     This structure contains the object handles for all objects in the
     MPLAB Harmony project's system configuration.
-        
+
 Remarks:
     These handles are returned from the "Initialize" functions for each module
     and must be passed into the "Tasks" function for each module.
 */
-        
+
 typedef struct
 {
     SYS_MODULE_OBJ  sysTime;
