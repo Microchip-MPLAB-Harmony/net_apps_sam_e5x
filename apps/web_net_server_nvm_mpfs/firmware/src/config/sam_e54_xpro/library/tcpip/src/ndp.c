@@ -1476,7 +1476,7 @@ void TCPIP_NDP_SAAPrefixInfoProcess (TCPIP_NET_IF * pNetIf, NDP_OPTION_PREFIX_IN
         // Check to ensure that the prefix option preferred lifetime is less than the valid lifetime
         if (prefixInfo->dPreferredLifetime <= prefixInfo->dValidLifetime)
         {
-            pPrefixAdd = (IPV6_ADDR*)((uint8_t*)prefixInfo + offsetof(NDP_OPTION_PREFIX_INFO, aPrefix));
+            pPrefixAdd = (IPV6_ADDR*)((uint8_t*)prefixInfo + offsetof(struct NDP_OPTION_PREFIX_INFO, aPrefix));
             if ((localAddressPointer = TCPIP_NDP_PrefixFind (pNetIf, pPrefixAdd, prefixInfo->vPrefixLen, false)) == NULL)
             {
                 // Prefix is not equal to the prefix of an address configured by Stateless Address Autoconfiguration
@@ -1484,7 +1484,7 @@ void TCPIP_NDP_SAAPrefixInfoProcess (TCPIP_NET_IF * pNetIf, NDP_OPTION_PREFIX_IN
                 {
                     if (prefixInfo->vPrefixLen + IPV6_INTERFACE_ID_SIZE != 128)
                         return;
-                    pPrefixAdd = (IPV6_ADDR*)((uint8_t*)prefixInfo + offsetof(NDP_OPTION_PREFIX_INFO, aPrefix));
+                    pPrefixAdd = (IPV6_ADDR*)((uint8_t*)prefixInfo + offsetof(struct NDP_OPTION_PREFIX_INFO, aPrefix));
                     TCPIP_NDP_AddressConstructFromPrefix (pNetIf, &tempAddress, pPrefixAdd, prefixInfo->vPrefixLen);
                     localAddressPointer = TCPIP_IPV6_UnicastAddressAdd (pNetIf, &tempAddress, 0, false);
                     if (localAddressPointer != NULL)
@@ -1546,7 +1546,7 @@ void TCPIP_NDP_PrefixInfoProcessForOnLinkStatus (TCPIP_NET_IF * pNetIf, NDP_OPTI
     IPV6_HEAP_NDP_PL_ENTRY * prefixPointer;
     IPV6_ADDR* pPrefixAdd;
 
-    pPrefixAdd = (IPV6_ADDR*)((uint8_t*)prefixInfo + offsetof(NDP_OPTION_PREFIX_INFO, aPrefix));
+    pPrefixAdd = (IPV6_ADDR*)((uint8_t*)prefixInfo + offsetof(struct NDP_OPTION_PREFIX_INFO, aPrefix));
 
     if ((prefixInfo->flags.bL) && !((prefixInfo->aPrefix.v[0] == 0xFE) && ((prefixInfo->aPrefix.v[1] & 0xC0) == 0x80)))
     {

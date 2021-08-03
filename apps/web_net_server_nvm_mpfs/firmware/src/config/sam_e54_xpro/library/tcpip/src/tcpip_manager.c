@@ -1732,7 +1732,9 @@ static void _TCPIPStackSetIfNumberName(void)
     int netIx;
     TCPIP_NET_IF* pNetIf;
     TCPIP_MAC_TYPE macType;
-    int ifNumber[TCPIP_MAC_TYPES] = { 0 };
+    int ifNumber[TCPIP_MAC_TYPES];
+
+    memset(ifNumber, 0, sizeof(ifNumber));
 
     for(netIx = 0, pNetIf = tcpipNetIf; netIx < tcpip_stack_ctrl_data.nIfs; netIx++, pNetIf++)
     {
