@@ -852,7 +852,7 @@ char TCPIP_NDP_DupAddrDiscoveryStatus (IPV6_ADDR_STRUCT * localAddressPointer)
                         IPV6_PACKET * pkt;
 
                         IPV6_ADDR_STRUCT* pDadStruct = (gDuplicateAddrDetectState + i)->addressPointer;
-                        IPV6_ADDR* pDadAdd = (IPV6_ADDR*)((uint8_t*)pDadStruct + offsetof(IPV6_ADDR_STRUCT, address));
+                        IPV6_ADDR* pDadAdd = (IPV6_ADDR*)((uint8_t*)pDadStruct + offsetof(struct _IPV6_ADDR_STRUCT, address));
                         pkt = TCPIP_ICMPV6_HeaderNeighborSolicitationPut (gDuplicateAddrDetectState[i].netConfig, (IPV6_ADDR *)&IPV6_FIXED_ADDR_UNSPECIFIED, &solicitedNodeMulticastAddr, pDadAdd);
                         if (pkt != NULL)
                         {
@@ -1044,7 +1044,7 @@ static void TCPIP_NDP_RouterSolicitTask (void)
                         memcpy(&sllaOption.mLinkLayerAddr , &(pNetIf->netMACAddr), sizeof (TCPIP_MAC_ADDR));
 
                         pRsStruct = pRs->address; 
-                        pRsAdd = (IPV6_ADDR*)((uint8_t*)pRsStruct + offsetof(IPV6_ADDR_STRUCT, address));
+                        pRsAdd = (IPV6_ADDR*)((uint8_t*)pRsStruct + offsetof(struct _IPV6_ADDR_STRUCT, address));
                         pkt = TCPIP_ICMPV6_HeaderRouterSolicitationPut (pNetIf, pRsAdd, (IPV6_ADDR *)&IPV6_FIXED_ADDR_ALL_ROUTER_MULTICAST);
                         if (pkt == NULL)
                             return;
@@ -1067,7 +1067,7 @@ static void TCPIP_NDP_RouterSolicitTask (void)
                     memcpy(&sllaOption.mLinkLayerAddr , &(pNetIf->netMACAddr), sizeof (TCPIP_MAC_ADDR));
                     // The previously selected IP address is still valid; use it
                     pRsStruct = pRs->address; 
-                    pRsAdd = (IPV6_ADDR*)((uint8_t*)pRsStruct + offsetof(IPV6_ADDR_STRUCT, address));
+                    pRsAdd = (IPV6_ADDR*)((uint8_t*)pRsStruct + offsetof(struct _IPV6_ADDR_STRUCT, address));
                     pkt = TCPIP_ICMPV6_HeaderRouterSolicitationPut (pNetIf, pRsAdd, (IPV6_ADDR *)&IPV6_FIXED_ADDR_ALL_ROUTER_MULTICAST);
                     if (pkt == NULL)
                         return;
@@ -1214,7 +1214,7 @@ void * TCPIP_NDP_PrefixFind (TCPIP_NET_IF * pNetIf, IPV6_ADDR * prefix, unsigned
             {
                 if (prefixLength == localAddressPointer->prefixLen)
                 {
-                    const IPV6_ADDR* pLclAdd = (const IPV6_ADDR*)((uint8_t*)localAddressPointer + offsetof(IPV6_ADDR_STRUCT, address));
+                    const IPV6_ADDR* pLclAdd = (const IPV6_ADDR*)((uint8_t*)localAddressPointer + offsetof(struct _IPV6_ADDR_STRUCT, address));
                     if (TCPIP_Helper_FindCommonPrefix ((uint8_t*)prefix, (uint8_t*)pLclAdd, sizeof (IPV6_ADDR)) >= prefixLength)
                     {
                         return localAddressPointer;
@@ -1870,7 +1870,7 @@ static void TCPIP_NDP_NborUnreachDetectTask (void)
 
                             if (neighborPointer->preferredSource != NULL)
                             {
-                                pPrefAdd = (IPV6_ADDR*)((uint8_t*)&neighborPointer->preferredSource + offsetof(IPV6_ADDR_STRUCT, address));
+                                pPrefAdd = (IPV6_ADDR*)((uint8_t*)&neighborPointer->preferredSource + offsetof(struct _IPV6_ADDR_STRUCT, address));
                                 sourceAddress = TCPIP_IPV6_DASSourceAddressSelect (pNetIf, &neighborPointer->remoteIPAddress, pPrefAdd);
                             }
                             if (sourceAddress == NULL)
@@ -1889,7 +1889,7 @@ static void TCPIP_NDP_NborUnreachDetectTask (void)
                             memcpy (&sllaOption.mLinkLayerAddr, &pNetIf->netMACAddr, sizeof (TCPIP_MAC_ADDR));
 
 
-                            pSrcAdd = (IPV6_ADDR*)((uint8_t*)sourceAddress + offsetof(IPV6_ADDR_STRUCT, address));
+                            pSrcAdd = (IPV6_ADDR*)((uint8_t*)sourceAddress + offsetof(struct _IPV6_ADDR_STRUCT, address));
                             pkt = TCPIP_ICMPV6_HeaderNeighborSolicitationPut (pNetIf, pSrcAdd, &(neighborPointer->remoteIPAddress), &(neighborPointer->remoteIPAddress));
                             if (pkt == NULL)
                             {
@@ -1949,7 +1949,7 @@ static void TCPIP_NDP_NborUnreachDetectTask (void)
 
                             if (neighborPointer->preferredSource != NULL)
                             {
-                                pPrefAdd = (IPV6_ADDR*)((uint8_t*)&neighborPointer->preferredSource + offsetof(IPV6_ADDR_STRUCT, address));
+                                pPrefAdd = (IPV6_ADDR*)((uint8_t*)&neighborPointer->preferredSource + offsetof(struct _IPV6_ADDR_STRUCT, address));
                                 sourceAddress = TCPIP_IPV6_DASSourceAddressSelect (pNetIf, &neighborPointer->remoteIPAddress, pPrefAdd);
                             }
                             if (sourceAddress == NULL)
@@ -1970,7 +1970,7 @@ static void TCPIP_NDP_NborUnreachDetectTask (void)
                             sllaOption.vLength = 1;
                             memcpy (&sllaOption.mLinkLayerAddr, &pNetIf->netMACAddr, sizeof (TCPIP_MAC_ADDR));
 
-                            pSrcAdd = (IPV6_ADDR*)((uint8_t*)sourceAddress + offsetof(IPV6_ADDR_STRUCT, address));
+                            pSrcAdd = (IPV6_ADDR*)((uint8_t*)sourceAddress + offsetof(struct _IPV6_ADDR_STRUCT, address));
                             pkt = TCPIP_ICMPV6_HeaderNeighborSolicitationPut (pNetIf, pSrcAdd, &solicitedNodeMulticastAddr, &neighborPointer->remoteIPAddress);
                             if (pkt == NULL)
                             {
