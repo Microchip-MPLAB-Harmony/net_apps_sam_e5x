@@ -447,6 +447,7 @@ extern "C" {
 #define TCPIP_SMTPC_SKT_TX_BUFF_SIZE			    0
 #define TCPIP_SMTPC_SKT_RX_BUFF_SIZE			    0
 #define TCPIP_SMTPC_TASK_TICK_RATE			        55
+#define TCPIP_SMTPC_USE_MAIL_COMMAND
 
 
 
