@@ -126,6 +126,8 @@
                 <itemPath>../src/config/sam_e54_xpro/library/tcpip/src/lldp_manager.h</itemPath>
                 <itemPath>../src/config/sam_e54_xpro/library/tcpip/src/lldp_private.h</itemPath>
                 <itemPath>../src/config/sam_e54_xpro/library/tcpip/src/lldp_tlv.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro/library/tcpip/src/dhcp_server_manager.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro/library/tcpip/src/dhcp_server_private.h</itemPath>
                 <itemPath>../src/config/sam_e54_xpro/library/tcpip/src/tcpip_mac_bridge_manager.h</itemPath>
                 <itemPath>../src/config/sam_e54_xpro/library/tcpip/src/tcpip_mac_bridge_private.h</itemPath>
               </logicalFolder>
@@ -173,6 +175,7 @@
               <itemPath>../src/config/sam_e54_xpro/library/tcpip/tcpip_commands.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro/library/tcpip/tcpip.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro/library/tcpip/tcpip_ethernet.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro/library/tcpip/dhcp_server.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro/library/tcpip/tcpip_mac_bridge.h</itemPath>
             </logicalFolder>
           </logicalFolder>
@@ -260,6 +263,9 @@
               <itemPath>../src/config/sam_e54_xpro/system/ports/sys_ports.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro/system/ports/sys_ports_mapping.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="f9" displayName="reset" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro/system/reset/sys_reset.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f1" displayName="time" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro/system/time/sys_time.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro/system/time/sys_time_definitions.h</itemPath>
@@ -281,6 +287,8 @@
           <itemPath>../src/config/sam_e54_xpro/definitions.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/config.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/device.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro/interrupts.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro/device_vectors.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="packs" projectFiles="true">
@@ -325,11 +333,74 @@
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/trng.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/usb.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/fuses.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f3" displayName="instance" projectFiles="true">
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/adc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/adc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/aes.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/can0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/can1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ccl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/cmcc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/dac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/dmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/dsu.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/eic.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/evsys.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/freqm.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/fuses.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/gclk.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/gmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/hmatrix.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/i2s.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/icm.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/mclk.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/nvmctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/osc32kctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/oscctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pcc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pdec.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pm.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/port.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/qspi.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ramecc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/rstc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/rtc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sdhc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sdhc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom2.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom3.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom4.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom5.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom6.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom7.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/supc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc2.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc3.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc4.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc5.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc6.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc7.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc2.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc3.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc4.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/trng.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/usb.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/wdt.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME54P20A_DFP/pio/same54p20a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAME54P20A_DFP/atsame54p20a.h</itemPath>
+          <itemPath>../src/packs/ATSAME54P20A_DFP/same54p20a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
           <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
@@ -485,12 +556,87 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/ed448.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/fe_448.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/ge_448.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/rc2.h</itemPath>
       </logicalFolder>
       <itemPath>../src/mib.h</itemPath>
       <itemPath>../src/app.h</itemPath>
       <itemPath>../src/http_net_print.h</itemPath>
     </logicalFolder>
     <logicalFolder name="f4" displayName="Important Files" projectFiles="true">
+      <logicalFolder name="f3"
+                     displayName="pic32mz_ef_sk_freertos.mhc"
+                     projectFiles="true">
+        <logicalFolder name="f1" displayName="TCP_IP_STACK" projectFiles="true">
+          <logicalFolder name="f1" displayName="APPLICATION_LAYER" projectFiles="true">
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/APPLICATION_LAYER.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipAnnounce.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipDhcp.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipDns.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipHttpNet.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipNbns.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipSmtpc.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipSnmp.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipSnmpv3.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipSntp.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpip_apps_config.yml</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f2" displayName="BASIC_CONFIGURATION" projectFiles="true">
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/BASIC_CONFIGURATION.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipCmd.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipNetConfig.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipStack.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpip_basic_config.yml</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f3" displayName="DRIVER_LAYER" projectFiles="true">
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/DRIVER_LAYER/DRIVER_LAYER.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/DRIVER_LAYER/drvExtPhyLan8740.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/DRIVER_LAYER/drvMiim.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/DRIVER_LAYER/drvPic32mEthmac.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/DRIVER_LAYER/tcpip_driver_config.yml</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f4" displayName="NETWORK_LAYER" projectFiles="true">
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/NETWORK_LAYER.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipArp.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIcmp.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIcmpv6.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIPv4.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIPv6.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipNdp.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpip_network_config.yml</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f5" displayName="PRESENTATION_LAYER" projectFiles="true">
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/PRESENTATION_LAYER/net_Pres.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/PRESENTATION_LAYER/PRESENTATION_LAYER.yml</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f6" displayName="TRANSPORT_LAYER" projectFiles="true">
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpipTcp.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpipUdp.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpip_transport_config.yml</itemPath>
+            <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/TRANSPORT_LAYER/TRANSPORT_LAYER.yml</itemPath>
+          </logicalFolder>
+          <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/TCP_IP_STACK/TCP_IP_STACK.yml</itemPath>
+        </logicalFolder>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/BSP_PIC32MZ_EF_Starter_Kit.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/core.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/core_timer.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/dfp.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/drv_sdspi.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/FreeRTOS.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/lib_crypto.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/lib_wolfcrypt.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/lib_wolfssl.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/project.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/settings.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/spi1.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/sys_command.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/sys_console.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/sys_debug.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/sys_fs.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/sys_time.yml</itemPath>
+        <itemPath>../../../../../net_apps_pic32mz/apps/snmpv3_sdcard_fatfs/firmware/src/config/pic32mz_ef_sk_freertos/pic32mz_ef_sk_freertos.mhc/uart2.yml</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="sam_e54_xpro.mhc" projectFiles="true">
         <logicalFolder name="f1" displayName="TCP_IP_STACK" projectFiles="true">
           <logicalFolder name="f1" displayName="APPLICATION_LAYER" projectFiles="true">
@@ -724,6 +870,9 @@
             <logicalFolder name="f3" displayName="int" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro/system/int/src/sys_int.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="f8" displayName="reset" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro/system/reset/sys_reset.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="f1" displayName="time" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro/system/time/src/sys_time.c</itemPath>
             </logicalFolder>
@@ -862,6 +1011,7 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ed448.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/fe_448.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ge_448.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/rc2.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_dsp32.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_dsp.c</itemPath>
       </logicalFolder>
@@ -886,7 +1036,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.50</languageToolchainVersion>
+        <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -953,7 +1103,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src/third_party/wolfssl/wolfssl;../src/third_party/wolfssl;../src;../src/config/sam_e54_xpro;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/config/sam_e54_xpro/library;../src/config/sam_e54_xpro/library/tcpip/src;../src/config/sam_e54_xpro/library/tcpip/src/common"/>
+                  value="../src;../src/config/sam_e54_xpro;../src/config/sam_e54_xpro/library;../src/config/sam_e54_xpro/library/tcpip/src;../src/config/sam_e54_xpro/library/tcpip/src/common;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/wolfssl;../src/third_party/wolfssl/wolfssl"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -963,9 +1113,10 @@
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="preprocessor-macros"
-                  value="WOLFSSL_IGNORE_FILE_WARN;HAVE_CONFIG_H"/>
+                  value="HAVE_CONFIG_H;WOLFSSL_IGNORE_FILE_WARN"/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
+        <property key="tentative-definitions" value="-fno-common"/>
         <property key="toplevel-reordering" value=""/>
         <property key="unaligned-access" value=""/>
         <property key="use-cci" value="false"/>
@@ -997,6 +1148,7 @@
       </C32-AS>
       <C32-CO>
         <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
       </C32-CO>
       <C32-LD>
         <property key="additional-options-use-response-files" value="false"/>
@@ -1050,7 +1202,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e54_xpro;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/sam_e54_xpro;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1078,6 +1230,7 @@
         <property key="omit-pack-options" value="1"/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
+        <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
       <EdbgTool>
@@ -1087,6 +1240,8 @@
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -1108,10 +1263,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/11_Repo/01_H3/h3/net_apps_sam_e5x/apps/snmpv3_nvm_mpfs/firmware/sam_e54_xpro.X/debug/sam_e54_xpro/sam_e54_xpro_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
