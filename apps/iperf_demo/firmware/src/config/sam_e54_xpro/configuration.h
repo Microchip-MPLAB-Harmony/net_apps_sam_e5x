@@ -56,7 +56,7 @@
 */
 
 #include "user.h"
-#include "toolchain_specifics.h"
+#include "device.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -175,6 +175,7 @@ extern "C" {
 #define TCPIP_TCP_QUIET_TIME		        	    0
 #define TCPIP_TCP_COMMANDS   false
 #define TCPIP_TCP_EXTERN_PACKET_PROCESS   false
+#define TCPIP_TCP_DISABLE_CRYPTO_USAGE		        	    false
 
 
 
@@ -340,13 +341,13 @@ extern "C" {
 
 		/*** QUEUE 0 TX Configuration ***/
 #define TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE0				8
-#define TCPIP_GMAC_TX_BUFF_SIZE_QUE0				    	1536			
 #define TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE0				    	1536
 		
 		/*** QUEUE 0 RX Configuration ***/
 #define TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE0				8
 #define TCPIP_GMAC_RX_BUFF_SIZE_QUE0				    	1536
-#define TCPIP_GMAC_RX_BUFF_COUNT_QUE0				   		10
+#define TCPIP_GMAC_RX_DEDICATED_BUFFERS_QUE0				8
+#define TCPIP_GMAC_RX_ADDL_BUFF_COUNT_QUE0				   	2
 #define TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE0			1
 #define TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE0				2
 
@@ -386,7 +387,7 @@ extern "C" {
 #define TCPIP_GMAC_TX_PRIO_COUNT				1
 #define TCPIP_GMAC_RX_PRIO_COUNT				1
 #define DRV_GMAC_NUMBER_OF_QUEUES				1
-#define DRV_GMAC_RMII_MODE					0
+#define DRV_GMAC_RMII_MODE						0
 
 
 
@@ -418,6 +419,7 @@ extern "C" {
 #define WOLF_CRYPTO_CB  // provide call-back support
 #define WOLFCRYPT_ONLY
 // ---------- FUNCTIONAL CONFIGURATION START ----------
+#define WOLFSSL_AES_SMALL_TABLES
 #define NO_MD4
 #define WOLFSSL_SHA224
 #define WOLFSSL_AES_128
@@ -428,6 +430,7 @@ extern "C" {
 #define HAVE_AES_ECB
 #define HAVE_AES_CBC
 #define WOLFSSL_AES_COUNTER
+#define WOLFSSL_AES_OFB
 #define HAVE_AESGCM
 #define HAVE_AESCCM
 #define NO_RC4
@@ -442,9 +445,13 @@ extern "C" {
 #define HAVE_HASHDRBG
 #define WC_NO_HARDEN
 #define SINGLE_THREADED
+#define NO_SIG_WRAPPER
 #define NO_ERROR_STRINGS
 #define NO_WOLFSSL_MEMORY
 // ---------- FUNCTIONAL CONFIGURATION END ----------
+
+#define TCPIP_STACK_NETWORK_INTERAFCE_COUNT  	1
+
 
 
 
