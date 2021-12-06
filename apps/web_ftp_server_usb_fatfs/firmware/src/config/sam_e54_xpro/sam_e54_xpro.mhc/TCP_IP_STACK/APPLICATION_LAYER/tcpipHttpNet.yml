@@ -31,6 +31,6 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: /mnt/myDrive1/webpages/}
+        attributes: {value: /mnt/myDrive1/webpages}
 - type: ElementPosition
   attributes: {x: '310', y: '141', id: tcpipHttpNet}

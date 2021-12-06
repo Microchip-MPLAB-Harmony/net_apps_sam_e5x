@@ -26,4 +26,4 @@ children:
       - type: User
         attributes: {value: /mnt/myDrive1/}
 - type: ElementPosition
-  attributes: {x: '34', y: '288', id: tcpipFtps}
+  attributes: {x: '33', y: '287', id: tcpipFtps}
