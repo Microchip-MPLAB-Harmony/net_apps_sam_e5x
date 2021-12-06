@@ -56,7 +56,7 @@
 */
 
 #include "user.h"
-#include "toolchain_specifics.h"
+#include "device.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -127,6 +127,7 @@ extern "C" {
 
 
 
+
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			1
 #define SYS_CONSOLE_UART_MAX_INSTANCES 	   			1
 #define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		0
@@ -149,6 +150,7 @@ extern "C" {
 #define DRV_MEMORY_BUFFER_QUEUE_SIZE_IDX0    1
 #define DRV_MEMORY_DEVICE_START_ADDRESS      0x80000
 #define DRV_MEMORY_DEVICE_MEDIA_SIZE         512UL
+#define DRV_MEMORY_DEVICE_MEDIA_SIZE_BYTES   (DRV_MEMORY_DEVICE_MEDIA_SIZE * 1024)
 #define DRV_MEMORY_DEVICE_PROGRAM_SIZE       512
 #define DRV_MEMORY_DEVICE_ERASE_SIZE         8192
 
@@ -440,12 +442,12 @@ extern "C" {
 #define TCPIP_SMTPC_MAIL_RETRIES 	                3
 #define TCPIP_SMTPC_SERVER_TRANSIENT_RETRY_TIMEOUT  600
 #define TCPIP_SMTPC_INTERNAL_RETRY_TIMEOUT          10
-#define TCPIP_SMTPC_SERVER_REPLY_BUFFER_SIZE 	    512
+#define TCPIP_SMTPC_SERVER_REPLY_BUFFER_SIZE 	    2048
 #define TCPIP_SMTPC_CLIENT_AUTH_BUFFER_SIZE 	    100
 #define TCPIP_SMTPC_CLIENT_ADDR_BUFFER_SIZE 	    80
 #define TCPIP_SMTPC_PLAIN_LINE_BUFF_SIZE 	        256
-#define TCPIP_SMTPC_SKT_TX_BUFF_SIZE			    0
-#define TCPIP_SMTPC_SKT_RX_BUFF_SIZE			    0
+#define TCPIP_SMTPC_SKT_TX_BUFF_SIZE			    2048
+#define TCPIP_SMTPC_SKT_RX_BUFF_SIZE			    2048
 #define TCPIP_SMTPC_TASK_TICK_RATE			        55
 #define TCPIP_SMTPC_USE_MAIL_COMMAND
 
@@ -617,6 +619,7 @@ extern "C" {
 #define HAVE_MCAPI
 #define WOLF_CRYPTO_CB  // provide call-back support
 // ---------- FUNCTIONAL CONFIGURATION START ----------
+#define WOLFSSL_AES_SMALL_TABLES
 #define NO_MD4
 #define WOLFSSL_SHA224
 #define WOLFSSL_AES_128
@@ -627,6 +630,7 @@ extern "C" {
 #define HAVE_AES_ECB
 #define HAVE_AES_CBC
 #define WOLFSSL_AES_COUNTER
+#define WOLFSSL_AES_OFB
 #define HAVE_AESGCM
 #define HAVE_AESCCM
 #define NO_RC4
@@ -650,6 +654,9 @@ extern "C" {
 #define NET_PRES_NUM_INSTANCE 1
 #define NET_PRES_NUM_SOCKETS 10
 
+
+
+#define TCPIP_STACK_NETWORK_INTERAFCE_COUNT  	1
 
 
 

@@ -707,9 +707,16 @@ TCPIP_MAC_RES DRV_GMAC_PacketTx(DRV_HANDLE hMac, TCPIP_MAC_PACKET * ptrPacket)
     }
 
     TCPIP_MAC_DATA_SEGMENT* pSeg;
-	GMAC_QUE_LIST queueIdx = (GMAC_QUE_LIST)(pMACDrv->sGmacData.gmacConfig.txPrioNumToQueIndx[ptrPacket->pktPriority]);	
+	GMAC_QUE_LIST queueIdx = GMAC_QUE_0;
     
-
+    // Check if priority is between 0 and (Number of Queues -1 )
+    if ((ptrPacket->pktPriority) >= DRV_GMAC_NUMBER_OF_QUEUES)
+    {    
+        return TCPIP_MAC_RES_PACKET_ERR; 	        
+    }
+	
+	queueIdx = (GMAC_QUE_LIST)(pMACDrv->sGmacData.gmacConfig.txPrioNumToQueIndx[ptrPacket->pktPriority]);
+	
     if (queueIdx == DRV_GMAC_DUMMY_PRIORITY)
     {
         // fallback to default queue priority
@@ -763,8 +770,8 @@ TCPIP_MAC_PACKET* DRV_GMAC_PacketRx (DRV_HANDLE hMac, TCPIP_MAC_RES* pRes, TCPIP
     }
 
 	TCPIP_MAC_RES			mRes;	
-	TCPIP_MAC_PACKET		*pRxPkt;
-	DRV_GMAC_RXDCPT_STATUS	pRxPktStat;
+	TCPIP_MAC_PACKET		*pRxPkt = NULL;
+	DRV_GMAC_RXDCPT_STATUS	pRxPktStat = {0};
 	DRV_PIC32CGMAC_RESULT	ethRes = DRV_PIC32CGMAC_RES_NO_PACKET;	
 	int                     buffsPerRxPkt = 0;
     static GMAC_QUE_LIST    queueIndex = DRV_GMAC_NO_ACTIVE_QUEUE;    
