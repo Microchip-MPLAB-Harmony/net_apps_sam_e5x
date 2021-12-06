@@ -11,6 +11,19 @@ children:
       children:
       - type: Dynamic
         attributes: {id: netPres_0, value: 'true'}
+  - type: Boolean
+    attributes: {id: wolfsslOsalHeapKeys}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
 - type: Attachments
   children:
   - type: DirectDependency
@@ -40,4 +53,4 @@ children:
         children:
         - {type: Value, value: NetPres_Crypto_Dependency}
 - type: ElementPosition
-  attributes: {x: '765', y: '311', id: lib_wolfssl}
+  attributes: {x: '749', y: '203', id: lib_wolfssl}
