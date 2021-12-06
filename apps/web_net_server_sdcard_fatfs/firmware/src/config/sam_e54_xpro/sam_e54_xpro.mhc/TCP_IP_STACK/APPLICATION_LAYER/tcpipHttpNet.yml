@@ -45,6 +45,6 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: /mnt/mchpSite1/web_pages}
+        attributes: {value: /mnt/mchpSite1/}
 - type: ElementPosition
   attributes: {x: '248', y: '174', id: tcpipHttpNet}
