@@ -5,13 +5,6 @@ children:
 - type: Symbols
   children:
   - type: Integer
-    attributes: {id: TCPIP_STACK_DRAM_SIZE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: '64960'}
-  - type: Integer
     attributes: {id: TCPIP_STACK_HEAP_SIZE_RECOMMEND}
     children:
     - type: Values
@@ -94,4 +87,4 @@ children:
         children:
         - {type: Value, value: 'true'}
 - type: ElementPosition
-  attributes: {x: '240', y: '20', id: tcpipStack}
+  attributes: {x: '20', y: '20', id: tcpipStack}
