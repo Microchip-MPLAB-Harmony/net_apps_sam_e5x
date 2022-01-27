@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------------------*/
-/* Low level disk I/O module skeleton for FatFs     (C)ChaN, 2014        */
+/* Low level disk I/O module SKELETON for FatFs     (C)ChaN, 2019        */
 /*-----------------------------------------------------------------------*/
 /* If a working storage control module is available, it should be        */
 /* attached to the FatFs via a glue function rather than modifying it.   */
@@ -71,9 +71,9 @@ static DRESULT disk_checkCommandStatus(uint8_t pdrv)
 }
 
 /* Definitions of physical drive number for each drive */
-#define ATA     0   /* Example: Map ATA harddisk to physical drive 0 */
-#define MMC     1   /* Example: Map MMC/SD card to physical drive 1 */
-#define USB     2   /* Example: Map USB MSD to physical drive 2 */
+#define DEV_RAM     0   /* Example: Map Ramdisk to physical drive 0 */
+#define DEV_MMC     1   /* Example: Map MMC/SD card to physical drive 1 */
+#define DEV_USB     2   /* Example: Map USB MSD to physical drive 2 */
 
 
 /*-----------------------------------------------------------------------*/
@@ -107,12 +107,34 @@ DSTATUS disk_initialize (
     return 0;
 }
 
+static DRESULT disk_read_aligned
+(
+    uint8_t pdrv,   /* Physical drive nmuber (0..) */
+    uint8_t *buff,  /* Data buffer to store read data */
+    uint32_t sector,/* Sector address (LBA) */
+    uint32_t sector_count   /* Number of sectors to read (1..128) */
+)
+{
+    DRESULT result = RES_ERROR;
 
+    gSysFsDiskData[pdrv].commandStatus = SYS_FS_MEDIA_COMMAND_IN_PROGRESS;
+
+    gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID;
+
+    /* Submit the read request to media */
+    gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_MANAGER_SectorRead(pdrv /* DISK Number */ ,
+            buff /* Destination Buffer*/,
+            sector /* Source Sector */,
+            sector_count /* Number of Sectors */);
+
+    result = disk_checkCommandStatus(pdrv);
+
+    return result;
+}
 
 /*-----------------------------------------------------------------------*/
 /* Read Sector(s)                                                        */
 /*-----------------------------------------------------------------------*/
-
 DRESULT disk_read
 (
     uint8_t pdrv,   /* Physical drive nmuber (0..) */
@@ -124,17 +146,7 @@ DRESULT disk_read
     DRESULT result = RES_ERROR;
 
     {
-        gSysFsDiskData[pdrv].commandStatus = SYS_FS_MEDIA_COMMAND_IN_PROGRESS;
-
-        gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID;
-
-        /* submit the read request */
-        gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_MANAGER_SectorRead(pdrv /* DISK Number */ ,
-                buff /* Destination Buffer*/,
-                sector /* Source Sector */,
-                count /* Number of Sectors */);
-
-        result = disk_checkCommandStatus(pdrv);
+        result = disk_read_aligned(pdrv, buff, sector, count);
     }
 
     return result;
