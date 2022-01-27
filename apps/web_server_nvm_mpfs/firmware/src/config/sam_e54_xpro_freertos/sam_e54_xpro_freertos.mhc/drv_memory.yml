@@ -232,4 +232,4 @@ children:
             children:
             - {type: Value, value: NVMCTRL_MEMORY}
 - type: ElementPosition
-  attributes: {x: '174', y: '416', id: drv_memory}
+  attributes: {x: '174', y: '397', id: drv_memory}
