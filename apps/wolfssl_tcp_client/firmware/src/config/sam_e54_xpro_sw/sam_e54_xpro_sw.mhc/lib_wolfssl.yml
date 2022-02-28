@@ -101,6 +101,13 @@ children:
       - type: Dynamic
         attributes: {id: lib_wolfssl, value: 'true'}
   - type: Boolean
+    attributes: {id: wolfsslTlsEccCurvesExt}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
     attributes: {id: wolfssl_debug}
     children:
     - type: Values

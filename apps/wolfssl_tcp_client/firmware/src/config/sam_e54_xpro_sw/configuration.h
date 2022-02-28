@@ -186,8 +186,7 @@ extern "C" {
 #define HAVE_FFDHE_2048
 #define HAVE_FFDHE_3072
 #define HAVE_FFDHE_4096
-#define HAVE_FFDHE_6144
-#define HAVE_FFDHE_8192
+#define WOLFSSL_DTLS
 #define NO_PWDBASED
 #define HAVE_TLS_EXTENSIONS
 #define WOLFSSL_TLS13
@@ -468,7 +467,6 @@ extern "C" {
 #define HAVE_MCAPI
 #define WOLF_CRYPTO_CB  // provide call-back support
 // ---------- FUNCTIONAL CONFIGURATION START ----------
-#define WOLFSSL_AES_SMALL_TABLES
 #define NO_MD4
 #define WOLFSSL_SHA224
 #define WOLFSSL_SHA384
@@ -492,7 +490,7 @@ extern "C" {
 #define HAVE_ECC
 #define HAVE_DH
 #define NO_DSA
-#define FP_MAX_BITS 16384
+#define FP_MAX_BITS 8192
 #define USE_CERT_BUFFERS_2048
 #define WC_RSA_PSS
 #define NO_DEV_RANDOM
