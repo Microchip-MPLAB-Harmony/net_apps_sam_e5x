@@ -223,7 +223,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.8"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.9"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -859,23 +859,19 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;739&quot; canvasWidth=&quot;655&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;TCP/IP STACK&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;189&quot; y=&quot;72&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DRIVER LAYER&quot; x=&quot;12&quot; y=&quot;93&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;380&quot; y=&quot;19&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;PRESENTATION LAYER&quot; x=&quot;540&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;200&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;APPLICATION LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;15&quot; y=&quot;70&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;APPLICATION LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipAnnounce&quot; x=&quot;470&quot; y=&quot;240&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcp&quot; x=&quot;320&quot; y=&quot;20&quot;/&gt;
@@ -887,14 +883,7 @@
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;tcpip_apps_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;15&quot; y=&quot;70&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;DRIVER LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;DRIVER LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;drvExtPhyKsz8091&quot; x=&quot;162&quot; y=&quot;92&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;drvGmac&quot; x=&quot;308&quot; y=&quot;92&quot;/&gt;
@@ -902,7 +891,26 @@
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;TCP/IP STACK&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;189&quot; y=&quot;72&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DRIVER LAYER&quot; x=&quot;12&quot; y=&quot;93&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;380&quot; y=&quot;19&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;PRESENTATION LAYER&quot; x=&quot;540&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;200&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;739&quot; canvasWidth=&quot;655&quot; dnOrder=&quot;5&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;420&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipNetConfig&quot; x=&quot;246&quot; y=&quot;25&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipStack&quot; x=&quot;39&quot; y=&quot;81&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_basic_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E54_Xplained_Pro&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;35&quot; y=&quot;79&quot;/&gt;
@@ -923,14 +931,6 @@
         &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_fs&quot; x=&quot;650&quot; y=&quot;182&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;sys_time&quot; x=&quot;192&quot; y=&quot;180&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;tc0&quot; x=&quot;0&quot; y=&quot;214&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;420&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipNetConfig&quot; x=&quot;246&quot; y=&quot;25&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipStack&quot; x=&quot;39&quot; y=&quot;81&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_basic_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
     &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;NETWORK LAYER&quot;&gt;
@@ -4449,17 +4449,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;lib_wolfssl&gt;
   &lt;lib_wolfssl dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;WolfSSL_Crypto_Dependency&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;lib_wolfcrypt&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;lib_wolfcrypt&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-      &lt;DirectCapability dnOrder=&quot;1&quot; id=&quot;lib_wolfssl&quot;&gt;
+      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;lib_wolfssl&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;TCP/IP&amp;amp;#160;STACK&lt;/Value&gt;
@@ -7904,7 +7894,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>0098e8e01f3a17f3b7a4a5e236c4250ca1865aeb05a12faf9845e201cd112eff</hash>
+         <hash>03ff23191dabf3871d70216d69851b5339c42cc2f719e0f1d4bf9b74055fd225</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\peripheral\nvmctrl\plib_nvmctrl.h</file>
@@ -7932,7 +7922,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>3ec013593edf39000df359408205a1f012fba3df3b88ce90f09c5115522d81cb</hash>
+         <hash>1d9f6a9be5f12371756731060bc391bec35cf01f5a2a3017ea81a5e9cb480828</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\rstc.h</file>
@@ -7968,7 +7958,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\peripheral\sercom\usart\plib_sercom2_usart.c</file>
-         <hash>dff3a57438c04ca64ba0392b2aa46df4a1f214340216027b4a24055e47ce5e24</hash>
+         <hash>a926ae9d80e4becaa7e5b373eeaece016ac7c837cfa5cd784f9779f6870ccb28</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\nbns_manager.h</file>
@@ -8280,7 +8270,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\system\fs\src\sys_fs.c</file>
-         <hash>2a43be04eef02f90f4d6d31009b772e1730f4edb58a9796a8c54340c2efb55bf</hash>
+         <hash>eb92f8667a2330efcebfe7d775c81089e7ef05d0cbe9e457b8812333fb0ea3b4</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\system\fs\mpfs\mpfs.c</file>
@@ -8324,7 +8314,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\peripheral\port\plib_port.c</file>
-         <hash>b746a6eb3da12832ed88778ad0ecca2565e7fa9ec86369d570e05e794576dee1</hash>
+         <hash>6f7ef5de739949e1bc375cf7f12aed8d47233fd20d4343fe1d3554e754cfc3b9</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\des3.c</file>
@@ -8392,7 +8382,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\configuration.h</file>
-         <hash>37bd571eb60114575acbc56e38d0b327405ba94a6a2f19810d0f8ba6587ec7d9</hash>
+         <hash>08c0d66c84df3be212576757cbe7956bdf2503336e8596c07c0b531a2aa907d8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\udp_manager.h</file>
@@ -8884,7 +8874,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\startup_xc32.c</file>
-         <hash>ebe33b46bd83c26f32578138f29ec66ad92771b9b6de05a59e0583cbe6bcbe66</hash>
+         <hash>9497a3bb8a98e8d9697ff9ca031a33f207d23bc6618932326afb7f49a5c8af77</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_ZpEccAdd_pb.h</file>
@@ -8924,7 +8914,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\tcpip_manager.c</file>
-         <hash>e85dfa4ce9ea64d77dbe30768a8698f2ce9365650bed4190e37d2953fca304ac</hash>
+         <hash>1159559e437c574a27256913c02c4a242369eedde85b8957a79a30647c9d5801</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\mpi_superclass.h</file>
@@ -9028,7 +9018,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\dhcp.h</file>
-         <hash>4f6af9fc08fdfd47f5551e16127028960151ea26da2c43c7b99992648a101e8a</hash>
+         <hash>30d1c8ba29e1fe380bafd1b247df7245499e023cf5cdc7c444f660703a0fdaba</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\osc32kctrl.h</file>
@@ -9108,7 +9098,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\dhcp_server_private.h</file>
-         <hash>9514bcacb3b4fae6420aa6e7677501df0a4ba0d9605d20c7ebea5f80132ac915</hash>
+         <hash>f3f6f5ea9259d39604499021a75a5edafa1886ba0d5d1aa66aefa15e2ba2de95</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\dsu.h</file>
@@ -9284,7 +9274,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\oahash.h</file>
-         <hash>14cd46dce77ffceacb33fbef8ed5dc96b8e5bd24fae6d72d5b7dddf5c2b3fa8f</hash>
+         <hash>75929a00c86e29359dcb5452f9dc184fa1c714906b6244c79982f911063b8848</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\aes.h</file>
@@ -9300,7 +9290,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\oahash.c</file>
-         <hash>5651aa16152a6548ce9bb8e1a0dd914ade8cfa27b9acf72a7453744c6f783598</hash>
+         <hash>f8e65ee4421a5405e219e05f5a5ab875ab948b51e9aa035566b11e1060941af6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\zero_conf_link_local.h</file>
@@ -9612,7 +9602,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\dhcp_server.h</file>
-         <hash>93cd5e8e6adaf55dd34e6594165348565c5504c4468022e8c55708026611d2c4</hash>
+         <hash>51e645d3ded493317ac36d913b5534bd60a59d705d4310eced80c7be89c1eeff</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\gclk.h</file>
@@ -9900,11 +9890,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\peripheral\clock\plib_clock.c</file>
-         <hash>e37708c9f77f899c6479bf96c3bca40c6ae166f2f3990ee66f1e134f73fac3d0</hash>
+         <hash>381db78ccf6bf711e76b8de1f7fedac2eba2d8c189ac39d5244d42d803307967</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\tcpip_commands.c</file>
-         <hash>9447bca6226e483541b51f1ddf036f30c91de6a0f49407ddf898712a566fef62</hash>
+         <hash>de8baef6621a31e33699d177e89619dd7b5301df58275f493ffe14dd11678ae0</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\curve448.h</file>
@@ -9928,7 +9918,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\dhcp_private.h</file>
-         <hash>b91eda5e97999b9b0c12d509616899fbbd4816dd06311b96cf7fbb90ea6db8ca</hash>
+         <hash>91ffa8cd07a9564bc1d05744dd8779dede435bd4036d3ab4a905cd5ca17c7cf8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\peripheral\clock\plib_clock.h</file>
@@ -9936,7 +9926,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\dhcp.c</file>
-         <hash>a27b74e015a1392d7a2fee551288ca5dd63628b7fedfbefb21dbda8ab4c8b2bb</hash>
+         <hash>45dbcf12064725af8225654619727d41b23e5fe632d2912bf31073f2c9cd890d</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_rng_hw.h</file>
