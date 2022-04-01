@@ -996,7 +996,35 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;NETWORK LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipArp&quot; x=&quot;179&quot; y=&quot;74&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipIPv4&quot; x=&quot;47&quot; y=&quot;71&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipIPv6&quot; x=&quot;447&quot; y=&quot;73&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpipIcmp&quot; x=&quot;318&quot; y=&quot;76&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;tcpipIcmpv6&quot; x=&quot;566&quot; y=&quot;73&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;tcpipNdp&quot; x=&quot;686&quot; y=&quot;70&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;tcpip_network_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;TCP/IP STACK&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;2&quot; y=&quot;8&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;150&quot; y=&quot;170&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DRIVER LAYER&quot; x=&quot;0&quot; y=&quot;171&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;0&quot; y=&quot;110&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;PRESENTATION LAYER&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;3&quot; y=&quot;54&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;APPLICATION LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipAnnounce&quot; x=&quot;257&quot; y=&quot;59&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcp&quot; x=&quot;16&quot; y=&quot;49&quot;/&gt;
@@ -1010,8 +1038,7 @@
         &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;tcpip_apps_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;568&quot; canvasWidth=&quot;766&quot; dnOrder=&quot;1&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E54_Xplained_Pro&quot; x=&quot;623&quot; y=&quot;14&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;FreeRTOS&quot; x=&quot;548&quot; y=&quot;64&quot;/&gt;
@@ -1026,7 +1053,7 @@
         &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;lib_wolfcrypt&quot; x=&quot;586&quot; y=&quot;226&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;lib_wolfssl&quot; x=&quot;603&quot; y=&quot;381&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;nvmctrl&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sdhc1&quot; x=&quot;19&quot; y=&quot;190&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sdhc1&quot; x=&quot;21&quot; y=&quot;189&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sercom2&quot; x=&quot;6&quot; y=&quot;315&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;sys_command&quot; x=&quot;420&quot; y=&quot;410&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_console&quot; x=&quot;202&quot; y=&quot;352&quot;/&gt;
@@ -1036,7 +1063,12 @@
         &lt;ElementPosition dnOrder=&quot;20&quot; id=&quot;tc0&quot; x=&quot;17&quot; y=&quot;89&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;363&quot; y=&quot;58&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipNetConfig&quot; x=&quot;35&quot; y=&quot;59&quot;/&gt;
@@ -1044,45 +1076,13 @@
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_basic_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;DRIVER LAYER&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;156&quot; canvasWidth=&quot;180&quot; dnOrder=&quot;7&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;DRIVER LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;drvExtPhyKsz8091&quot; x=&quot;257&quot; y=&quot;59&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;drvGmac&quot; x=&quot;387&quot; y=&quot;79&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;drvMiim&quot; x=&quot;130&quot; y=&quot;63&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;NETWORK LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipArp&quot; x=&quot;179&quot; y=&quot;74&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipIPv4&quot; x=&quot;47&quot; y=&quot;71&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipIPv6&quot; x=&quot;447&quot; y=&quot;73&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpipIcmp&quot; x=&quot;318&quot; y=&quot;76&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;tcpipIcmpv6&quot; x=&quot;566&quot; y=&quot;73&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;tcpipNdp&quot; x=&quot;686&quot; y=&quot;70&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;tcpip_network_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;TCP/IP STACK&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;2&quot; y=&quot;8&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;150&quot; y=&quot;170&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DRIVER LAYER&quot; x=&quot;0&quot; y=&quot;171&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;0&quot; y=&quot;110&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;PRESENTATION LAYER&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;3&quot; y=&quot;54&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -4976,7 +4976,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;XC32_HEAP_SIZE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1024&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;174960&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;200000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -6000,6 +6000,17 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="lib_wolfssl" name="wolfsslDTLS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;lib_wolfssl&gt;
+  &lt;lib_wolfssl dnOrder=&quot;0&quot; id=&quot;wolfsslDTLS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/lib_wolfssl&gt;
+&lt;/lib_wolfssl&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="lib_wolfssl" name="wolfsslOsalHeapKeys"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;lib_wolfssl&gt;
   &lt;lib_wolfssl dnOrder=&quot;0&quot; id=&quot;wolfsslOsalHeapKeys&quot;&gt;
@@ -6012,6 +6023,17 @@
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/lib_wolfssl&gt;
+&lt;/lib_wolfssl&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="lib_wolfssl" name="wolfsslTlsEccCurvesExt"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;lib_wolfssl&gt;
+  &lt;lib_wolfssl dnOrder=&quot;0&quot; id=&quot;wolfsslTlsEccCurvesExt&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/lib_wolfssl&gt;
@@ -6310,7 +6332,7 @@
   &lt;net_Pres dnOrder=&quot;0&quot; id=&quot;NET_PRES_RTOS_STACK_SIZE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; value=&quot;32768&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;49158&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;32768&quot;/&gt;
     &lt;/Values&gt;
   &lt;/net_Pres&gt;
 &lt;/net_Pres&gt;
@@ -7674,11 +7696,55 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipHttpNet" name="TCPIP_HTTP_NET_SKT_RX_BUFF_SIZE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipHttpNet&gt;
+  &lt;tcpipHttpNet dnOrder=&quot;0&quot; id=&quot;TCPIP_HTTP_NET_SKT_RX_BUFF_SIZE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;2048&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/tcpipHttpNet&gt;
+&lt;/tcpipHttpNet&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipHttpNet" name="TCPIP_HTTP_NET_SKT_TX_BUFF_SIZE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipHttpNet&gt;
+  &lt;tcpipHttpNet dnOrder=&quot;0&quot; id=&quot;TCPIP_HTTP_NET_SKT_TX_BUFF_SIZE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;2048&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/tcpipHttpNet&gt;
+&lt;/tcpipHttpNet&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipHttpNet" name="TCPIP_HTTP_NET_SSI_VARIABLE_STRING_MAX_LENGTH"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipHttpNet&gt;
   &lt;tcpipHttpNet dnOrder=&quot;0&quot; id=&quot;TCPIP_HTTP_NET_SSI_VARIABLE_STRING_MAX_LENGTH&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;User dnOrder=&quot;0&quot; value=&quot;20&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/tcpipHttpNet&gt;
+&lt;/tcpipHttpNet&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipHttpNet" name="TCPIP_HTTP_NET_WEBPAGE_DIRECTORY_PATH"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipHttpNet&gt;
+  &lt;tcpipHttpNet dnOrder=&quot;0&quot; id=&quot;TCPIP_HTTP_NET_WEBPAGE_DIRECTORY_PATH&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;C:\microchip\h3\net\web_pages&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/tcpipHttpNet&gt;
+&lt;/tcpipHttpNet&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipHttpNet" name="TCPIP_HTTP_NET_WEB_DIR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipHttpNet&gt;
+  &lt;tcpipHttpNet dnOrder=&quot;0&quot; id=&quot;TCPIP_HTTP_NET_WEB_DIR&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;/mnt/mchpSite1/&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcpipHttpNet&gt;
 &lt;/tcpipHttpNet&gt;
@@ -8147,6 +8213,17 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTcp" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>TRANSPORT LAYER</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTcp" name="TCPIP_TCP_HEAP_SIZE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTcp&gt;
+  &lt;tcpipTcp dnOrder=&quot;0&quot; id=&quot;TCPIP_TCP_HEAP_SIZE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; value=&quot;22856&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/tcpipTcp&gt;
+&lt;/tcpipTcp&gt;
+</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipUdp" name="!@#harmonyAttachmentState"/>
@@ -10808,7 +10885,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_freertos\configuration.h</file>
-         <hash>0d2d2dfd6dd1158b8f495534a23ac4bb7ffed5d74cc20475750029b187407cc5</hash>
+         <hash>87f87f0fbeb2f38fe3df8832dac012a6db185a7f0d10d431cbfcaf3a1717034d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_freertos\library\tcpip\tcpip_commands.h</file>

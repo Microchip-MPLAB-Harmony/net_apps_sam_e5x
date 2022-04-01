@@ -434,7 +434,7 @@ extern "C" {
 #define NET_PRES_NUM_SOCKETS 10
 
 /* Net Pres RTOS Configurations*/
-#define NET_PRES_RTOS_STACK_SIZE                12289.5
+#define NET_PRES_RTOS_STACK_SIZE                8192
 #define NET_PRES_RTOS_TASK_PRIORITY             1
 	
 #define FREERTOS
@@ -654,7 +654,7 @@ extern "C" {
 
 
 /* TCP/IP RTOS Configurations*/
-#define TCPIP_RTOS_STACK_SIZE                2048
+#define TCPIP_RTOS_STACK_SIZE                1024
 #define TCPIP_RTOS_PRIORITY             1
 
 
