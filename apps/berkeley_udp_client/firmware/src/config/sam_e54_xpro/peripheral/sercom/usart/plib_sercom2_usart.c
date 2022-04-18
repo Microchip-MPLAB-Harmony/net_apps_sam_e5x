@@ -69,15 +69,15 @@ static SERCOM_USART_RING_BUFFER_OBJECT sercom2USARTObj;
 // *****************************************************************************
 // *****************************************************************************
 
-#define SERCOM2_USART_READ_BUFFER_SIZE      128U
-#define SERCOM2_USART_READ_BUFFER_9BIT_SIZE     (128U >> 1U)
+#define SERCOM2_USART_READ_BUFFER_SIZE      128
+#define SERCOM2_USART_READ_BUFFER_9BIT_SIZE     (128 >> 1)
 #define SERCOM2_USART_RX_INT_DISABLE()      SERCOM2_REGS->USART_INT.SERCOM_INTENCLR = SERCOM_USART_INT_INTENCLR_RXC_Msk
 #define SERCOM2_USART_RX_INT_ENABLE()       SERCOM2_REGS->USART_INT.SERCOM_INTENSET = SERCOM_USART_INT_INTENSET_RXC_Msk
 
 static uint8_t SERCOM2_USART_ReadBuffer[SERCOM2_USART_READ_BUFFER_SIZE];
 
-#define SERCOM2_USART_WRITE_BUFFER_SIZE     4096U
-#define SERCOM2_USART_WRITE_BUFFER_9BIT_SIZE  (4096U >> 1U)
+#define SERCOM2_USART_WRITE_BUFFER_SIZE     4096
+#define SERCOM2_USART_WRITE_BUFFER_9BIT_SIZE  (4096 >> 1)
 #define SERCOM2_USART_TX_INT_DISABLE()      SERCOM2_REGS->USART_INT.SERCOM_INTENCLR = SERCOM_USART_INT_INTENCLR_DRE_Msk
 #define SERCOM2_USART_TX_INT_ENABLE()       SERCOM2_REGS->USART_INT.SERCOM_INTENSET = SERCOM_USART_INT_INTENSET_DRE_Msk
 
@@ -254,7 +254,7 @@ bool SERCOM2_USART_SerialSetup( USART_SERIAL_SETUP * serialSetup, uint32_t clkFr
 
 void static SERCOM2_USART_ErrorClear( void )
 {
-    uint16_t  u16dummyData = 0;
+    uint8_t  u8dummyData = 0;
 
     /* Clear error flag */
     SERCOM2_REGS->USART_INT.SERCOM_INTFLAG = SERCOM_USART_INT_INTFLAG_ERROR_Msk;
@@ -265,11 +265,11 @@ void static SERCOM2_USART_ErrorClear( void )
     /* Flush existing error bytes from the RX FIFO */
     while((SERCOM2_REGS->USART_INT.SERCOM_INTFLAG & SERCOM_USART_INT_INTFLAG_RXC_Msk) == SERCOM_USART_INT_INTFLAG_RXC_Msk)
     {
-        u16dummyData = SERCOM2_REGS->USART_INT.SERCOM_DATA;
+        u8dummyData = SERCOM2_REGS->USART_INT.SERCOM_DATA;
     }
 
     /* Ignore the warning */
-    (void)u16dummyData;
+    (void)u8dummyData;
 }
 
 USART_ERROR SERCOM2_USART_ErrorGet( void )
@@ -536,7 +536,7 @@ static inline bool SERCOM2_USART_TxPushByte(uint16_t wrByte)
 }
 
 /* This routine is only called from ISR. Hence do not disable/enable USART interrupts. */
-static void SERCOM2_USART_SendWriteNotification(void)
+static void SERCOM2_USART_WriteNotificationSend(void)
 {
     uint32_t nFreeWrBufferCount;
 
@@ -726,7 +726,7 @@ void static SERCOM2_USART_ISR_TX_Handler( void )
                 SERCOM2_REGS->USART_INT.SERCOM_DATA = wrByte;
             }
 
-            SERCOM2_USART_SendWriteNotification();
+            SERCOM2_USART_WriteNotificationSend();
         }
         else
         {
@@ -759,8 +759,8 @@ void SERCOM2_USART_InterruptHandler( void )
         }
 
         /* Checks for receive complete empty flag */
-        testCondition = ((SERCOM2_REGS->USART_INT.SERCOM_INTFLAG & SERCOM_USART_INT_INTFLAG_RXC_Msk) != 0U);
-        testCondition = ((SERCOM2_REGS->USART_INT.SERCOM_INTENSET & SERCOM_USART_INT_INTENSET_RXC_Msk) != 0U) && testCondition;
+        testCondition = (SERCOM2_REGS->USART_INT.SERCOM_INTFLAG & SERCOM_USART_INT_INTFLAG_RXC_Msk);
+        testCondition = (SERCOM2_REGS->USART_INT.SERCOM_INTENSET & SERCOM_USART_INT_INTENSET_RXC_Msk) && testCondition;
         if(testCondition)
         {
             SERCOM2_USART_ISR_RX_Handler();
