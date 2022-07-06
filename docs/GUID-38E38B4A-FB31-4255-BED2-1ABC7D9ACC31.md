@@ -90,7 +90,7 @@ This is the following section describes the hardware configuration used for this
 
 **TCP/IP WEB-NET & FTP SERVER Running Application**
 
-This application uses more than one FS for the TCP/IP application demonstration. Here HTTP Net server uses Microchip Proprietary File System \(MPFS\) as a read only FS. Here MPFS FS reads web pages from Non-Volatile Memory \(NVM\) media which is used to store the web server pages.
+This application uses more than one FS for the TCP/IP application demonstration.<br />Here HTTP Net server uses Microchip Proprietary File System \(MPFS\) as a read only FS. Here MPFS FS reads web pages from Non-Volatile Memory \(NVM\) media which is used to store the web server pages.
 
 The FAT FS File System read and writes to SDCard memory media which is used for storing any type of files. FTP server will read from and write to this SDcard media using FAT FS.
 
@@ -152,7 +152,7 @@ This table list the name and location of the MPLAB X IDE project folder for the 
 
     9.  **MPFS Upload** - A new set of web pages can be uploaded to the web server using this feature, which is accessed through http://mchpboard\_c/mpfsupload
 
-    **Notes:** The location of the MPFS image is fixed at the beginning of the Flash page specified by DRV\_MEMORY\_DEVICE\_START\_ADDRESS. The size of the MPFS upload is limited to DRV\_MEMORY\_DEVICE\_MEDIA\_SIZE in the demonstration. The HTTP File Upload functionality has to be enabled when the project is generated.
+    **Notes:** The location of the MPFS image is fixed at the beginning of the Flash page specified by DRV\_MEMORY\_DEVICE\_START\_ADDRESS. The size of the MPFS upload is limited to DRV\_MEMORY\_DEVICE\_MEDIA\_SIZE in the demonstration.<br />The HTTP File Upload functionality has to be enabled when the project is generated.
 
     ![tcpip_web_ftp_server_project](GUID-2C799F11-8BA6-4F90-A775-23BAA6D9AC44-low.png)
 

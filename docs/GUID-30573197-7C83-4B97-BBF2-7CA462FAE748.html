@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /><meta name="copyright" content="(C) Copyright 2022" />
+<meta name="DC.rights.owner" content="(C) Copyright 2022" />
+<meta name="DC.type" content="topic" />
+<meta name="DC.title" content="MPLAB® Harmony 3 TCP/IP Application for SAM E5X Family" />
+<meta name="DC.relation" scheme="URI" content="GUID-6FA31D77-7E3C-4EB5-B58B-E10F90991924.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-69286689-41F1-431B-8071-509558DEE9D9.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-39B797E5-42FA-4460-8888-2F7462A45EE3.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-485BB380-E1FE-43DE-ACC0-FC3AA3523FA7.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-E9DD8AC4-5235-4454-BB17-B0DDC66855AD.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-7C1C777A-DB47-468E-BDAB-9A2EC39C10BA.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-95DE67FE-8022-4837-B877-9FCAA1EC8FCC.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-E673648D-D80D-420E-8431-128FF7845E0B.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-14D9CE6F-4B1C-4DCA-9C1C-16C09BA4A647.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-A3A06AD9-E780-480B-90A9-9E412408508A.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-9AD07EE8-CF17-4CF1-8B0E-04CE3342B4BB.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-1EDCA93F-0E1F-464C-AFD6-9F3536B0F7EC.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-F805D35F-1372-46CD-ACEE-DB422E074FF7.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-6573C5B0-F3B2-4D8A-B76A-4085DE84C01C.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-D6DF936B-7B1A-4B63-974F-FC9BC863E606.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-7996BDD3-547C-4FFD-A636-512FE2CC5B6B.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-38E38B4A-FB31-4255-BED2-1ABC7D9ACC31.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-49B2B1BB-EE09-482D-9E34-B4C7AAEE8763.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-3BB2E2CC-A2C4-40CE-A62F-6654D529F641.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-4156D7F7-CCE8-4EB0-8BD7-5BFDD8A03E54.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-88A86921-2857-400D-9F7B-E222C2DAE1C9.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-FA21657E-3F49-4312-BCDA-B67E1821B7F4.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-B87BF4E5-DB14-4557-9D56-1EA7DB070F94.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-6AA84A41-A602-45EA-8EDB-9F8C86FAF9C6.html" />
+<meta name="DC.format" content="XHTML" />
+<meta name="DC.identifier" content="mplab-harmony-3-tcpip-application-for-sam-e5x-family" />
+<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
+<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>MPLAB® Harmony 3 TCP/IP Application for SAM E5X Family</title>
+<meta name="Microsoft.Help.Id" content="GUID-78B1E9D7-1CA9-428D-9D37-E1AB64F5F94A-mplab-harmony-3-tcpip-application-for-sam-e5x-family" />
+<meta name="Microsoft.Help.TocParent" content="GUID-78B1E9D7-1CA9-428D-9D37-E1AB64F5F94A" />
+<meta name="Microsoft.Help.TocOrder" content="0" />
+<meta name="Microsoft.Help.Locale" content="en-US" />
+<meta name="Microsoft.Help.TopicLocale" content="en-US" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB® Harmony TCP/IP Application for SAM E5X Family Reference A 11/2021" />
+<script language="javascript">
+       
+       if (window.parent.location.protocol != 'file:') {
+				document.addEventListener('click', function(e) {
+				    if (e.target) {
+               if (e.target.nodeName == "A" ) {
+                    if (!e.target.target) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                              
+                      var origUrl = window.parent.location.href.substr(0, window.parent.location.href.indexOf("?"));
+                      if (origUrl.length === 0) {
+                          origUrl = window.parent.location.href;
+                      }
+                      var href= e.target.getAttribute("href");
+                      var parts = href.split("#");
+          
+                      var url = "";
+                      if (parts.length == 2 ) {
+                        if (!parts[0].length) {
+                            url = window.parent.location.search.replace('?','')
+                        } else {
+                            url = parts[0].replace('.html','');
+                        }
+                      } else {
+                        url = parts[0].replace('.html','');
+                      }
+
+                      if (parts.length == 2) {
+                          url += "#" + parts[1];
+                      }
+    
+                      window.parent.location.href = origUrl + "?" + url;
+
+                      return false;
+                    }
+               }
+            }
+				});
+			}
+
+		</script><script language="javascript">
+        function cpy(id, button) {
+        
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            var textArea = document.createElement("textarea");
+            
+            // Place in the top-left corner of screen regardless of scroll position.
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            
+            // Ensure it has a small width and height. Setting to 1px / 1em
+            // doesn't work as this gives a negative w/h on some browsers.
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            
+            // We don't need padding, reducing the size if it does flash render.
+            textArea.style.padding = 0;
+            
+            // Clean up any borders.
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            
+            // Avoid flash of the white box if rendered for any reason.
+            textArea.style.background = 'transparent';
+            
+            
+            textArea.value = content;
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+               var successful = document.execCommand('copy');
+               var msg = successful ? 'successful' : 'unsuccessful';
+               if (!button.classList.contains("copied")){
+                  button.textContent = "Copied";
+                  button.classList.add("copied");
+                  setTimeout(function(){
+                    button.textContent = "Copy";
+                    button.classList.remove("copied");
+                  },1000);
+               }
+            } catch (err) {
+              console.log('Oops, unable to copy');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+      </script><script language="javascript">
+          
+          // Add the MathML namespace to html
+          var html = document.getElementsByTagName("html")[0],
+          head = document.getElementsByTagName("head")[0];
+          
+          var mathJax = document.createElement("script");
+          mathJax.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML";
+          head.appendChild(mathJax);
+          
+          html.setAttribute("xmlns:m","http://www.w3.org/1998/Math/MathML");
+          
+          function inIframe() { try { return window.self !== window.top; } catch (e) { return true; } }
+          
+          if (!inIframe()) { 
+          
+          var Default = "index.html?GUID-30573197-7C83-4B97-BBF2-7CA462FAE748"; 
+          
+          var displaylocation = "value" + window.location.href;
+          
+          var GUIDS = displaylocation.split('GUID');          
+          
+          if (displaylocation.indexOf('#GUID') != -1) {            
+          var First = GUIDS[1].split('.html');  
+          if (GUIDS[3]){First = GUIDS[2].split('.html');}
+          if (GUIDS[4]){First = GUIDS[3].split('.html');}
+          if (GUIDS[5]){First = GUIDS[4].split('.html');}
+          
+          var Second = GUIDS[2].split('#');   
+          if (GUIDS[3]){Second = GUIDS[3].split('#');}
+          if (GUIDS[4]){Second = GUIDS[4].split('#');}
+          if (GUIDS[5]){Second = GUIDS[5].split('#');}
+          
+          Default = "index.html?" + "GUID" + First[0] + "GUID" + Second[0];     
+          }                    
+          window.top.location = Default;
+          }       
+          
+        </script><style xml:space="">
+        
+          button.copy-code{
+            display:none;
+            padding:0.7em 1.4em;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.15em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            text-transform:uppercase;
+            font-weight:400;
+            color:#FFFFFF;
+            background-color:#9c9c9c;
+            box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+            text-align:center;
+            position:relative;
+            border: 0;
+            float: right;
+            border-radius: .5em;
+            cursor: pointer;
+          }
+          button.copy-code:active{
+            top:0.1em;
+          }
+          
+          pre:hover button.copy-code{
+            display: inline-block !important;
+          }
+          button.copy-code.copied {
+            cursor: default !important;
+          }
+          
+          
+          @media all and (max-width:30em){
+            button.copy-code{
+              display:block;
+              margin:0.4em auto;
+            }
+          }
+        
+        
+      </style></head>
+<body id="mplab-harmony-3-tcpip-application-for-sam-e5x-family">
+<h1 class="title topictitle1" id="ariaid-title1">MPLAB® Harmony 3 TCP/IP Application for SAM E5X Family</h1><div class="body"><p class="p">MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC microcontroller and microprocessor devices.</p>
+<p class="p">This repository contains multiple applications that demonstrate communication over TCP/IP using well known protocols like TCP, UDP, HTTP, SMTP, etc. Refer to the following links for release notes, training materials, and interface reference information.</p>
+<p class="p"><strong class="ph b">Code Examples</strong></p>
+<p class="p">The following applications are provided to demonstrate the typical or interesting usage models of one or more peripheral libraries.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d8183e25"><span>Name</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d8183e27"><span>Description</span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>berkeley_tcp_client</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP Berkeley TCP Client Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>berkeley_tcp_server</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP Berkeley TCP Server Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>berkeley_udp_client</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP Berkeley UDP Client Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>berkeley_udp_server</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP Berkeley UDP Server Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>berkeley_udp_relay</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP Berkeley UDP Relay Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>iperf_demo</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP IPERF Demo Applications</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>tcpip_tcp_client</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP TCP Client Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>tcpip_tcp_client_server</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP TCP Client Server Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>tcpip_client_server</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP Client Server Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>tcpip_tcp_demo_at24mac</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP TCP Client with AT24MAC Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>tcpip_tcp_server</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP TCP Server Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>tcpip_udp_client</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP UDP Client Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>tcpip_udp_server</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP UDP Server Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>tcpip_udp_client_server</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP UDP Client Server Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>snmpv3_nvm_mpfs</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP SNMP &amp; Secure Web Server NVM MPFS Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>snmpv3_sdcard_fatfs</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP SNMP &amp; Secure Web Server SDCARD with FATFS Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>web_ftp_server_mpfs_fatfs</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP Secure WEB &amp; FTP Server NVM MPFS &amp; SDCARD FATFS Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>web_ftp_server_usb_fatfs</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP Secure WEB &amp; FTP Server NVM MPFS &amp; USB FATFS Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>web_net_server_nvm_mpfs</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP Secure WEB Server NVM MPFS Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>web_net_server_sdcard_fatfs</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP Secure WEB Server SDCARD FATFS Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>web_server_nvm_mpfs</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP WEB Server NVM MPFS Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>web_server_sdcard_fatfs</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP WEB Server SDCARD FATFS Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>wolfssl_tcp_client</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP Secured TCP Client Application</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e25 "><span>wolfssl_tcp_server</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d8183e27 "><span>TCP/IP Secured TCP Server Application</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="GUID-6FA31D77-7E3C-4EB5-B58B-E10F90991924.html">TCP/IP Berkeley TCP Client</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-69286689-41F1-431B-8071-509558DEE9D9.html">TCP/IP Berkeley TCP Server</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-39B797E5-42FA-4460-8888-2F7462A45EE3.html">TCP/IP Berkeley UDP Client</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-485BB380-E1FE-43DE-ACC0-FC3AA3523FA7.html">TCP/IP Berkeley UDP Relay</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-E9DD8AC4-5235-4454-BB17-B0DDC66855AD.html">TCP/IP Berkeley UDP Server</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-7C1C777A-DB47-468E-BDAB-9A2EC39C10BA.html">TCP/IP Iperf Application</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-95DE67FE-8022-4837-B877-9FCAA1EC8FCC.html">TCP/IP Iperf Application</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-E673648D-D80D-420E-8431-128FF7845E0B.html">TCP/IP SNMP SDCARD Application</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-14D9CE6F-4B1C-4DCA-9C1C-16C09BA4A647.html">TCP/IP TCP and UDP Client Server</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-A3A06AD9-E780-480B-90A9-9E412408508A.html">TCP/IP TCP Client</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-9AD07EE8-CF17-4CF1-8B0E-04CE3342B4BB.html">TCP/IP TCP Client Server</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-1EDCA93F-0E1F-464C-AFD6-9F3536B0F7EC.html">TCP/IP TCP Client</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-F805D35F-1372-46CD-ACEE-DB422E074FF7.html">TCP/IP TCP Server Application</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-6573C5B0-F3B2-4D8A-B76A-4085DE84C01C.html">TCP/IP UDP Client</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-D6DF936B-7B1A-4B63-974F-FC9BC863E606.html">TCP/IP UDP Client Server</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-7996BDD3-547C-4FFD-A636-512FE2CC5B6B.html">TCP/IP UDP Server</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-38E38B4A-FB31-4255-BED2-1ABC7D9ACC31.html">TCP/IP WEB &amp; FTP SERVER Application with MPFS &amp; FATF FS</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-49B2B1BB-EE09-482D-9E34-B4C7AAEE8763.html">TCP/IP WEB &amp; FTP SERVER Application with USB FATFS</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-3BB2E2CC-A2C4-40CE-A62F-6654D529F641.html">TCP/IP Web NET Server NVM MPFS Application</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-4156D7F7-CCE8-4EB0-8BD7-5BFDD8A03E54.html">TCP/IP WEB-NET Server SDMMC Application</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-88A86921-2857-400D-9F7B-E222C2DAE1C9.html">TCP/IP Web Server NVM MPFS Application</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-FA21657E-3F49-4312-BCDA-B67E1821B7F4.html">TCP/IP WEB Server SDCARD Application</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-B87BF4E5-DB14-4557-9D56-1EA7DB070F94.html">TCP/IP WolfSSL TCP Client</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-6AA84A41-A602-45EA-8EDB-9F8C86FAF9C6.html">TCP/IP WolfSSL TCP Server</a></strong><br />
+</li>
+</ul>
+</div></body>
+</html>

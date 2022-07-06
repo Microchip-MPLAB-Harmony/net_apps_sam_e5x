@@ -127,7 +127,7 @@ This table list the name and location of the MPLAB X IDE project folder for the 
 
     6.  For TCP Client test, input the following command from the serial port: **openurl < url \>** - The < url \> argument must be a fully formed URL; for instance, http://www.microchip.com/.
 
-        For this above URL , the DNS module will make a DNS query. Then it will open a connection to the requested URL and perform a simple HTTP GET command. The response received from the server will be printed on the terminal application through the serial port.
+        For this above URL , the DNS module will make a DNS query. Then it will open a connection to the requested URL and perform a simple HTTP GET command.<br />The response received from the server will be printed on the terminal application through the serial port.
 
         The expected output -
 

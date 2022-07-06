@@ -50,7 +50,7 @@ The following Project Graph diagram shows the Harmony components included in the
 
     ![tcpip_same54_project](GUID-CA9BB7EB-854A-41AA-B6AB-324BC76EDB9D-low.png)
 
-    For **SAM V71** demonstration , **LAN8061 PHY driver** ia selcted along with GMAC **Internal ethernet driver**.
+    For **SAM V71** demonstration , **LAN8061 PHY driver** ia selcted along with GMAC<br />**Internal ethernet driver**.
 
     ![tcpip_same54_project](GUID-187EE6EB-A1A2-4888-A780-0B94BA2536BD-low.png)
 
