@@ -57,13 +57,12 @@
 #include "system/sys_time_h2_adapter.h"
 #include "system/sys_random_h2_adapter.h"
 #include "system/int/sys_int.h"
-#include "system/ports/sys_ports.h"
 #include "system/cache/sys_cache.h"
 #include "system/reset/sys_reset.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
-#include "peripheral/sercom/usart/plib_sercom2_usart.h"
 #include "driver/gmac/drv_gmac.h"
+#include "peripheral/sercom/usart/plib_sercom2_usart.h"
 #include "peripheral/evsys/plib_evsys.h"
 #include "system/command/sys_command.h"
 #include "peripheral/port/plib_port.h"
@@ -206,8 +205,8 @@ typedef struct
 
 
     SYS_MODULE_OBJ  tcpip;
+   SYS_MODULE_OBJ  drvMiim_0;
 
-    SYS_MODULE_OBJ  drvMiim;
     SYS_MODULE_OBJ  sysDebug;
 
 
