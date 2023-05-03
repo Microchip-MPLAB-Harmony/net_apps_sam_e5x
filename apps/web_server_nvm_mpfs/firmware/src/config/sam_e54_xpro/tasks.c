@@ -85,14 +85,14 @@ SYS_FS_Tasks();
     /* Maintain Device Drivers */
     DRV_MEMORY_Tasks(sysObj.drvMemory0);
 
-DRV_MIIM_Tasks(sysObj.drvMiim);
+   DRV_MIIM_Tasks(sysObj.drvMiim_0);
 
 
 
 
     /* Maintain Middleware & Other Libraries */
     
-TCPIP_STACK_Task(sysObj.tcpip);
+   TCPIP_STACK_Task(sysObj.tcpip);
 
 
 

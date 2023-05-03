@@ -56,7 +56,6 @@
 #include "driver/memory/drv_memory_nvmctrl.h"
 #include "bsp/bsp.h"
 #include "system/int/sys_int.h"
-#include "system/ports/sys_ports.h"
 #include "system/cache/sys_cache.h"
 #include "system/reset/sys_reset.h"
 #include "osal/osal.h"
@@ -215,8 +214,8 @@ typedef struct
 
 
     SYS_MODULE_OBJ  tcpip;
+   SYS_MODULE_OBJ  drvMiim_0;
 
-    SYS_MODULE_OBJ  drvMiim;
     SYS_MODULE_OBJ  sysDebug;
 
     SYS_MODULE_OBJ  netPres;
