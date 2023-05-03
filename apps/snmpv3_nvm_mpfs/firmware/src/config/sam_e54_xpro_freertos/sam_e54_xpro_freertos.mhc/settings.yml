@@ -1,13 +1,14 @@
-configName: sam_e54_xpro_freertos
-folderName: ''
 format_version: v1.0
-frameworkPath: ../../..
+configName: sam_e54_xpro_freertos
+folderName: sam_e54_xpro_freertos
+frameworkPath: C:\harmony\h3
 processor: ATSAME54P20A
-projectName: ''
+projectName: sam_e54_xpro_freertos
 settings:
-  PackageFilter: aws_cloud;azure_rtos;bootloader;bsp;core;core_apps_pic32cz_ca;crypto;csp;csp_apps_pic32cz_ca;csp_apps_sam_9x60;Devices;dev_packs;ethercat;harmony-services;net;net_apps_pic32cz_ca;net_apps_pic32cz_ca_backup;net_apps_pic32mx;net_apps_pic32mx_notworking;net_apps_pic32mz;net_apps_sam_9x60;net_apps_sam_a5d2;net_apps_sam_e5x;net_apps_sam_e70_v71;quick_docs;usb;wireless
+  PackageFilter: ''
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
-  MERGE_STRATEGY: OVERWRITE
-  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.6.95\atdf\ATSAME54P20A.atdf
+  TRUSTZONE: 'false'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\SAME54_DFP\3.7.122\atdf\ATSAME54P20A.atdf
