@@ -74,11 +74,11 @@ void SYS_Tasks ( void )
     /* Maintain system services */
     
 
-SYS_FS_Tasks();
-
-
 SYS_CMD_Tasks();
 
+
+
+SYS_FS_Tasks();
 
 DRV_SDMMC_Tasks(sysObj.drvSDMMC0);
 
@@ -87,20 +87,20 @@ DRV_SDMMC_Tasks(sysObj.drvSDMMC0);
 
 
     /* Maintain Device Drivers */
-    DRV_MIIM_Tasks(sysObj.drvMiim);
+    DRV_MEMORY_Tasks(sysObj.drvMemory0);
 
+   DRV_MIIM_Tasks(sysObj.drvMiim_0);
 
-DRV_MEMORY_Tasks(sysObj.drvMemory0);
 
 
 
     /* Maintain Middleware & Other Libraries */
     
+   TCPIP_STACK_Task(sysObj.tcpip);
+
+
+
 NET_PRES_Tasks(sysObj.netPres);
-
-
-
-TCPIP_STACK_Task(sysObj.tcpip);
 
 
 
