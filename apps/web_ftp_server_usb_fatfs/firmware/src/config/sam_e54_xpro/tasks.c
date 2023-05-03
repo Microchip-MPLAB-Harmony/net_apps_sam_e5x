@@ -83,7 +83,7 @@ SYS_FS_Tasks();
 
 
     /* Maintain Device Drivers */
-    DRV_MIIM_Tasks(sysObj.drvMiim);
+       DRV_MIIM_Tasks(sysObj.drvMiim_0);
 
 
 
@@ -96,7 +96,7 @@ SYS_FS_Tasks();
     DRV_USBFSV1_Tasks(sysObj.drvUSBFSV1Object);
 
 
-TCPIP_STACK_Task(sysObj.tcpip);
+   TCPIP_STACK_Task(sysObj.tcpip);
 
 
 
