@@ -61,8 +61,8 @@
 #include "system/reset/sys_reset.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
-#include "peripheral/sercom/usart/plib_sercom2_usart.h"
 #include "driver/gmac/drv_gmac.h"
+#include "peripheral/sercom/usart/plib_sercom2_usart.h"
 #include "peripheral/evsys/plib_evsys.h"
 #include "peripheral/sercom/i2c_master/plib_sercom7_i2c_master.h"
 #include "system/command/sys_command.h"
@@ -207,8 +207,8 @@ typedef struct
 
 
     SYS_MODULE_OBJ  tcpip;
+   SYS_MODULE_OBJ  drvMiim_0;
 
-    SYS_MODULE_OBJ  drvMiim;
     SYS_MODULE_OBJ  sysDebug;
 
 
