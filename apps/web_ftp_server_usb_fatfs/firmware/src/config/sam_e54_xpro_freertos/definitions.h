@@ -64,10 +64,10 @@
 #include "library/tcpip/tcpip.h"
 #include "system/sys_time_h2_adapter.h"
 #include "system/sys_random_h2_adapter.h"
-#include "peripheral/sercom/usart/plib_sercom2_usart.h"
 #include "usb/usb_msd.h"
 #include "usb/usb_host_msd.h"
 #include "usb/usb_host_scsi.h"
+#include "peripheral/sercom/usart/plib_sercom2_usart.h"
 #include "driver/gmac/drv_gmac.h"
 #include "peripheral/evsys/plib_evsys.h"
 #include "system/command/sys_command.h"
@@ -225,8 +225,8 @@ typedef struct
 
 
     SYS_MODULE_OBJ  tcpip;
+   SYS_MODULE_OBJ  drvMiim_0;
 
-    SYS_MODULE_OBJ  drvMiim;
     SYS_MODULE_OBJ  sysDebug;
 
     SYS_MODULE_OBJ  netPres;
