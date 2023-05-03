@@ -55,12 +55,12 @@
 // ****************************************************************************
 // ****************************************************************************
 #pragma config BOD33_DIS = SET
-#pragma config BOD33USERLEVEL = 0x1c
+#pragma config BOD33USERLEVEL = 0x1cU
 #pragma config BOD33_ACTION = RESET
-#pragma config BOD33_HYST = 0x2
+#pragma config BOD33_HYST = 0x2U
 #pragma config NVMCTRL_BOOTPROT = 0
-#pragma config NVMCTRL_SEESBLK = 0x0
-#pragma config NVMCTRL_SEEPSZ = 0x0
+#pragma config NVMCTRL_SEESBLK = 0x0U
+#pragma config NVMCTRL_SEEPSZ = 0x0U
 #pragma config RAMECC_ECCDIS = SET
 #pragma config WDT_ENABLE = CLEAR
 #pragma config WDT_ALWAYSON = CLEAR
@@ -68,7 +68,7 @@
 #pragma config WDT_WINDOW = CYC8192
 #pragma config WDT_EWOFFSET = CYC8192
 #pragma config WDT_WEN = CLEAR
-#pragma config NVMCTRL_REGION_LOCKS = 0xffffffff
+#pragma config NVMCTRL_REGION_LOCKS = 0xffffffffU
 
 
 
@@ -81,13 +81,12 @@
 /* Forward declaration of PHY initialization data */
 const DRV_ETHPHY_INIT tcpipPhyInitData_KSZ8091;
 
-/* Forward declaration of MIIM initialization data */
-static const DRV_MIIM_INIT drvMiimInitData;
+/* Forward declaration of GMAC initialization data */
+const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipGMACInitData;
 
 
-/* Forward declaration of MAC initialization data */
-const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipMACPIC32CINTInitData;
-
+/* Forward declaration of MIIM 0 initialization data */
+static const DRV_MIIM_INIT drvMiimInitData_0;
 
 // <editor-fold defaultstate="collapsed" desc="DRV_SDMMC Instance 0 Initialization Data">
 
@@ -154,211 +153,28 @@ SYSTEM_OBJECTS sysObj;
 // Section: Library/Stack Initialization Data
 // *****************************************************************************
 // *****************************************************************************
-
-    
-    
+/*** KSZ8091 PHY Driver Time-Out Initialization Data ***/
+DRV_ETHPHY_TMO drvksz8091Tmo = 
+{
+    .resetTmo = DRV_ETHPHY_KSZ8091_RESET_CLR_TMO,
+    .aNegDoneTmo = DRV_ETHPHY_KSZ8091_NEG_DONE_TMO,
+    .aNegInitTmo = DRV_ETHPHY_KSZ8091_NEG_INIT_TMO,    
+};
 
 /*** ETH PHY Initialization Data ***/
 const DRV_ETHPHY_INIT tcpipPhyInitData_KSZ8091 =
 {    
-    .ethphyId               = TCPIP_INTMAC_MODULE_ID,
-    .phyAddress             = TCPIP_INTMAC_PHY_ADDRESS,
-    .phyFlags               = TCPIP_INTMAC_PHY_CONFIG_FLAGS,
+    .ethphyId               = DRV_KSZ8091_PHY_PERIPHERAL_ID,
+    .phyAddress             = DRV_KSZ8091_PHY_ADDRESS,
+    .phyFlags               = DRV_KSZ8091_PHY_CONFIG_FLAGS,
     .pPhyObject             = &DRV_ETHPHY_OBJECT_KSZ8091,
     .resetFunction          = 0,
+    .ethphyTmo              = &drvksz8091Tmo,
     .pMiimObject            = &DRV_MIIM_OBJECT_BASE_Default,
-    .pMiimInit              = &drvMiimInitData,
-    .miimIndex              = DRV_MIIM_DRIVER_INDEX,
+    .pMiimInit              = &drvMiimInitData_0,
+    .miimIndex              = 0,
 };
 
-/* MIIM Driver Configuration */
-static const DRV_MIIM_INIT drvMiimInitData =
-{
-	.ethphyId = DRV_MIIM_ETH_MODULE_ID,
-};
-
-/* Net Presentation Layer Data Definitions */
-#include "net_pres/pres/net_pres_enc_glue.h"
-
-static const NET_PRES_TransportObject netPresTransObject0SS = {
-    .fpOpen        = (NET_PRES_TransOpen)TCPIP_TCP_ServerOpen,
-    .fpLocalBind         = (NET_PRES_TransBind)TCPIP_TCP_Bind,
-    .fpRemoteBind        = (NET_PRES_TransBind)TCPIP_TCP_RemoteBind,
-    .fpOptionGet         = (NET_PRES_TransOption)TCPIP_TCP_OptionsGet,
-    .fpOptionSet         = (NET_PRES_TransOption)TCPIP_TCP_OptionsSet,
-    .fpIsConnected       = (NET_PRES_TransBool)TCPIP_TCP_IsConnected,
-    .fpWasReset          = (NET_PRES_TransBool)TCPIP_TCP_WasReset,
-    .fpWasDisconnected   = (NET_PRES_TransBool)TCPIP_TCP_WasDisconnected,
-    .fpDisconnect        = (NET_PRES_TransBool)TCPIP_TCP_Disconnect,
-    .fpConnect           = (NET_PRES_TransBool)TCPIP_TCP_Connect,
-    .fpClose             = (NET_PRES_TransClose)TCPIP_TCP_Close,
-    .fpSocketInfoGet     = (NET_PRES_TransSocketInfoGet)TCPIP_TCP_SocketInfoGet,
-    .fpFlush             = (NET_PRES_TransBool)TCPIP_TCP_Flush,
-    .fpPeek              = (NET_PRES_TransPeek)TCPIP_TCP_ArrayPeek,
-    .fpDiscard           = (NET_PRES_TransDiscard)TCPIP_TCP_Discard,
-    .fpHandlerRegister   = (NET_PRES_TransHandlerRegister)TCPIP_TCP_SignalHandlerRegister,
-    .fpHandlerDeregister = (NET_PRES_TransSignalHandlerDeregister)TCPIP_TCP_SignalHandlerDeregister,
-    .fpRead              = (NET_PRES_TransRead)TCPIP_TCP_ArrayGet,
-    .fpWrite             = (NET_PRES_TransWrite)TCPIP_TCP_ArrayPut,
-    .fpReadyToRead       = (NET_PRES_TransReady)TCPIP_TCP_GetIsReady,
-    .fpReadyToWrite      = (NET_PRES_TransReady)TCPIP_TCP_PutIsReady,
-    .fpIsPortDefaultSecure = (NET_PRES_TransIsPortDefaultSecured)TCPIP_Helper_TCPSecurePortGet,
-};
-static const NET_PRES_TransportObject netPresTransObject0SC = {
-    .fpOpen        = (NET_PRES_TransOpen)TCPIP_TCP_ClientOpen,
-    .fpLocalBind         = (NET_PRES_TransBind)TCPIP_TCP_Bind,
-    .fpRemoteBind        = (NET_PRES_TransBind)TCPIP_TCP_RemoteBind,
-    .fpOptionGet         = (NET_PRES_TransOption)TCPIP_TCP_OptionsGet,
-    .fpOptionSet         = (NET_PRES_TransOption)TCPIP_TCP_OptionsSet,
-    .fpIsConnected       = (NET_PRES_TransBool)TCPIP_TCP_IsConnected,
-    .fpWasReset          = (NET_PRES_TransBool)TCPIP_TCP_WasReset,
-    .fpWasDisconnected   = (NET_PRES_TransBool)TCPIP_TCP_WasDisconnected,
-    .fpDisconnect        = (NET_PRES_TransBool)TCPIP_TCP_Disconnect,
-    .fpConnect           = (NET_PRES_TransBool)TCPIP_TCP_Connect,
-    .fpClose             = (NET_PRES_TransClose)TCPIP_TCP_Close,
-    .fpSocketInfoGet     = (NET_PRES_TransSocketInfoGet)TCPIP_TCP_SocketInfoGet,
-    .fpFlush             = (NET_PRES_TransBool)TCPIP_TCP_Flush,
-    .fpPeek              = (NET_PRES_TransPeek)TCPIP_TCP_ArrayPeek,
-    .fpDiscard           = (NET_PRES_TransDiscard)TCPIP_TCP_Discard,
-    .fpHandlerRegister   = (NET_PRES_TransHandlerRegister)TCPIP_TCP_SignalHandlerRegister,
-    .fpHandlerDeregister = (NET_PRES_TransSignalHandlerDeregister)TCPIP_TCP_SignalHandlerDeregister,
-    .fpRead              = (NET_PRES_TransRead)TCPIP_TCP_ArrayGet,
-    .fpWrite             = (NET_PRES_TransWrite)TCPIP_TCP_ArrayPut,
-    .fpReadyToRead       = (NET_PRES_TransReady)TCPIP_TCP_GetIsReady,
-    .fpReadyToWrite      = (NET_PRES_TransReady)TCPIP_TCP_PutIsReady,
-    .fpIsPortDefaultSecure = (NET_PRES_TransIsPortDefaultSecured)TCPIP_Helper_TCPSecurePortGet,
-};
-static const NET_PRES_TransportObject netPresTransObject0DS = {
-    .fpOpen        = (NET_PRES_TransOpen)TCPIP_UDP_ServerOpen,
-    .fpLocalBind         = (NET_PRES_TransBind)TCPIP_UDP_Bind,
-    .fpRemoteBind        = (NET_PRES_TransBind)TCPIP_UDP_RemoteBind,
-    .fpOptionGet         = (NET_PRES_TransOption)TCPIP_UDP_OptionsGet,
-    .fpOptionSet         = (NET_PRES_TransOption)TCPIP_UDP_OptionsSet,
-    .fpIsConnected       = (NET_PRES_TransBool)TCPIP_UDP_IsConnected,
-    .fpWasReset          = NULL,
-    .fpWasDisconnected   = NULL,
-    .fpDisconnect        = (NET_PRES_TransBool)TCPIP_UDP_Disconnect,
-    .fpConnect          = NULL,
-    .fpClose             = (NET_PRES_TransClose)TCPIP_UDP_Close,
-    .fpSocketInfoGet     = (NET_PRES_TransSocketInfoGet)TCPIP_UDP_SocketInfoGet,
-    .fpFlush             = (NET_PRES_TransBool)TCPIP_UDP_Flush,
-    .fpPeek              = NULL,
-    .fpDiscard           = (NET_PRES_TransDiscard)TCPIP_UDP_Discard,
-    .fpHandlerRegister   = (NET_PRES_TransHandlerRegister)TCPIP_UDP_SignalHandlerRegister,
-    .fpHandlerDeregister = (NET_PRES_TransSignalHandlerDeregister)TCPIP_UDP_SignalHandlerDeregister,
-    .fpRead              = (NET_PRES_TransRead)TCPIP_UDP_ArrayGet,
-    .fpWrite             = (NET_PRES_TransWrite)TCPIP_UDP_ArrayPut,
-    .fpReadyToRead       = (NET_PRES_TransReady)TCPIP_UDP_GetIsReady,
-    .fpReadyToWrite      = (NET_PRES_TransReady)TCPIP_UDP_PutIsReady,
-    .fpIsPortDefaultSecure = (NET_PRES_TransIsPortDefaultSecured)TCPIP_Helper_UDPSecurePortGet,
-};
-static const NET_PRES_TransportObject netPresTransObject0DC = {
-    .fpOpen        = (NET_PRES_TransOpen)TCPIP_UDP_ClientOpen,
-    .fpLocalBind         = (NET_PRES_TransBind)TCPIP_UDP_Bind,
-    .fpRemoteBind        = (NET_PRES_TransBind)TCPIP_UDP_RemoteBind,
-    .fpOptionGet         = (NET_PRES_TransOption)TCPIP_UDP_OptionsGet,
-    .fpOptionSet         = (NET_PRES_TransOption)TCPIP_UDP_OptionsSet,
-    .fpIsConnected       = (NET_PRES_TransBool)TCPIP_UDP_IsConnected,
-    .fpWasReset          = NULL,
-    .fpWasDisconnected   = NULL,
-    .fpDisconnect        = (NET_PRES_TransBool)TCPIP_UDP_Disconnect,
-    .fpConnect          = NULL,
-    .fpClose             = (NET_PRES_TransClose)TCPIP_UDP_Close,
-    .fpSocketInfoGet     = (NET_PRES_TransSocketInfoGet)TCPIP_UDP_SocketInfoGet,
-    .fpFlush             = (NET_PRES_TransBool)TCPIP_UDP_Flush,
-    .fpPeek              = NULL,
-    .fpDiscard           = (NET_PRES_TransDiscard)TCPIP_UDP_Discard,
-    .fpHandlerRegister   = (NET_PRES_TransHandlerRegister)TCPIP_UDP_SignalHandlerRegister,
-    .fpHandlerDeregister = (NET_PRES_TransSignalHandlerDeregister)TCPIP_UDP_SignalHandlerDeregister,
-    .fpRead              = (NET_PRES_TransRead)TCPIP_UDP_ArrayGet,
-    .fpWrite             = (NET_PRES_TransWrite)TCPIP_UDP_ArrayPut,
-    .fpReadyToRead       = (NET_PRES_TransReady)TCPIP_UDP_GetIsReady,
-    .fpReadyToWrite      = (NET_PRES_TransReady)TCPIP_UDP_PutIsReady,
-    .fpIsPortDefaultSecure = (NET_PRES_TransIsPortDefaultSecured)TCPIP_Helper_UDPSecurePortGet,
-};
-
-static const NET_PRES_INST_DATA netPresCfgs[] = 
-{  
-        
-    {
-        .pTransObject_ss = &netPresTransObject0SS,
-        .pTransObject_sc = &netPresTransObject0SC,
-        .pTransObject_ds = &netPresTransObject0DS,
-        .pTransObject_dc = &netPresTransObject0DC,
-        .pProvObject_ss = &net_pres_EncProviderStreamServer0,
-        .pProvObject_sc = &net_pres_EncProviderStreamClient0,
-        .pProvObject_ds = NULL,
-        .pProvObject_dc = NULL,
-    },
-        
-};
-
-static const NET_PRES_INIT_DATA netPresInitData = 
-{
-    .numLayers = sizeof(netPresCfgs) / sizeof(NET_PRES_INST_DATA),
-    .pInitData = netPresCfgs
-};
-  
- 
-
-// <editor-fold defaultstate="collapsed" desc="File System Initialization Data">
-
-
-const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
-{
-    {NULL}
-};
-
-const SYS_FS_FUNCTIONS FatFsFunctions =
-{
-    .mount             = FATFS_mount,
-    .unmount           = FATFS_unmount,
-    .open              = FATFS_open,
-    .read              = FATFS_read,
-    .close             = FATFS_close,
-    .seek              = FATFS_lseek,
-    .fstat             = FATFS_stat,
-    .getlabel          = FATFS_getlabel,
-    .currWD            = FATFS_getcwd,
-    .getstrn           = FATFS_gets,
-    .openDir           = FATFS_opendir,
-    .readDir           = FATFS_readdir,
-    .closeDir          = FATFS_closedir,
-    .chdir             = FATFS_chdir,
-    .chdrive           = FATFS_chdrive,
-    .write             = FATFS_write,
-    .tell              = FATFS_tell,
-    .eof               = FATFS_eof,
-    .size              = FATFS_size,
-    .mkdir             = FATFS_mkdir,
-    .remove            = FATFS_unlink,
-    .setlabel          = FATFS_setlabel,
-    .truncate          = FATFS_truncate,
-    .chmode            = FATFS_chmod,
-    .chtime            = FATFS_utime,
-    .rename            = FATFS_rename,
-    .sync              = FATFS_sync,
-    .putchr            = FATFS_putc,
-    .putstrn           = FATFS_puts,
-    .formattedprint    = FATFS_printf,
-    .testerror         = FATFS_error,
-    .formatDisk        = (FORMAT_DISK)FATFS_mkfs,
-    .partitionDisk     = FATFS_fdisk,
-    .getCluster        = FATFS_getclusters
-};
-
-
-
-const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
-{
-    {
-        .nativeFileSystemType = FAT,
-        .nativeFileSystemFunctions = &FatFsFunctions
-    },
-};
-
-
-// </editor-fold>
 
 
 // <editor-fold defaultstate="collapsed" desc="TCP/IP Stack Initialization Data">
@@ -635,7 +451,6 @@ TCPIP_STACK_HEAP_INTERNAL_CONFIG tcpipHeapConfig =
     .heapFlags = TCPIP_STACK_HEAP_USE_FLAGS,
     .heapUsage = TCPIP_STACK_HEAP_USAGE_CONFIG,
     .malloc_fnc = TCPIP_STACK_MALLOC_FUNC,
-    .calloc_fnc = TCPIP_STACK_CALLOC_FUNC,
     .free_fnc = TCPIP_STACK_FREE_FUNC,
     .heapSize = TCPIP_STACK_DRAM_SIZE,
 };
@@ -685,7 +500,7 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     { TCPIP_MODULE_MANAGER,         &tcpipHeapConfig },             // TCPIP_MODULE_MANAGER
 
 // MAC modules
-    {TCPIP_MODULE_MAC_PIC32C,     &tcpipMACPIC32CINTInitData},     // TCPIP_MODULE_MAC_PIC32C
+    {TCPIP_MODULE_MAC_PIC32C,     &tcpipGMACInitData},     // TCPIP_MODULE_MAC_PIC32C
 
 };
 
@@ -726,38 +541,235 @@ SYS_MODULE_OBJ TCPIP_STACK_Init(void)
 }
 // </editor-fold>
 
-	
-/*** GMAC MAC Initialization Data ***/
-const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipMACPIC32CINTInitData =
+
+uint8_t txPrioNumToQueIndxGmac [DRV_GMAC_NUMBER_OF_QUEUES];
+uint8_t rxPrioNumToQueIndxGmac [DRV_GMAC_NUMBER_OF_QUEUES];
+
+/*** GMAC Initialization Data ***/
+TCPIP_MODULE_GMAC_QUEUE_CONFIG  gmac_queue_config[DRV_GMAC_NUMBER_OF_QUEUES]=
+{
+   {   /** QUEUE 0 Initialization**/
+       .queueTxEnable = true,
+       .queueRxEnable = true,
+       .nRxDescCnt    = 8,
+       .nTxDescCnt    = 8,
+       .rxBufferSize  = 1536,
+       .txMaxPktSize  = 1536,
+       .nRxDedicatedBuffers   = 8,
+       .nRxAddlBuffCount  = 2,
+       .nRxBuffCntThres   = 1,
+       .nRxBuffAllocCnt   = 2,   
+       .queueIntSrc       = GMAC_IRQn,                               
+   },
+};
+
+const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipGMACInitData =
 { 
-	/** QUEUE 0 Intialization**/
-	.gmac_queue_config[0].queueTxEnable	= true,
-	.gmac_queue_config[0].queueRxEnable	= true,
-	.gmac_queue_config[0].nRxDescCnt	= TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE0,
-	.gmac_queue_config[0].nTxDescCnt	= TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE0,
-	.gmac_queue_config[0].rxBufferSize	= TCPIP_GMAC_RX_BUFF_SIZE_QUE0,
-	.gmac_queue_config[0].txMaxPktSize	= TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE0,
-	.gmac_queue_config[0].nRxDedicatedBuffers	= TCPIP_GMAC_RX_DEDICATED_BUFFERS_QUE0,
-	.gmac_queue_config[0].nRxAddlBuffCount	= TCPIP_GMAC_RX_ADDL_BUFF_COUNT_QUE0,
-	.gmac_queue_config[0].nRxBuffCntThres	= TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE0,
-	.gmac_queue_config[0].nRxBuffAllocCnt	= TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE0,
-
-
-
-
-
-	.ethFlags               = TCPIP_GMAC_ETH_OPEN_FLAGS,	
-	.linkInitDelay          = TCPIP_INTMAC_PHY_LINK_INIT_DELAY,
-    .ethModuleId            = TCPIP_INTMAC_MODULE_ID,
-    .pPhyBase               = &DRV_ETHPHY_OBJECT_BASE_Default,
-    .pPhyInit               = &tcpipPhyInitData_KSZ8091,
-	.checksumOffloadRx      = DRV_GMAC_RX_CHKSM_OFFLOAD,
-    .checksumOffloadTx      = DRV_GMAC_TX_CHKSM_OFFLOAD,
-    .macTxPrioNum           = TCPIP_GMAC_TX_PRIO_COUNT,
-    .macRxPrioNum           = TCPIP_GMAC_RX_PRIO_COUNT,
+       .gmac_queue_config = gmac_queue_config,
+       .macQueNum = DRV_GMAC_NUMBER_OF_QUEUES, 
+       .txPrioNumToQueIndx = txPrioNumToQueIndxGmac,
+       .rxPrioNumToQueIndx = rxPrioNumToQueIndxGmac,
+       .ethFlags               = TCPIP_GMAC_ETH_OPEN_FLAGS,    
+       .linkInitDelay          = DRV_KSZ8091_PHY_LINK_INIT_DELAY,
+       .ethModuleId            = TCPIP_GMAC_MODULE_ID,
+       .pPhyBase               = &DRV_ETHPHY_OBJECT_BASE_Default,
+       .pPhyInit               = &tcpipPhyInitData_KSZ8091,
+       .checksumOffloadRx      = DRV_GMAC_RX_CHKSM_OFFLOAD,
+       .checksumOffloadTx      = DRV_GMAC_TX_CHKSM_OFFLOAD,
+       .macTxPrioNum           = TCPIP_GMAC_TX_PRIO_COUNT,
+       .macRxPrioNum           = TCPIP_GMAC_RX_PRIO_COUNT,  
+       .macRxFilt              = TCPIP_GMAC_RX_FILTERS,
 };
 
 
+/*** MIIM Driver Instance 0 Configuration ***/
+static const DRV_MIIM_INIT drvMiimInitData_0 =
+{
+   .ethphyId = DRV_MIIM_ETH_MODULE_ID_0,
+};
+
+/* Net Presentation Layer Data Definitions */
+#include "net_pres/pres/net_pres_enc_glue.h"
+
+static const NET_PRES_TransportObject netPresTransObject0SS = {
+    .fpOpen        = (NET_PRES_TransOpen)TCPIP_TCP_ServerOpen,
+    .fpLocalBind         = (NET_PRES_TransBind)TCPIP_TCP_Bind,
+    .fpRemoteBind        = (NET_PRES_TransBind)TCPIP_TCP_RemoteBind,
+    .fpOptionGet         = (NET_PRES_TransOption)TCPIP_TCP_OptionsGet,
+    .fpOptionSet         = (NET_PRES_TransOption)TCPIP_TCP_OptionsSet,
+    .fpIsConnected       = (NET_PRES_TransBool)TCPIP_TCP_IsConnected,
+    .fpWasReset          = (NET_PRES_TransBool)TCPIP_TCP_WasReset,
+    .fpWasDisconnected   = (NET_PRES_TransBool)TCPIP_TCP_WasDisconnected,
+    .fpDisconnect        = (NET_PRES_TransBool)TCPIP_TCP_Disconnect,
+    .fpConnect           = (NET_PRES_TransBool)TCPIP_TCP_Connect,
+    .fpClose             = (NET_PRES_TransClose)TCPIP_TCP_Close,
+    .fpSocketInfoGet     = (NET_PRES_TransSocketInfoGet)TCPIP_TCP_SocketInfoGet,
+    .fpFlush             = (NET_PRES_TransBool)TCPIP_TCP_Flush,
+    .fpPeek              = (NET_PRES_TransPeek)TCPIP_TCP_ArrayPeek,
+    .fpDiscard           = (NET_PRES_TransDiscard)TCPIP_TCP_Discard,
+    .fpHandlerRegister   = (NET_PRES_TransHandlerRegister)TCPIP_TCP_SignalHandlerRegister,
+    .fpHandlerDeregister = (NET_PRES_TransSignalHandlerDeregister)TCPIP_TCP_SignalHandlerDeregister,
+    .fpRead              = (NET_PRES_TransRead)TCPIP_TCP_ArrayGet,
+    .fpWrite             = (NET_PRES_TransWrite)TCPIP_TCP_ArrayPut,
+    .fpReadyToRead       = (NET_PRES_TransReady)TCPIP_TCP_GetIsReady,
+    .fpReadyToWrite      = (NET_PRES_TransReady)TCPIP_TCP_PutIsReady,
+    .fpIsPortDefaultSecure = (NET_PRES_TransIsPortDefaultSecured)TCPIP_Helper_TCPSecurePortGet,
+};
+static const NET_PRES_TransportObject netPresTransObject0SC = {
+    .fpOpen        = (NET_PRES_TransOpen)TCPIP_TCP_ClientOpen,
+    .fpLocalBind         = (NET_PRES_TransBind)TCPIP_TCP_Bind,
+    .fpRemoteBind        = (NET_PRES_TransBind)TCPIP_TCP_RemoteBind,
+    .fpOptionGet         = (NET_PRES_TransOption)TCPIP_TCP_OptionsGet,
+    .fpOptionSet         = (NET_PRES_TransOption)TCPIP_TCP_OptionsSet,
+    .fpIsConnected       = (NET_PRES_TransBool)TCPIP_TCP_IsConnected,
+    .fpWasReset          = (NET_PRES_TransBool)TCPIP_TCP_WasReset,
+    .fpWasDisconnected   = (NET_PRES_TransBool)TCPIP_TCP_WasDisconnected,
+    .fpDisconnect        = (NET_PRES_TransBool)TCPIP_TCP_Disconnect,
+    .fpConnect           = (NET_PRES_TransBool)TCPIP_TCP_Connect,
+    .fpClose             = (NET_PRES_TransClose)TCPIP_TCP_Close,
+    .fpSocketInfoGet     = (NET_PRES_TransSocketInfoGet)TCPIP_TCP_SocketInfoGet,
+    .fpFlush             = (NET_PRES_TransBool)TCPIP_TCP_Flush,
+    .fpPeek              = (NET_PRES_TransPeek)TCPIP_TCP_ArrayPeek,
+    .fpDiscard           = (NET_PRES_TransDiscard)TCPIP_TCP_Discard,
+    .fpHandlerRegister   = (NET_PRES_TransHandlerRegister)TCPIP_TCP_SignalHandlerRegister,
+    .fpHandlerDeregister = (NET_PRES_TransSignalHandlerDeregister)TCPIP_TCP_SignalHandlerDeregister,
+    .fpRead              = (NET_PRES_TransRead)TCPIP_TCP_ArrayGet,
+    .fpWrite             = (NET_PRES_TransWrite)TCPIP_TCP_ArrayPut,
+    .fpReadyToRead       = (NET_PRES_TransReady)TCPIP_TCP_GetIsReady,
+    .fpReadyToWrite      = (NET_PRES_TransReady)TCPIP_TCP_PutIsReady,
+    .fpIsPortDefaultSecure = (NET_PRES_TransIsPortDefaultSecured)TCPIP_Helper_TCPSecurePortGet,
+};
+static const NET_PRES_TransportObject netPresTransObject0DS = {
+    .fpOpen        = (NET_PRES_TransOpen)TCPIP_UDP_ServerOpen,
+    .fpLocalBind         = (NET_PRES_TransBind)TCPIP_UDP_Bind,
+    .fpRemoteBind        = (NET_PRES_TransBind)TCPIP_UDP_RemoteBind,
+    .fpOptionGet         = (NET_PRES_TransOption)TCPIP_UDP_OptionsGet,
+    .fpOptionSet         = (NET_PRES_TransOption)TCPIP_UDP_OptionsSet,
+    .fpIsConnected       = (NET_PRES_TransBool)TCPIP_UDP_IsConnected,
+    .fpWasReset          = NULL,
+    .fpWasDisconnected   = NULL,
+    .fpDisconnect        = (NET_PRES_TransBool)TCPIP_UDP_Disconnect,
+    .fpConnect          = NULL,
+    .fpClose             = (NET_PRES_TransClose)TCPIP_UDP_Close,
+    .fpSocketInfoGet     = (NET_PRES_TransSocketInfoGet)TCPIP_UDP_SocketInfoGet,
+    .fpFlush             = (NET_PRES_TransBool)TCPIP_UDP_Flush,
+    .fpPeek              = NULL,
+    .fpDiscard           = (NET_PRES_TransDiscard)TCPIP_UDP_Discard,
+    .fpHandlerRegister   = (NET_PRES_TransHandlerRegister)TCPIP_UDP_SignalHandlerRegister,
+    .fpHandlerDeregister = (NET_PRES_TransSignalHandlerDeregister)TCPIP_UDP_SignalHandlerDeregister,
+    .fpRead              = (NET_PRES_TransRead)TCPIP_UDP_ArrayGet,
+    .fpWrite             = (NET_PRES_TransWrite)TCPIP_UDP_ArrayPut,
+    .fpReadyToRead       = (NET_PRES_TransReady)TCPIP_UDP_GetIsReady,
+    .fpReadyToWrite      = (NET_PRES_TransReady)TCPIP_UDP_PutIsReady,
+    .fpIsPortDefaultSecure = (NET_PRES_TransIsPortDefaultSecured)TCPIP_Helper_UDPSecurePortGet,
+};
+static const NET_PRES_TransportObject netPresTransObject0DC = {
+    .fpOpen        = (NET_PRES_TransOpen)TCPIP_UDP_ClientOpen,
+    .fpLocalBind         = (NET_PRES_TransBind)TCPIP_UDP_Bind,
+    .fpRemoteBind        = (NET_PRES_TransBind)TCPIP_UDP_RemoteBind,
+    .fpOptionGet         = (NET_PRES_TransOption)TCPIP_UDP_OptionsGet,
+    .fpOptionSet         = (NET_PRES_TransOption)TCPIP_UDP_OptionsSet,
+    .fpIsConnected       = (NET_PRES_TransBool)TCPIP_UDP_IsConnected,
+    .fpWasReset          = NULL,
+    .fpWasDisconnected   = NULL,
+    .fpDisconnect        = (NET_PRES_TransBool)TCPIP_UDP_Disconnect,
+    .fpConnect          = NULL,
+    .fpClose             = (NET_PRES_TransClose)TCPIP_UDP_Close,
+    .fpSocketInfoGet     = (NET_PRES_TransSocketInfoGet)TCPIP_UDP_SocketInfoGet,
+    .fpFlush             = (NET_PRES_TransBool)TCPIP_UDP_Flush,
+    .fpPeek              = NULL,
+    .fpDiscard           = (NET_PRES_TransDiscard)TCPIP_UDP_Discard,
+    .fpHandlerRegister   = (NET_PRES_TransHandlerRegister)TCPIP_UDP_SignalHandlerRegister,
+    .fpHandlerDeregister = (NET_PRES_TransSignalHandlerDeregister)TCPIP_UDP_SignalHandlerDeregister,
+    .fpRead              = (NET_PRES_TransRead)TCPIP_UDP_ArrayGet,
+    .fpWrite             = (NET_PRES_TransWrite)TCPIP_UDP_ArrayPut,
+    .fpReadyToRead       = (NET_PRES_TransReady)TCPIP_UDP_GetIsReady,
+    .fpReadyToWrite      = (NET_PRES_TransReady)TCPIP_UDP_PutIsReady,
+    .fpIsPortDefaultSecure = (NET_PRES_TransIsPortDefaultSecured)TCPIP_Helper_UDPSecurePortGet,
+};
+
+static const NET_PRES_INST_DATA netPresCfgs[] = 
+{  
+        
+    {
+        .pTransObject_ss = &netPresTransObject0SS,
+        .pTransObject_sc = &netPresTransObject0SC,
+        .pTransObject_ds = &netPresTransObject0DS,
+        .pTransObject_dc = &netPresTransObject0DC,
+        .pProvObject_ss = &net_pres_EncProviderStreamServer0,
+        .pProvObject_sc = &net_pres_EncProviderStreamClient0,
+        .pProvObject_ds = NULL,
+        .pProvObject_dc = NULL,
+    },
+        
+};
+
+static const NET_PRES_INIT_DATA netPresInitData = 
+{
+    .numLayers = sizeof(netPresCfgs) / sizeof(NET_PRES_INST_DATA),
+    .pInitData = netPresCfgs
+};
+  
+ 
+
+// <editor-fold defaultstate="collapsed" desc="File System Initialization Data">
+
+
+const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
+{
+    {NULL}
+};
+
+const SYS_FS_FUNCTIONS FatFsFunctions =
+{
+    .mount             = FATFS_mount,
+    .unmount           = FATFS_unmount,
+    .open              = FATFS_open,
+    .read              = FATFS_read,
+    .close             = FATFS_close,
+    .seek              = FATFS_lseek,
+    .fstat             = FATFS_stat,
+    .getlabel          = FATFS_getlabel,
+    .currWD            = FATFS_getcwd,
+    .getstrn           = FATFS_gets,
+    .openDir           = FATFS_opendir,
+    .readDir           = FATFS_readdir,
+    .closeDir          = FATFS_closedir,
+    .chdir             = FATFS_chdir,
+    .chdrive           = FATFS_chdrive,
+    .write             = FATFS_write,
+    .tell              = FATFS_tell,
+    .eof               = FATFS_eof,
+    .size              = FATFS_size,
+    .mkdir             = FATFS_mkdir,
+    .remove            = FATFS_unlink,
+    .setlabel          = FATFS_setlabel,
+    .truncate          = FATFS_truncate,
+    .chmode            = FATFS_chmod,
+    .chtime            = FATFS_utime,
+    .rename            = FATFS_rename,
+    .sync              = FATFS_sync,
+    .putchr            = FATFS_putc,
+    .putstrn           = FATFS_puts,
+    .formattedprint    = FATFS_printf,
+    .testerror         = FATFS_error,
+    .formatDisk        = (FORMAT_DISK)FATFS_mkfs,
+    .partitionDisk     = FATFS_fdisk,
+    .getCluster        = FATFS_getclusters
+};
+
+
+
+const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
+{
+    {
+        .nativeFileSystemType = FAT,
+        .nativeFileSystemFunctions = &FatFsFunctions
+    },
+};
+
+
+// </editor-fold>
 
 
 
@@ -857,6 +869,8 @@ const SYS_DEBUG_INIT debugInit =
 
 void SYS_Initialize ( void* data )
 {
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
     NVMCTRL_Initialize( );
 
@@ -868,19 +882,19 @@ void SYS_Initialize ( void* data )
 
 
 
-	BSP_Initialize();
     TC0_TimerInitialize();
 
 	SDHC1_Initialize();
 
+	BSP_Initialize();
     SERCOM2_USART_Initialize();
 
     EVSYS_Initialize();
 
 
 
-    /* Initialize the MIIM Driver */
-    sysObj.drvMiim = DRV_MIIM_Initialize( DRV_MIIM_INDEX_0, (const SYS_MODULE_INIT *) &drvMiimInitData );
+   /* Initialize the MIIM Driver Instance 0*/
+   sysObj.drvMiim_0 = DRV_MIIM_Initialize(DRV_MIIM_DRIVER_INDEX_0, (const SYS_MODULE_INIT *) &drvMiimInitData_0); 
 
 
     sysObj.drvSDMMC0 = DRV_SDMMC_Initialize(DRV_SDMMC_INDEX_0,(SYS_MODULE_INIT *)&drvSDMMC0InitData);
@@ -895,24 +909,25 @@ void SYS_Initialize ( void* data )
 
 
 
-    /*** File System Service Initialization Code ***/
-    SYS_FS_Initialize( (const void *) sysFSInit );
 
-
-/* Network Presentation Layer Initialization */
-sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
-/* TCPIP Stack Initialization */
-sysObj.tcpip = TCPIP_STACK_Init();
-SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
+   /* Network Presentation Layer Initialization */
+   sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
+   /* TCPIP Stack Initialization */
+   sysObj.tcpip = TCPIP_STACK_Init();
+   SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
 
 
     CRYPT_WCCB_Initialize();
+    /*** File System Service Initialization Code ***/
+    SYS_FS_Initialize( (const void *) sysFSInit );
+
 
     APP_Initialize();
 
 
     NVIC_Initialize();
 
+    /* MISRAC 2012 deviation block end */
 }
 
 

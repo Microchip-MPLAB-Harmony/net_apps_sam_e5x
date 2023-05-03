@@ -1,6 +1,0 @@
-format_version: v1.0
-type: UniqueComponent
-attributes: {id: tcpipIcmpv6}
-children:
-- type: ElementPosition
-  attributes: {x: '566', y: '73', id: tcpipIcmpv6}
