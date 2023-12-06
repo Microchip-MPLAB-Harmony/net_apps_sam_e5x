@@ -50,10 +50,8 @@
 #include <stdbool.h>
 #include "crypto/crypto.h"
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
-#include "driver/memory/drv_memory.h"
 #include "peripheral/tc/plib_tc0.h"
 #include "system/time/sys_time.h"
-#include "driver/memory/drv_memory_nvmctrl.h"
 #include "bsp/bsp.h"
 #include "library/tcpip/tcpip.h"
 #include "system/sys_time_h2_adapter.h"
@@ -212,7 +210,6 @@ Remarks:
 typedef struct
 {
     SYS_MODULE_OBJ  sysTime;
-    SYS_MODULE_OBJ  drvMemory0;
     SYS_MODULE_OBJ  sysConsole0;
 
 

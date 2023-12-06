@@ -84,39 +84,6 @@
 /* Forward declaration of PHY initialization data */
 const DRV_ETHPHY_INIT tcpipPhyInitData_KSZ8091;
 
-// <editor-fold defaultstate="collapsed" desc="DRV_MEMORY Instance 0 Initialization Data">
-
-static uint8_t gDrvMemory0EraseBuffer[NVMCTRL_ERASE_BUFFER_SIZE] CACHE_ALIGN;
-
-static DRV_MEMORY_CLIENT_OBJECT gDrvMemory0ClientObject[DRV_MEMORY_CLIENTS_NUMBER_IDX0];
-
-static DRV_MEMORY_BUFFER_OBJECT gDrvMemory0BufferObject[DRV_MEMORY_BUF_Q_SIZE_IDX0];
-
-static const DRV_MEMORY_DEVICE_INTERFACE drvMemory0DeviceAPI = {
-    .Open               = DRV_NVMCTRL_Open,
-    .Close              = DRV_NVMCTRL_Close,
-    .Status             = DRV_NVMCTRL_Status,
-    .SectorErase        = DRV_NVMCTRL_SectorErase,
-    .Read               = DRV_NVMCTRL_Read,
-    .PageWrite          = DRV_NVMCTRL_PageWrite,
-    .EventHandlerSet    = NULL,
-    .GeometryGet        = (DRV_MEMORY_DEVICE_GEOMETRY_GET)DRV_NVMCTRL_GeometryGet,
-    .TransferStatusGet  = (DRV_MEMORY_DEVICE_TRANSFER_STATUS_GET)DRV_NVMCTRL_TransferStatusGet
-};
-static const DRV_MEMORY_INIT drvMemory0InitData =
-{
-    .memDevIndex                = 0,
-    .memoryDevice               = &drvMemory0DeviceAPI,
-    .isMemDevInterruptEnabled   = false,
-    .isFsEnabled                = false,
-    .ewBuffer                   = &gDrvMemory0EraseBuffer[0],
-    .clientObjPool              = (uintptr_t)&gDrvMemory0ClientObject[0],
-    .bufferObj                  = (uintptr_t)&gDrvMemory0BufferObject[0],
-    .queueSize                  = DRV_MEMORY_BUF_Q_SIZE_IDX0,
-    .nClientsMax                = DRV_MEMORY_CLIENTS_NUMBER_IDX0
-};
-
-// </editor-fold>
 /* Forward declaration of GMAC initialization data */
 const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipGMACInitData;
 
@@ -331,6 +298,7 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     {TCPIP_MODULE_NBNS,             &tcpipNBNSInitData},            // TCPIP_MODULE_NBNS
     {TCPIP_MODULE_SNTP,             &tcpipSNTPInitData},            // TCPIP_MODULE_SNTP
 
+    {TCPIP_MODULE_COMMAND,          0},                             // TCPIP_MODULE_COMMAND,
     { TCPIP_MODULE_MANAGER,         &tcpipHeapConfig },             // TCPIP_MODULE_MANAGER
 
 // MAC modules
@@ -668,9 +636,6 @@ void SYS_Initialize ( void* data )
     /* Following MISRA-C rules deviated in this block  */
     /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
     /* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
-
-
-    sysObj.drvMemory0 = DRV_MEMORY_Initialize((SYS_MODULE_INDEX)DRV_MEMORY_INDEX_0, (SYS_MODULE_INIT *)&drvMemory0InitData);
 
 
    /* Initialize the MIIM Driver Instance 0*/

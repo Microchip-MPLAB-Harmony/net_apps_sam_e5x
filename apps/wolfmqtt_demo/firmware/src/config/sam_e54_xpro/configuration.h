@@ -120,19 +120,6 @@ extern "C" {
 // Section: Driver Configuration
 // *****************************************************************************
 // *****************************************************************************
-/* Memory Driver Global Configuration Options */
-#define DRV_MEMORY_INSTANCES_NUMBER          (1U)
-
-/* Memory Driver Instance 0 Configuration */
-#define DRV_MEMORY_INDEX_0                   0
-#define DRV_MEMORY_CLIENTS_NUMBER_IDX0       1
-#define DRV_MEMORY_BUF_Q_SIZE_IDX0    1
-#define DRV_MEMORY_DEVICE_START_ADDRESS      0x80000U
-#define DRV_MEMORY_DEVICE_MEDIA_SIZE         512UL
-#define DRV_MEMORY_DEVICE_MEDIA_SIZE_BYTES   (DRV_MEMORY_DEVICE_MEDIA_SIZE * 1024U)
-#define DRV_MEMORY_DEVICE_PROGRAM_SIZE       512U
-#define DRV_MEMORY_DEVICE_ERASE_SIZE         8192U
-
 /*** MIIM Driver Configuration ***/
 #define DRV_MIIM_ETH_MODULE_ID_0                GMAC_BASE_ADDRESS
 #define DRV_MIIM_DRIVER_INDEX_0                 0
@@ -195,7 +182,7 @@ extern "C" {
 #define WMQTT_NET_GLUE_FORCE_TLS			false
 #define WMQTT_NET_GLUE_IPV6					false
 #define WMQTT_NET_GLUE_MAX_BROKER_NAME		64
-#define WMQTT_NET_GLUE_DEBUG_ENABLE			false
+#define WMQTT_NET_GLUE_DEBUG_ENABLE			true
 #define WMQTT_NET_GLUE_ERROR_STRINGS		true
 #define WMQTT_NET_GLUE_MALLOC				malloc
 #define WMQTT_NET_GLUE_FREE					free
@@ -277,6 +264,9 @@ extern "C" {
 
 
 
+#define TCPIP_STACK_USE_ICMPV6_SERVER
+
+
 /*** ARP Configuration ***/
 #define TCPIP_ARP_CACHE_ENTRIES                 		5
 #define TCPIP_ARP_CACHE_DELETE_OLD		        	true
@@ -292,9 +282,6 @@ extern "C" {
 #define TCPIP_ARP_PRIMARY_CACHE_ONLY		        	true
 #define TCPIP_ARP_COMMANDS false
 
-
-
-#define TCPIP_STACK_USE_ICMPV6_SERVER
 
 
 #define TCPIP_IPV6_NDP_MAX_RTR_SOLICITATION_DELAY 	1

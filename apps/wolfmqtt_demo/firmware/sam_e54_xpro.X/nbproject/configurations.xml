@@ -36,12 +36,6 @@
               </logicalFolder>
               <itemPath>../src/config/sam_e54_xpro/driver/gmac/drv_gmac.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="memory" displayName="memory" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro/driver/memory/drv_memory.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro/driver/memory/src/drv_memory_local.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro/driver/memory/drv_memory_nvmctrl.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro/driver/memory/drv_memory_definitions.h</itemPath>
-            </logicalFolder>
             <logicalFolder name="miim" displayName="miim" projectFiles="true">
               <logicalFolder name="src" displayName="src" projectFiles="true">
                 <logicalFolder name="dynamic" displayName="dynamic" projectFiles="true">
@@ -51,14 +45,15 @@
               </logicalFolder>
               <itemPath>../src/config/sam_e54_xpro/driver/miim/drv_miim.h</itemPath>
             </logicalFolder>
-            <itemPath>../src/config/sam_e54_xpro/driver/driver.h</itemPath>
             <itemPath>../src/config/sam_e54_xpro/driver/driver_common.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro/driver/driver.h</itemPath>
           </logicalFolder>
           <logicalFolder name="library" displayName="library" projectFiles="true">
             <logicalFolder name="tcpip" displayName="tcpip" projectFiles="true">
               <logicalFolder name="src" displayName="src" projectFiles="true">
                 <logicalFolder name="common" displayName="common" projectFiles="true">
                   <itemPath>../src/config/sam_e54_xpro/library/tcpip/src/common/helpers.h</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro/library/tcpip/src/common/sys_fs_shell.h</itemPath>
                 </logicalFolder>
                 <itemPath>../src/config/sam_e54_xpro/library/tcpip/src/iperf_manager.h</itemPath>
                 <itemPath>../src/config/sam_e54_xpro/library/tcpip/src/icmp_manager.h</itemPath>
@@ -198,9 +193,9 @@
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="osal" displayName="osal" projectFiles="true">
-            <itemPath>../src/config/sam_e54_xpro/osal/osal.h</itemPath>
             <itemPath>../src/config/sam_e54_xpro/osal/osal_impl_basic.h</itemPath>
             <itemPath>../src/config/sam_e54_xpro/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro/osal/osal.h</itemPath>
           </logicalFolder>
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="clock" displayName="clock" projectFiles="true">
@@ -254,8 +249,8 @@
               <itemPath>../src/config/sam_e54_xpro/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
             <logicalFolder name="int" displayName="int" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro/system/int/sys_int.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro/system/int/sys_int_mapping.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro/system/int/sys_int.h</itemPath>
             </logicalFolder>
             <logicalFolder name="reset" displayName="reset" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro/system/reset/sys_reset.h</itemPath>
@@ -266,11 +261,10 @@
               <itemPath>../src/config/sam_e54_xpro/system/time/src/sys_time_local.h</itemPath>
             </logicalFolder>
             <itemPath>../src/config/sam_e54_xpro/system/sys_random_h2_adapter.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro/system/sys_time_h2_adapter.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro/system/system.h</itemPath>
             <itemPath>../src/config/sam_e54_xpro/system/system_module.h</itemPath>
             <itemPath>../src/config/sam_e54_xpro/system/system_common.h</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/system/sys_time_h2_adapter.h</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/system/system_media.h</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/system/system.h</itemPath>
           </logicalFolder>
           <logicalFolder name="third_party_adapter"
                          displayName="third_party_adapter"
@@ -285,15 +279,15 @@
           <itemPath>../src/config/sam_e54_xpro/device.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/device_vectors.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/interrupts.h</itemPath>
-          <itemPath>../src/config/sam_e54_xpro/user.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/config.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/system_config.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/system_definitions.h</itemPath>
-          <itemPath>../src/config/sam_e54_xpro/configuration.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/device_cache.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/definitions.h</itemPath>
-          <itemPath>../src/config/sam_e54_xpro/sys_tasks.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/user_settings.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro/user.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro/sys_tasks.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro/configuration.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="packs" displayName="packs" projectFiles="true">
@@ -599,8 +593,8 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/ssl.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/openssl/compat_types.h</itemPath>
       </logicalFolder>
-      <itemPath>../src/app.h</itemPath>
       <itemPath>../src/app_mqtt_task.h</itemPath>
+      <itemPath>../src/app.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -642,10 +636,6 @@
                   <itemPath>../src/config/sam_e54_xpro/driver/gmac/src/dynamic/drv_gmac.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
-            </logicalFolder>
-            <logicalFolder name="memory" displayName="memory" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro/driver/memory/src/drv_memory.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro/driver/memory/src/drv_memory_nvmctrl.c</itemPath>
             </logicalFolder>
             <logicalFolder name="miim" displayName="miim" projectFiles="true">
               <logicalFolder name="src" displayName="src" projectFiles="true">
@@ -766,10 +756,10 @@
           </logicalFolder>
           <itemPath>../src/config/sam_e54_xpro/startup_xc32.c</itemPath>
           <itemPath>../src/config/sam_e54_xpro/libc_syscalls.c</itemPath>
-          <itemPath>../src/config/sam_e54_xpro/tasks.c</itemPath>
           <itemPath>../src/config/sam_e54_xpro/interrupts.c</itemPath>
           <itemPath>../src/config/sam_e54_xpro/exceptions.c</itemPath>
           <itemPath>../src/config/sam_e54_xpro/initialization.c</itemPath>
+          <itemPath>../src/config/sam_e54_xpro/tasks.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="third_party" displayName="third_party" projectFiles="true">
@@ -896,11 +886,11 @@
         <itemPath>../src/third_party/wolfssl/src/dtls13.c</itemPath>
         <itemPath>../src/third_party/wolfssl/src/x509.c</itemPath>
       </logicalFolder>
-      <itemPath>../src/app.c</itemPath>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/config/sam_e54_xpro/pin_configurations.csv</itemPath>
       <itemPath>../src/app_mqtt_commands.c</itemPath>
       <itemPath>../src/app_mqtt_task.c</itemPath>
+      <itemPath>../src/app.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -923,7 +913,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.20</languageToolchainVersion>
+        <languageToolchainVersion>4.35</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -1134,6 +1124,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/microchip/h3/net_apps_sam_e5x/apps/wolfmqtt_demo/firmware/sam_e54_xpro.X/debug/sam_e54_xpro/sam_e54_xpro_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
