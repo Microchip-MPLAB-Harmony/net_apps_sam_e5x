@@ -107,6 +107,28 @@ extern "C" {
 #define SYS_DEBUG_USE_CONSOLE
 
 
+
+/* File System Service Configuration */
+
+#define SYS_FS_MEDIA_NUMBER               (1U)
+#define SYS_FS_VOLUME_NUMBER              (1U)
+
+#define SYS_FS_AUTOMOUNT_ENABLE           false
+#define SYS_FS_MAX_FILES                  (25U)
+#define SYS_FS_MAX_FILE_SYSTEM_TYPE       (1U)
+#define SYS_FS_MEDIA_MAX_BLOCK_SIZE       (512U)
+#define SYS_FS_MEDIA_MANAGER_BUFFER_SIZE  (2048U)
+#define SYS_FS_USE_LFN                    (1)
+#define SYS_FS_FILE_NAME_LEN              (255U)
+#define SYS_FS_CWD_STRING_LEN             (1024)
+
+
+
+
+
+
+
+
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			(1U)
 #define SYS_CONSOLE_UART_MAX_INSTANCES 	   			(1U)
 #define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		(0U)
@@ -120,6 +142,19 @@ extern "C" {
 // Section: Driver Configuration
 // *****************************************************************************
 // *****************************************************************************
+/* Memory Driver Global Configuration Options */
+#define DRV_MEMORY_INSTANCES_NUMBER          (1U)
+
+/* Memory Driver Instance 0 Configuration */
+#define DRV_MEMORY_INDEX_0                   0
+#define DRV_MEMORY_CLIENTS_NUMBER_IDX0       1
+#define DRV_MEMORY_BUF_Q_SIZE_IDX0    1
+#define DRV_MEMORY_DEVICE_START_ADDRESS      0x80000U
+#define DRV_MEMORY_DEVICE_MEDIA_SIZE         512UL
+#define DRV_MEMORY_DEVICE_MEDIA_SIZE_BYTES   (DRV_MEMORY_DEVICE_MEDIA_SIZE * 1024U)
+#define DRV_MEMORY_DEVICE_PROGRAM_SIZE       512U
+#define DRV_MEMORY_DEVICE_ERASE_SIZE         8192U
+
 /*** MIIM Driver Configuration ***/
 #define DRV_MIIM_ETH_MODULE_ID_0                GMAC_BASE_ADDRESS
 #define DRV_MIIM_DRIVER_INDEX_0                 0
@@ -163,6 +198,55 @@ extern "C" {
 /*** ICMPv4 Server Configuration ***/
 #define TCPIP_STACK_USE_ICMP_SERVER
 #define TCPIP_ICMP_ECHO_ALLOW_BROADCASTS    false
+
+
+
+/*** HTTP NET Configuration ***/
+#define TCPIP_STACK_USE_HTTP_NET_SERVER
+#define TCPIP_HTTP_NET_MAX_HEADER_LEN		    		15
+#define TCPIP_HTTP_NET_CACHE_LEN		        		"600"
+#define TCPIP_HTTP_NET_TIMEOUT		            		45
+#define TCPIP_HTTP_NET_MAX_CONNECTIONS		    		4
+#define TCPIP_HTTP_NET_DEFAULT_FILE		        		"index.htm"
+#define TCPIP_HTTP_NET_FILENAME_MAX_LEN			        25
+#define TCPIP_HTTP_NET_WEB_DIR		        		    "/mnt/mchpSite1/"
+#define TCPIP_HTTP_NET_USE_POST
+#define TCPIP_HTTP_NET_USE_COOKIES
+#define TCPIP_HTTP_NET_USE_AUTHENTICATION
+#define TCPIP_HTTP_NET_MAX_DATA_LEN		        		100
+#define TCPIP_HTTP_NET_SKT_TX_BUFF_SIZE		    		1024
+#define TCPIP_HTTP_NET_SKT_RX_BUFF_SIZE		    		1024
+#define TCPIP_HTTP_NET_LISTEN_PORT		    		    80
+#define TCPIP_HTTP_NET_CONFIG_FLAGS                       \
+                                                        TCPIP_HTTP_NET_MODULE_FLAG_SECURE_DEFAULT |\
+                                                        TCPIP_HTTP_NET_MODULE_FLAG_DEFAULT
+#define TCPIP_HTTP_NET_TASK_RATE					    33
+#define TCPIP_HTTP_NET_RESPONSE_BUFFER_SIZE				300
+#define TCPIP_HTTP_NET_COOKIE_BUFFER_SIZE				200
+#define TCPIP_HTTP_NET_FIND_PEEK_BUFF_SIZE				512
+#define TCPIP_HTTP_NET_FILE_PROCESS_BUFFER_SIZE         512
+#define TCPIP_HTTP_NET_FILE_PROCESS_BUFFERS_NUMBER      4
+#define TCPIP_HTTP_NET_FILE_PROCESS_BUFFER_RETRIES      10
+#define TCPIP_HTTP_NET_CHUNKS_NUMBER                    10
+#define TCPIP_HTTP_NET_CHUNK_RETRIES                    10
+#define TCPIP_HTTP_NET_MAX_RECURSE_LEVEL				3
+#define TCPIP_HTTP_NET_DYNVAR_PROCESS           		1
+#define TCPIP_HTTP_NET_DYNVAR_DESCRIPTORS_NUMBER		10
+#define TCPIP_HTTP_NET_DYNVAR_MAX_LEN					50
+#define TCPIP_HTTP_NET_DYNVAR_ARG_MAX_NUMBER			4
+#define TCPIP_HTTP_NET_DYNVAR_PROCESS_RETRIES			10
+#define TCPIP_HTTP_NET_SSI_PROCESS           			1
+#define TCPIP_HTTP_NET_SSI_ATTRIBUTES_MAX_NUMBER        4
+#define TCPIP_HTTP_NET_SSI_STATIC_ATTTRIB_NUMBER        2
+#define TCPIP_HTTP_NET_SSI_CMD_MAX_LEN                  100
+#define TCPIP_HTTP_NET_SSI_VARIABLES_NUMBER             13
+#define TCPIP_HTTP_NET_SSI_VARIABLE_NAME_MAX_LENGTH     20
+#define TCPIP_HTTP_NET_SSI_VARIABLE_STRING_MAX_LENGTH   20
+#define TCPIP_HTTP_NET_SSI_ECHO_NOT_FOUND_MESSAGE       "SSI Echo - Not Found: "
+#define TCPIP_HTTP_NET_CONNECTION_TIMEOUT          	0
+#define TCPIP_HTTP_NET_MALLOC_FUNC                  malloc
+#define TCPIP_HTTP_NET_FREE_FUNC                    free
+#define TCPIP_HTTP_NET_CONSOLE_CMD           		false
 
 
 
@@ -253,10 +337,25 @@ extern "C" {
 
 
 
-/*** Berkeley API Configuration ***/
-#define TCPIP_STACK_USE_BERKELEY_API
-#define MAX_BSD_SOCKETS 					4
-#define TCPIP_STACK_USE_BERKELEY_API
+/* Network Configuration Index 1 */
+#define TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX1 "PPP"
+
+#define TCPIP_NETWORK_DEFAULT_HOST_NAME_IDX1              ""
+#define TCPIP_NETWORK_DEFAULT_MAC_ADDR_IDX1               0
+
+#define TCPIP_NETWORK_DEFAULT_IP_ADDRESS_IDX1         "0.0.0.0"
+#define TCPIP_NETWORK_DEFAULT_IP_MASK_IDX1            "255.255.255.0"
+#define TCPIP_NETWORK_DEFAULT_GATEWAY_IDX1            "0.0.0.0"
+#define TCPIP_NETWORK_DEFAULT_DNS_IDX1                "0.0.0.0"
+#define TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX1         "0.0.0.0"
+#define TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX1         "full"
+#define TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX1            \
+                                                    TCPIP_NETWORK_CONFIG_DHCP_CLIENT_ON |\
+                                                    TCPIP_NETWORK_CONFIG_DNS_CLIENT_ON |\
+                                                    TCPIP_NETWORK_CONFIG_IP_STATIC
+                                                    
+#define TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX1         DRV_PPP_MACObject
+
 
 
 /*** IPv4 Configuration ***/
@@ -273,7 +372,7 @@ extern "C" {
 
 /*** TCPIP Heap Configuration ***/
 #define TCPIP_STACK_USE_INTERNAL_HEAP
-#define TCPIP_STACK_DRAM_SIZE                       39250
+#define TCPIP_STACK_DRAM_SIZE                       65536
 #define TCPIP_STACK_DRAM_RUN_LIMIT                  2048
 
 #define TCPIP_STACK_MALLOC_FUNC                     malloc
@@ -328,6 +427,73 @@ extern "C" {
 
 
 
+
+/*** TCPIP PPP MAC Configuration ***/
+#define TCPIP_STACK_USE_PPP_INTERFACE
+#define HDLC_ENABLE_STATISTICS      false
+
+#define PPP_ENABLE_STATISTICS      false
+
+
+#define PPP_MAX_STAT_REGISTRATIONS              1
+
+#define PPP_ECHO_REQUEST_ENABLE                 true
+
+#define PPP_MAX_ECHO_REQUESTS                   2
+
+#define PPP_NOTIFICATIONS_ENABLE                    false
+
+#define PPP_MAX_EVENT_REGISTRATIONS             1
+
+#define PPP_MAX_PACKET_SEGMENTS                 4
+
+#define TCPIP_IPERF_PPP_TX_QUEUE_LIMIT          5
+
+#define TCPIP_STACK_HDLC_COMMANDS                   false
+
+#define TCPIP_STACK_PPP_COMMANDS                    false
+
+#define TCPIP_STACK_COMMANDS_PPP_ECHO_TIMEOUT               100
+#define TCPIP_STACK_COMMANDS_PPP_ECHO_REQUEST_DATA_SIZE     20
+#define TCPIP_STACK_COMMANDS_PPP_ECHO_REQUESTS              4
+#define TCPIP_STACK_COMMANDS_PPP_ECHO_REQUEST_DELAY         100
+
+#define TCPIP_LCP_CONF_FLAGS                       \
+                                                    DRV_LCP_OPT_FLAG_MRU |\
+                                                    DRV_LCP_OPT_FLAG_MAGIC_NO |\
+                                                    DRV_LCP_OPT_FLAG_ACCM |\
+                                                    0
+
+#define TCPIP_IPCP_CONF_FLAGS                       \
+                                                    0
+                                                    
+#define TCPIP_PPP_CONF_FLAGS                       \
+                                                    0
+
+#define DRV_PPP_MAGIC_CALLBACK          0
+
+                                                    
+#define TCPIP_PPP_RESTART_TMO           0
+#define TCPIP_PPP_MAX_TERM              0
+#define TCPIP_PPP_MAX_CONFIGURE         0
+#define TCPIP_PPP_MAX_FAILURE           0
+#define TCPIP_PPP_RX_DEDICATED_BUFFERS  4
+#define TCPIP_PPP_RX_INIT_BUFFERS       0
+#define TCPIP_PPP_RX_LOW_THRESHOLD      1
+#define TCPIP_PPP_RX_LOW_FILL           2
+#define TCPIP_PPP_MAX_RECEIVE_UNIT      0
+#define TCPIP_PPP_ECHO_TMO              0
+#define TCPIP_PPP_LOCAL_IPV4_ADDRESS    "192.168.1.100"
+#define TCPIP_PPP_PEER_IPV4_ADDRESS     "192.168.1.101"
+#define TCPIP_PPP_RX_ACCM               0
+#define DRV_PPP_HDLC_DRIVER_OBJECT      DRV_HDLC_AsyncObject
+#define TCPIP_HDLC_PROC_BUFFER_SIZE     0
+#define TCPIP_HDLC_PEEK_BUFFER_SIZE     0
+#define TCPIP_HDLC_OBJECT_INDEX         0
+
+
+
+
 /*** GMAC Configuration ***/
 #define DRV_GMAC
 #define DRV_SAME5x
@@ -376,14 +542,6 @@ extern "C" {
 #define DRV_GMAC_NUMBER_OF_QUEUES               1
 #define DRV_GMAC_RMII_MODE                      0
 
-
-
-
-/*** announce Configuration ***/
-#define TCPIP_STACK_USE_ANNOUNCE
-#define TCPIP_ANNOUNCE_MAX_PAYLOAD 	512
-#define TCPIP_ANNOUNCE_TASK_RATE    333
-#define TCPIP_ANNOUNCE_NETWORK_DIRECTED_BCAST             			false
 
 
 
@@ -464,7 +622,7 @@ extern "C" {
 
 
 
-#define TCPIP_STACK_NETWORK_INTERAFCE_COUNT  	1
+#define TCPIP_STACK_NETWORK_INTERAFCE_COUNT  	2
 
 
 

@@ -1,4 +1,27 @@
 /*******************************************************************************
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
+* THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+* EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+* WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
+* PARTICULAR PURPOSE.
+*
+* IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+* INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+* WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+* BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+* FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+* ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
+* THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+*******************************************************************************/
+
+/*******************************************************************************
   MPLAB Harmony Application Header File
 
   Company:
@@ -31,14 +54,22 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdlib.h>
-#include "system_config.h"
-#include "system_definitions.h"
+#include "configuration.h"
+#include "definitions.h" 
+#include "tcpip/tcpip.h"
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
+
+// Application SYS_FS mount points
+// Adjust as needed
+#define APP_SYS_FS_NVM_VOL          "/dev/nvma1"
+#define APP_SYS_FS_MOUNT_POINT      "/mnt/mchpSite1"
+#define APP_SYS_FS_TYPE             MPFS2
+#define APP_SYS_FS_TYPE_STRING      "MPFS2"
 
 // *****************************************************************************
 /* Application States
@@ -53,27 +84,38 @@
 
 typedef enum
 {
-    APP_WAITING_FOR_INITIALIZATION,
+    /* The application mounts the disk. */
+    APP_MOUNT_DISK = 0,
 
-    /* In this state, the application waits for a IP Address */
-    APP_TCPIP_WAIT_FOR_IP,
+    /* In this state, the application waits for the initialization of the TCP/IP stack
+       to complete. */
+    APP_TCPIP_WAIT_INIT,
 
-    APP_TCPIP_WAITING_FOR_COMMAND_READY,
-    APP_TCPIP_WAITING_FOR_COMMAND_INPUT,
+    /* In this state, the application can do TCP/IP transactions. */
+    APP_TCPIP_TRANSACT,
 
-    APP_DNS_START_RESOLUTION,
-
-    APP_DNS_GET_RESULT,
-
-    APP_BSD_START,
-    APP_BSD_CONNECT,
-    APP_BSD_SEND,
-    APP_BSD_OPERATION,
-    APP_BSD_CLOSE,
     APP_TCPIP_ERROR,
-	/* TODO: Define states used by the application state machine. */
-
 } APP_STATES;
+
+// *****************************************************************************
+/* LED State
+
+  Summary:
+    Enumerates the supported LED states.
+
+  Description:
+    This enumeration defines the supported LED states.
+
+  Remarks:
+    None.
+*/
+typedef enum
+{
+    /* LED State is on */
+    APP_LED_STATE_OFF = 0,
+   /* LED State is off */
+    APP_LED_STATE_ON = 1,
+} APP_LED_STATE;
 
 
 // *****************************************************************************
@@ -91,19 +133,13 @@ typedef enum
 
 typedef struct
 {
+    /* SYS_FS file handle */
+    SYS_FS_HANDLE fileHandle;
     /* The application's current state */
     APP_STATES state;
 
-    /* TODO: Define any additional data used by the application. */
-    SOCKET             socket;
+    TCP_SOCKET              socket;
 
-    char *            host;
-
-    char *            path;
-
-    uint16_t          port;
-
-    struct sockaddr_in addr;
 } APP_DATA;
 
 
@@ -188,8 +224,25 @@ void APP_Initialize ( void );
 
 void APP_Tasks ( void );
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: External Declarations
+// *****************************************************************************
+// *****************************************************************************
+
+// HTTP application processing
+#if defined(TCPIP_STACK_USE_HTTP_NET_SERVER)
+#include "http_net_print.h"
+#endif // defined(TCPIP_STACK_USE_HTTP_NET_SERVER)
 
 #endif /* _APP_H */
+
+//DOM-IGNORE-BEGIN
+#ifdef __cplusplus
+}
+#endif
+//DOM-IGNORE-END
+
 /*******************************************************************************
  End of File
  */

@@ -50,8 +50,10 @@
 #include <stdbool.h>
 #include "crypto/crypto.h"
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
+#include "driver/memory/drv_memory.h"
 #include "peripheral/tc/plib_tc0.h"
 #include "system/time/sys_time.h"
+#include "driver/memory/drv_memory_nvmctrl.h"
 #include "library/tcpip/tcpip.h"
 #include "system/sys_time_h2_adapter.h"
 #include "system/sys_random_h2_adapter.h"
@@ -60,10 +62,14 @@
 #include "system/reset/sys_reset.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
+#include "driver/ppp/drv_ppp.h"
+#include "driver/ppp/drv_ppp_mac.h"
+#include "driver/ppp/drv_hdlc_obj.h"
 #include "driver/gmac/drv_gmac.h"
 #include "peripheral/sercom/usart/plib_sercom1_usart.h"
 #include "peripheral/evsys/plib_evsys.h"
 #include "system/command/sys_command.h"
+#include "peripheral/sercom/usart/plib_sercom5_usart.h"
 #include "peripheral/port/plib_port.h"
 #include "peripheral/clock/plib_clock.h"
 #include "peripheral/nvic/plib_nvic.h"
@@ -74,6 +80,9 @@
 #include "net_pres/pres/net_pres_encryptionproviderapi.h"
 #include "net_pres/pres/net_pres_transportapi.h"
 #include "net_pres/pres/net_pres_socketapi.h"
+#include "system/fs/sys_fs.h"
+#include "system/fs/sys_fs_media_manager.h"
+#include "system/fs/mpfs/mpfs.h"
 #include "system/console/sys_console.h"
 #include "system/console/src/sys_console_uart_definitions.h"
 #include "app.h"
@@ -208,6 +217,7 @@ Remarks:
 typedef struct
 {
     SYS_MODULE_OBJ  sysTime;
+    SYS_MODULE_OBJ  drvMemory0;
     SYS_MODULE_OBJ  sysConsole0;
 
 

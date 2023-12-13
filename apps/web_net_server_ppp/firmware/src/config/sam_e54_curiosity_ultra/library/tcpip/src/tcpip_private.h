@@ -110,16 +110,15 @@ void _TCPIPStack_Condition(bool cond, const char* fileName, const char* funcName
 // private stack manager interface
 #include "tcpip/src/tcpip_manager_control.h"
 
-#include "tcpip/src/tcpip_announce_manager.h"
 #include "tcpip/src/ipv4_manager.h"
 #include "tcpip/src/icmp_manager.h"
 #include "tcpip/src/dhcp_manager.h"
 #include "tcpip/src/arp_manager.h"
 #include "tcpip/src/dns_manager.h"
 #include "tcpip/src/tcp_manager.h"
+#include "tcpip/src/http_net_manager.h"
 #include "tcpip/src/tcpip_commands_manager.h"
 #include "tcpip/src/udp_manager.h"
-#include "tcpip/src/berkeley_manager.h"
 #include "tcpip/src/lldp_manager.h"
 #include "tcpip/src/tcpip_packet.h"
 #include "tcpip/src/tcpip_helpers_private.h"

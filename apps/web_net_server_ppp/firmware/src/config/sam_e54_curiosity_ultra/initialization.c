@@ -81,6 +81,44 @@
 /* MISRA C-2012 Rule 11.1 */
 /* MISRA C-2012 Rule 11.3 */
 /* MISRA C-2012 Rule 11.8 */
+// <editor-fold defaultstate="collapsed" desc="DRV_MEMORY Instance 0 Initialization Data">
+
+static uint8_t gDrvMemory0EraseBuffer[NVMCTRL_ERASE_BUFFER_SIZE] CACHE_ALIGN;
+
+static DRV_MEMORY_CLIENT_OBJECT gDrvMemory0ClientObject[DRV_MEMORY_CLIENTS_NUMBER_IDX0];
+
+static DRV_MEMORY_BUFFER_OBJECT gDrvMemory0BufferObject[DRV_MEMORY_BUF_Q_SIZE_IDX0];
+
+static const DRV_MEMORY_DEVICE_INTERFACE drvMemory0DeviceAPI = {
+    .Open               = DRV_NVMCTRL_Open,
+    .Close              = DRV_NVMCTRL_Close,
+    .Status             = DRV_NVMCTRL_Status,
+    .SectorErase        = DRV_NVMCTRL_SectorErase,
+    .Read               = DRV_NVMCTRL_Read,
+    .PageWrite          = DRV_NVMCTRL_PageWrite,
+    .EventHandlerSet    = NULL,
+    .GeometryGet        = (DRV_MEMORY_DEVICE_GEOMETRY_GET)DRV_NVMCTRL_GeometryGet,
+    .TransferStatusGet  = (DRV_MEMORY_DEVICE_TRANSFER_STATUS_GET)DRV_NVMCTRL_TransferStatusGet
+};
+static const DRV_MEMORY_INIT drvMemory0InitData =
+{
+    .memDevIndex                = 0,
+    .memoryDevice               = &drvMemory0DeviceAPI,
+    .isMemDevInterruptEnabled   = false,
+    .isFsEnabled                = true,
+    .deviceMediaType            = (uint8_t)SYS_FS_MEDIA_TYPE_NVM,
+    .ewBuffer                   = &gDrvMemory0EraseBuffer[0],
+    .clientObjPool              = (uintptr_t)&gDrvMemory0ClientObject[0],
+    .bufferObj                  = (uintptr_t)&gDrvMemory0BufferObject[0],
+    .queueSize                  = DRV_MEMORY_BUF_Q_SIZE_IDX0,
+    .nClientsMax                = DRV_MEMORY_CLIENTS_NUMBER_IDX0
+};
+
+// </editor-fold>
+/* Forward declaration of MAC initialization data */
+const TCPIP_MODULE_MAC_PPP_CONFIG tcpip_PPP_InitData;
+
+
 /* Forward declaration of GMAC initialization data */
 const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipGMACInitData;
 
@@ -129,11 +167,6 @@ const TCPIP_ARP_MODULE_CONFIG tcpipARPInitData =
     .gratProbeCount     = TCPIP_ARP_GRATUITOUS_PROBE_COUNT,
 };
 
-/*** Announce Discovery Initialization Data ***/
-const TCPIP_ANNOUNCE_MODULE_CONFIG tcpipAnnounceInitData =
-{ 
-    0
-};
 
 /*** UDP Sockets Initialization Data ***/
 const TCPIP_UDP_MODULE_CONFIG tcpipUDPInitData =
@@ -151,6 +184,28 @@ const TCPIP_TCP_MODULE_CONFIG tcpipTCPInitData =
 };
 
 
+/*** HTTP_NET Server Initialization Data ***/
+const TCPIP_HTTP_NET_MODULE_CONFIG tcpipHTTPNetInitData =
+{
+    .nConnections   = TCPIP_HTTP_NET_MAX_CONNECTIONS,
+    .dataLen        = TCPIP_HTTP_NET_MAX_DATA_LEN,
+    .sktTxBuffSize  = TCPIP_HTTP_NET_SKT_TX_BUFF_SIZE,
+    .sktRxBuffSize  = TCPIP_HTTP_NET_SKT_RX_BUFF_SIZE,
+    .listenPort     = TCPIP_HTTP_NET_LISTEN_PORT,
+    .nDescriptors   = TCPIP_HTTP_NET_DYNVAR_DESCRIPTORS_NUMBER,
+    .nChunks        = TCPIP_HTTP_NET_CHUNKS_NUMBER, 
+    .maxRecurseLevel= TCPIP_HTTP_NET_MAX_RECURSE_LEVEL,    
+    .configFlags    = TCPIP_HTTP_NET_CONFIG_FLAGS,
+    .nFileBuffers   = TCPIP_HTTP_NET_FILE_PROCESS_BUFFERS_NUMBER,
+    .fileBufferSize = TCPIP_HTTP_NET_FILE_PROCESS_BUFFER_SIZE,
+    .chunkPoolRetries = TCPIP_HTTP_NET_CHUNK_RETRIES,
+    .fileBufferRetries = TCPIP_HTTP_NET_FILE_PROCESS_BUFFER_RETRIES,
+    .dynVarRetries  = TCPIP_HTTP_NET_DYNVAR_PROCESS_RETRIES,
+    .connTimeout        = TCPIP_HTTP_NET_CONNECTION_TIMEOUT,
+    .http_malloc_fnc    = TCPIP_HTTP_NET_MALLOC_FUNC,
+    .http_free_fnc      = TCPIP_HTTP_NET_FREE_FUNC,
+    .web_dir            = TCPIP_HTTP_NET_WEB_DIR, 
+};
 
 
 
@@ -165,11 +220,6 @@ const TCPIP_DHCP_MODULE_CONFIG tcpipDHCPInitData =
 
 };
 
-/*** Berkeley API Initialization Data ***/
-const BERKELEY_MODULE_CONFIG tcpipBerkeleyInitData = 
-{
-    .maxSockets     = MAX_BSD_SOCKETS,
-};
 
 /*** ICMP Server Initialization Data ***/
 const TCPIP_ICMP_MODULE_CONFIG tcpipICMPInitData = 
@@ -241,6 +291,20 @@ const TCPIP_NETWORK_CONFIG __attribute__((unused))  TCPIP_HOSTS_CONFIGURATION[] 
         .startFlags = TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX0,
         .pMacObject = &TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0,
     },
+    /*** Network Configuration Index 1 ***/
+    {
+        .interface = TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX1,
+        .hostName = TCPIP_NETWORK_DEFAULT_HOST_NAME_IDX1,
+        .macAddr = TCPIP_NETWORK_DEFAULT_MAC_ADDR_IDX1,
+        .ipAddr = TCPIP_NETWORK_DEFAULT_IP_ADDRESS_IDX1,
+        .ipMask = TCPIP_NETWORK_DEFAULT_IP_MASK_IDX1,
+        .gateway = TCPIP_NETWORK_DEFAULT_GATEWAY_IDX1,
+        .priDNS = TCPIP_NETWORK_DEFAULT_DNS_IDX1,
+        .secondDNS = TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX1,
+        .powerMode = TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX1,
+        .startFlags = TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX1,
+        .pMacObject = &TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX1,
+    },
 };
 
 const size_t TCPIP_HOSTS_CONFIGURATION_SIZE = sizeof (TCPIP_HOSTS_CONFIGURATION) / sizeof (*TCPIP_HOSTS_CONFIGURATION);
@@ -255,16 +319,16 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     {TCPIP_MODULE_UDP,              &tcpipUDPInitData},             // TCPIP_MODULE_UDP
     {TCPIP_MODULE_TCP,              &tcpipTCPInitData},             // TCPIP_MODULE_TCP
     {TCPIP_MODULE_DHCP_CLIENT,      &tcpipDHCPInitData},            // TCPIP_MODULE_DHCP_CLIENT
-    {TCPIP_MODULE_ANNOUNCE,         &tcpipAnnounceInitData},        // TCPIP_MODULE_ANNOUNCE
     {TCPIP_MODULE_DNS_CLIENT,       &tcpipDNSClientInitData},       // TCPIP_MODULE_DNS_CLIENT
 
-    {TCPIP_MODULE_BERKELEY,         &tcpipBerkeleyInitData},        // TCPIP_MODULE_BERKELEY
+    {TCPIP_MODULE_HTTP_NET_SERVER,  &tcpipHTTPNetInitData},         // TCPIP_MODULE_HTTP_NET_SERVER
     {TCPIP_MODULE_COMMAND,          0},                             // TCPIP_MODULE_COMMAND,
     { TCPIP_MODULE_MANAGER,         &tcpipHeapConfig },             // TCPIP_MODULE_MANAGER
 
 // MAC modules
     {TCPIP_MODULE_MAC_PIC32C,       &tcpipGMACInitData},            // TCPIP_MODULE_MAC_PIC32C
 
+    {TCPIP_MODULE_MAC_PPP_0,    &tcpip_PPP_InitData},           // TCPIP_MODULE_MAC_PPP_0
 };
 
 const size_t TCPIP_STACK_MODULE_CONFIG_TBL_SIZE = sizeof (TCPIP_STACK_MODULE_CONFIG_TBL) / sizeof (*TCPIP_STACK_MODULE_CONFIG_TBL);
@@ -303,6 +367,45 @@ SYS_MODULE_OBJ TCPIP_STACK_Init(void)
     return TCPIP_STACK_Initialize(0, &tcpipInit.moduleInit);
 }
 // </editor-fold>
+
+/*** PPP MAC Initialization Data ***/
+
+const SERIAL_HDLC_OBJECT PPP_UART_HDLC =
+{
+    .read = SERCOM5_USART_Read,
+    .readCount = SERCOM5_USART_ReadCountGet,
+    .write = SERCOM5_USART_Write,
+    .writeFreeSpace = SERCOM5_USART_WriteFreeBufferCountGet,
+};
+
+
+
+const TCPIP_MODULE_MAC_PPP_CONFIG tcpip_PPP_InitData =
+{
+    .restartTmo         = TCPIP_PPP_RESTART_TMO,
+    .maxTerminate       = TCPIP_PPP_MAX_TERM,
+    .maxConfigure       = TCPIP_PPP_MAX_CONFIGURE,
+    .maxFailure         = TCPIP_PPP_MAX_FAILURE,
+    .nRxDedicatedBuffers = TCPIP_PPP_RX_DEDICATED_BUFFERS,
+    .nRxInitBuffers     = TCPIP_PPP_RX_INIT_BUFFERS,
+    .rxLowThreshold     = TCPIP_PPP_RX_LOW_THRESHOLD,
+    .rxLowFill          = TCPIP_PPP_RX_LOW_FILL,
+    .lcpConfigFlags     = TCPIP_LCP_CONF_FLAGS,
+    .ipcpConfigFlags    = TCPIP_IPCP_CONF_FLAGS,
+    .configFlags        = TCPIP_PPP_CONF_FLAGS,
+    .mru                = TCPIP_PPP_MAX_RECEIVE_UNIT,
+    .echoTmo            = TCPIP_PPP_ECHO_TMO,
+    .lclIpv4Addr        = TCPIP_PPP_LOCAL_IPV4_ADDRESS,
+    .peerIpv4Addr       = TCPIP_PPP_PEER_IPV4_ADDRESS,
+    .magic_no_func      = DRV_PPP_MAGIC_CALLBACK,
+    .rxAccm             = TCPIP_PPP_RX_ACCM,
+    .pHdlcObj           = &DRV_PPP_HDLC_DRIVER_OBJECT,
+    .hdlcProcSize       = TCPIP_HDLC_PROC_BUFFER_SIZE,
+    .hdlcPeekSize       = TCPIP_HDLC_PEEK_BUFFER_SIZE,
+    .hdlcIx             = TCPIP_HDLC_OBJECT_INDEX,
+    .hdlcSerialObj      = &PPP_UART_HDLC,
+};
+
 
 
 uint8_t txPrioNumToQueIndxGmac [DRV_GMAC_NUMBER_OF_QUEUES];
@@ -498,6 +601,64 @@ static const NET_PRES_INIT_DATA netPresInitData =
   
  
 
+// <editor-fold defaultstate="collapsed" desc="File System Initialization Data">
+
+
+const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
+{
+    {NULL}
+};
+
+
+static const SYS_FS_FUNCTIONS MPFSFunctions =
+{
+    .mount             = MPFS_Mount,
+    .unmount           = MPFS_Unmount,
+    .open              = MPFS_Open,
+    .read_t            = MPFS_Read,
+    .close             = MPFS_Close,
+    .seek              = MPFS_Seek,
+    .fstat             = MPFS_Stat,
+    .tell              = MPFS_GetPosition,
+    .eof               = MPFS_EOF,
+    .size              = MPFS_GetSize,
+    .openDir           = MPFS_DirOpen,
+    .readDir           = MPFS_DirRead,
+    .closeDir          = MPFS_DirClose,
+    .getlabel          = NULL,
+    .currWD            = NULL,
+    .getstrn           = NULL,
+    .write_t           = NULL,
+    .mkdir             = NULL,
+    .chdir             = NULL,
+    .remove_t          = NULL,
+    .setlabel          = NULL,
+    .truncate          = NULL,
+    .chdrive           = NULL,
+    .chmode            = NULL,
+    .chtime            = NULL,
+    .rename_t           = NULL,
+    .sync              = NULL,
+    .putchr            = NULL,
+    .putstrn           = NULL,
+    .formattedprint    = NULL,
+    .testerror         = NULL,
+    .formatDisk        = NULL,
+    .partitionDisk     = NULL,
+    .getCluster        = NULL
+};
+
+
+
+static const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
+{
+    {
+        .nativeFileSystemType = MPFS2,
+        .nativeFileSystemFunctions = &MPFSFunctions
+    }
+};
+// </editor-fold>
+
 
 
 // *****************************************************************************
@@ -613,12 +774,17 @@ void SYS_Initialize ( void* data )
 
     EVSYS_Initialize();
 
+    SERCOM5_USART_Initialize();
+
 
 
     /* MISRAC 2012 deviation block start */
     /* Following MISRA-C rules deviated in this block  */
     /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
     /* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
+
+
+    sysObj.drvMemory0 = DRV_MEMORY_Initialize((SYS_MODULE_INDEX)DRV_MEMORY_INDEX_0, (SYS_MODULE_INIT *)&drvMemory0InitData);
 
 
    /* Initialize the MIIM Driver Instance 0*/
@@ -653,6 +819,9 @@ void SYS_Initialize ( void* data )
 
 
     CRYPT_WCCB_Initialize();
+    /*** File System Service Initialization Code ***/
+    (void) SYS_FS_Initialize( (const void *) sysFSInit );
+
 
     /* MISRAC 2012 deviation block end */
     APP_Initialize();

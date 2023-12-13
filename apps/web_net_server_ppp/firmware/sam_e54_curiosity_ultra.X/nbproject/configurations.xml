@@ -33,6 +33,13 @@
               </logicalFolder>
               <itemPath>../src/config/sam_e54_curiosity_ultra/driver/gmac/drv_gmac.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="memory" displayName="memory" projectFiles="true">
+              <itemPath>../src/config/sam_e54_curiosity_ultra/driver/memory/src/drv_memory_file_system.h</itemPath>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/driver/memory/drv_memory.h</itemPath>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/driver/memory/drv_memory_definitions.h</itemPath>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/driver/memory/drv_memory_nvmctrl.h</itemPath>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/driver/memory/src/drv_memory_local.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="miim" displayName="miim" projectFiles="true">
               <logicalFolder name="src" displayName="src" projectFiles="true">
                 <logicalFolder name="dynamic" displayName="dynamic" projectFiles="true">
@@ -41,6 +48,11 @@
                 <itemPath>../src/config/sam_e54_curiosity_ultra/driver/miim/src/drv_miim_local.h</itemPath>
               </logicalFolder>
               <itemPath>../src/config/sam_e54_curiosity_ultra/driver/miim/drv_miim.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="ppp" displayName="ppp" projectFiles="true">
+              <itemPath>../src/config/sam_e54_curiosity_ultra/driver/ppp/drv_ppp.h</itemPath>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/driver/ppp/drv_ppp_mac.h</itemPath>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/driver/ppp/drv_hdlc_obj.h</itemPath>
             </logicalFolder>
             <itemPath>../src/config/sam_e54_curiosity_ultra/driver/driver.h</itemPath>
             <itemPath>../src/config/sam_e54_curiosity_ultra/driver/driver_common.h</itemPath>
@@ -217,6 +229,7 @@
               <logicalFolder name="usart" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/sam_e54_curiosity_ultra/peripheral/sercom/usart/plib_sercom_usart_common.h</itemPath>
                 <itemPath>../src/config/sam_e54_curiosity_ultra/peripheral/sercom/usart/plib_sercom1_usart.h</itemPath>
+                <itemPath>../src/config/sam_e54_curiosity_ultra/peripheral/sercom/usart/plib_sercom5_usart.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="tc" displayName="tc" projectFiles="true">
@@ -241,6 +254,16 @@
               <itemPath>../src/config/sam_e54_curiosity_ultra/system/debug/src/sys_debug_local.h</itemPath>
               <itemPath>../src/config/sam_e54_curiosity_ultra/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="fs" displayName="fs" projectFiles="true">
+              <logicalFolder name="mpfs" displayName="mpfs" projectFiles="true">
+                <itemPath>../src/config/sam_e54_curiosity_ultra/system/fs/mpfs/mpfs_local.h</itemPath>
+                <itemPath>../src/config/sam_e54_curiosity_ultra/system/fs/mpfs/mpfs.h</itemPath>
+              </logicalFolder>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/system/fs/src/sys_fs_media_manager_local.h</itemPath>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/system/fs/sys_fs.h</itemPath>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/system/fs/src/sys_fs_local.h</itemPath>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/system/fs/sys_fs_media_manager.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="int" displayName="int" projectFiles="true">
               <itemPath>../src/config/sam_e54_curiosity_ultra/system/int/sys_int_mapping.h</itemPath>
               <itemPath>../src/config/sam_e54_curiosity_ultra/system/int/sys_int.h</itemPath>
@@ -258,6 +281,10 @@
             <itemPath>../src/config/sam_e54_curiosity_ultra/system/sys_random_h2_adapter.h</itemPath>
             <itemPath>../src/config/sam_e54_curiosity_ultra/system/system_common.h</itemPath>
             <itemPath>../src/config/sam_e54_curiosity_ultra/system/system_module.h</itemPath>
+            <itemPath>../src/config/sam_e54_curiosity_ultra/system/system_media.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="tm" displayName="tm" projectFiles="true">
+            <itemPath>../src/config/sam_e54_curiosity_ultra/tm/tm.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/sam_e54_curiosity_ultra/user.h</itemPath>
           <itemPath>../src/config/sam_e54_curiosity_ultra/configuration.h</itemPath>
@@ -549,8 +576,8 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/siphash.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/eccsi.h</itemPath>
       </logicalFolder>
-      <itemPath>../src/app_commands.h</itemPath>
       <itemPath>../src/app.h</itemPath>
+      <itemPath>../src/http_net_print.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -597,6 +624,11 @@
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
+            <logicalFolder name="memory" displayName="memory" projectFiles="true">
+              <itemPath>../src/config/sam_e54_curiosity_ultra/driver/memory/src/drv_memory_file_system.c</itemPath>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/driver/memory/src/drv_memory_nvmctrl.c</itemPath>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/driver/memory/src/drv_memory.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="miim" displayName="miim" projectFiles="true">
               <logicalFolder name="src" displayName="src" projectFiles="true">
                 <logicalFolder name="dynamic" displayName="dynamic" projectFiles="true">
@@ -611,6 +643,7 @@
               <logicalFolder name="src" displayName="src" projectFiles="true">
                 <logicalFolder name="common" displayName="common" projectFiles="true">
                   <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/helpers.c</itemPath>
+                  <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/common/sys_fs_shell.c</itemPath>
                 </logicalFolder>
                 <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/tcpip_manager.c</itemPath>
                 <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/udp.c</itemPath>
@@ -619,7 +652,6 @@
                 <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/tcpip_heap_alloc.c</itemPath>
                 <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/tcpip_packet.c</itemPath>
                 <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/hash_fnv.c</itemPath>
-                <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/berkeley_api.c</itemPath>
                 <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/tcpip_helpers.c</itemPath>
                 <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/tcpip_notify.c</itemPath>
                 <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/tcpip_commands.c</itemPath>
@@ -629,7 +661,7 @@
                 <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/dns.c</itemPath>
                 <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/oahash.c</itemPath>
                 <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/icmp.c</itemPath>
-                <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/tcpip_announce.c</itemPath>
+                <itemPath>../src/config/sam_e54_curiosity_ultra/library/tcpip/src/http_net.c</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -664,6 +696,7 @@
             <logicalFolder name="sercom" displayName="sercom" projectFiles="true">
               <logicalFolder name="usart" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/sam_e54_curiosity_ultra/peripheral/sercom/usart/plib_sercom1_usart.c</itemPath>
+                <itemPath>../src/config/sam_e54_curiosity_ultra/peripheral/sercom/usart/plib_sercom5_usart.c</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="tc" displayName="tc" projectFiles="true">
@@ -687,6 +720,13 @@
             <logicalFolder name="debug" displayName="debug" projectFiles="true">
               <itemPath>../src/config/sam_e54_curiosity_ultra/system/debug/src/sys_debug.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="fs" displayName="fs" projectFiles="true">
+              <logicalFolder name="mpfs" displayName="mpfs" projectFiles="true">
+                <itemPath>../src/config/sam_e54_curiosity_ultra/system/fs/mpfs/mpfs.c</itemPath>
+              </logicalFolder>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/system/fs/src/sys_fs.c</itemPath>
+              <itemPath>../src/config/sam_e54_curiosity_ultra/system/fs/src/sys_fs_media_manager.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="int" displayName="int" projectFiles="true">
               <itemPath>../src/config/sam_e54_curiosity_ultra/system/int/src/sys_int.c</itemPath>
             </logicalFolder>
@@ -706,6 +746,47 @@
           <itemPath>../src/config/sam_e54_curiosity_ultra/exceptions.c</itemPath>
           <itemPath>../src/config/sam_e54_curiosity_ultra/startup_xc32.c</itemPath>
         </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="web_pages" displayName="web_pages" projectFiles="true">
+        <logicalFolder name="dyndns" displayName="dyndns" projectFiles="true">
+          <logicalFolder name="dyndns" displayName="dyndns" projectFiles="true">
+            <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="email" displayName="email" projectFiles="true">
+          <logicalFolder name="email" displayName="email" projectFiles="true">
+            <itemPath>../src/web_pages/email/index.htm</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="protect" displayName="protect" projectFiles="true">
+          <logicalFolder name="protect" displayName="protect" projectFiles="true">
+            <itemPath>../src/web_pages/protect/index.htm</itemPath>
+            <itemPath>../src/web_pages/protect/config.htm</itemPath>
+            <itemPath>../src/web_pages/protect/reboot.htm</itemPath>
+            <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="snmp" displayName="snmp" projectFiles="true">
+          <logicalFolder name="snmp" displayName="snmp" projectFiles="true">
+            <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <itemPath>../src/web_pages/mchp.js</itemPath>
+        <itemPath>../src/web_pages/auth.htm</itemPath>
+        <itemPath>../src/web_pages/leds.cgi</itemPath>
+        <itemPath>../src/web_pages/harmony.gif</itemPath>
+        <itemPath>../src/web_pages/cookies.htm</itemPath>
+        <itemPath>../src/web_pages/snmp.bib</itemPath>
+        <itemPath>../src/web_pages/header.htm</itemPath>
+        <itemPath>../src/web_pages/ssi.htm</itemPath>
+        <itemPath>../src/web_pages/dynvars.htm</itemPath>
+        <itemPath>../src/web_pages/forms.htm</itemPath>
+        <itemPath>../src/web_pages/upload.htm</itemPath>
+        <itemPath>../src/web_pages/mchp.css</itemPath>
+        <itemPath>../src/web_pages/status.xml</itemPath>
+        <itemPath>../src/web_pages/mchp.gif</itemPath>
+        <itemPath>../src/web_pages/index.htm</itemPath>
+        <itemPath>../src/web_pages/footer.htm</itemPath>
       </logicalFolder>
       <logicalFolder name="wolfcrypt" displayName="wolfcrypt" projectFiles="true">
         <logicalFolder name="port" displayName="port" projectFiles="true">
@@ -806,10 +887,12 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/eccsi.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sakke.c</itemPath>
       </logicalFolder>
-      <itemPath>../src/app_commands.c</itemPath>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/config/sam_e54_curiosity_ultra/pin_configurations.csv</itemPath>
+      <itemPath>../src/custom_http_net_app.c</itemPath>
+      <itemPath>../src/mpfs_net_img.c</itemPath>
+      <itemPath>../src/http_net_print.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -837,6 +920,8 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
+            <linkerLibFileItem>../src/config/sam_e54_curiosity_ultra/tm_l12_sam_e5x_nfO0.a</linkerLibFileItem>
+            <linkerLibFileItem>../src/config/sam_e54_curiosity_ultra/driver/ppp/lib/ppp_lib_same54.X.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -886,7 +971,6 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -944,7 +1028,6 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -961,7 +1044,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="64960"/>
+        <property key="heap-size" value="124960"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>
@@ -984,7 +1067,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -1013,7 +1095,6 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
-        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
@@ -1060,8 +1141,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/00_Niy/Repos/H3_BitBucket/net_apps_sam_e5x/apps/web_net_server_ppp/firmware/sam_e54_curiosity_ultra.X/debug/sam_e54_curiosity_ultra/sam_e54_curiosity_ultra_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

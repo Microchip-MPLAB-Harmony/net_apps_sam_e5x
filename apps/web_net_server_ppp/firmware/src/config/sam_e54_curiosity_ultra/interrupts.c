@@ -79,7 +79,7 @@ void __attribute__((optimize("-O1"), long_call, noreturn, used))Dummy_Handler(vo
 }
 
 /* MISRAC 2012 deviation block start */
-/* MISRA C-2012 Rule 8.6 deviated 131 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
+/* MISRA C-2012 Rule 8.6 deviated 127 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 /* Device vectors list dummy definition*/
 extern void SVCall_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PendSV_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -143,10 +143,6 @@ extern void SERCOM4_0_Handler          ( void ) __attribute__((weak, alias("Dumm
 extern void SERCOM4_1_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SERCOM4_2_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SERCOM4_OTHER_Handler      ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void SERCOM5_0_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void SERCOM5_1_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void SERCOM5_2_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void SERCOM5_OTHER_Handler      ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SERCOM6_0_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SERCOM6_1_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SERCOM6_2_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -299,10 +295,10 @@ const H3DeviceVectors exception_table=
     .pfnSERCOM4_1_Handler          = SERCOM4_1_Handler,
     .pfnSERCOM4_2_Handler          = SERCOM4_2_Handler,
     .pfnSERCOM4_OTHER_Handler      = SERCOM4_OTHER_Handler,
-    .pfnSERCOM5_0_Handler          = SERCOM5_0_Handler,
-    .pfnSERCOM5_1_Handler          = SERCOM5_1_Handler,
-    .pfnSERCOM5_2_Handler          = SERCOM5_2_Handler,
-    .pfnSERCOM5_OTHER_Handler      = SERCOM5_OTHER_Handler,
+    .pfnSERCOM5_0_Handler          = SERCOM5_USART_InterruptHandler,
+    .pfnSERCOM5_1_Handler          = SERCOM5_USART_InterruptHandler,
+    .pfnSERCOM5_2_Handler          = SERCOM5_USART_InterruptHandler,
+    .pfnSERCOM5_OTHER_Handler      = SERCOM5_USART_InterruptHandler,
     .pfnSERCOM6_0_Handler          = SERCOM6_0_Handler,
     .pfnSERCOM6_1_Handler          = SERCOM6_1_Handler,
     .pfnSERCOM6_2_Handler          = SERCOM6_2_Handler,
