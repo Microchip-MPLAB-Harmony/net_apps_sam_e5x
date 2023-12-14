@@ -83,10 +83,7 @@ extern "C" {
 #define SYS_TIME_INDEX_0                            (0)
 #define SYS_TIME_MAX_TIMERS                         (5)
 #define SYS_TIME_HW_COUNTER_WIDTH                   (32)
-#define SYS_TIME_HW_COUNTER_PERIOD                  (4294967295U)
-#define SYS_TIME_HW_COUNTER_HALF_PERIOD             (SYS_TIME_HW_COUNTER_PERIOD>>1)
-#define SYS_TIME_CPU_CLOCK_FREQUENCY                (120000000)
-#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (188)
+#define SYS_TIME_TICK_FREQ_IN_HZ                    (1000.00833)
 
 #define SYS_CONSOLE_INDEX_0                       0
 
@@ -96,7 +93,7 @@ extern "C" {
 
 #define SYS_CMD_ENABLE
 #define SYS_CMD_DEVICE_MAX_INSTANCES       SYS_CONSOLE_DEVICE_MAX_INSTANCES
-#define SYS_CMD_PRINT_BUFFER_SIZE          1024
+#define SYS_CMD_PRINT_BUFFER_SIZE          1024U
 #define SYS_CMD_BUFFER_DMA_READY
 
 
@@ -107,10 +104,10 @@ extern "C" {
 #define SYS_DEBUG_USE_CONSOLE
 
 
-#define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			1
-#define SYS_CONSOLE_UART_MAX_INSTANCES 	   			2
-#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		0
-#define SYS_CONSOLE_PRINT_BUFFER_SIZE        		200
+#define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			(1U)
+#define SYS_CONSOLE_UART_MAX_INSTANCES 	   			(1U)
+#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		(0U)
+#define SYS_CONSOLE_PRINT_BUFFER_SIZE        		(200U)
 
 
 
@@ -277,7 +274,7 @@ extern "C" {
 
 /*** TCPIP Heap Configuration ***/
 #define TCPIP_STACK_USE_INTERNAL_HEAP
-#define TCPIP_STACK_DRAM_SIZE                       64250
+#define TCPIP_STACK_DRAM_SIZE                       122880
 #define TCPIP_STACK_DRAM_RUN_LIMIT                  2048
 
 #define TCPIP_STACK_MALLOC_FUNC                     malloc
@@ -309,6 +306,7 @@ extern "C" {
 
 #define TCPIP_STACK_TICK_RATE		        		5
 #define TCPIP_STACK_SECURE_PORT_ENTRIES             10
+#define TCPIP_STACK_LINK_RATE		        		333
 
 #define TCPIP_STACK_ALIAS_INTERFACE_SUPPORT   false
 
@@ -333,20 +331,21 @@ extern "C" {
 
 /*** GMAC Configuration ***/
 #define DRV_GMAC
+#define DRV_SAME5x
 #define TCPIP_GMAC_TX_DESCRIPTORS_COUNT_DUMMY    1
 #define TCPIP_GMAC_RX_DESCRIPTORS_COUNT_DUMMY    1
 #define TCPIP_GMAC_RX_BUFF_SIZE_DUMMY            64
 #define TCPIP_GMAC_TX_BUFF_SIZE_DUMMY            64
 /*** QUEUE 0 TX Configuration ***/
-#define TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE0            8
+#define TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE0            10
 #define TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE0                 1536
 /*** QUEUE 0 RX Configuration ***/
-#define TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE0            8
+#define TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE0            10
 #define TCPIP_GMAC_RX_BUFF_SIZE_QUE0                    1536
-#define TCPIP_GMAC_RX_DEDICATED_BUFFERS_QUE0            8
-#define TCPIP_GMAC_RX_ADDL_BUFF_COUNT_QUE0              2
-#define TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE0         1
-#define TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE0             2
+#define TCPIP_GMAC_RX_DEDICATED_BUFFERS_QUE0            10
+#define TCPIP_GMAC_RX_ADDL_BUFF_COUNT_QUE0              4
+#define TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE0         2
+#define TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE0             3
 #define TCPIP_GMAC_RX_FILTERS                       \
                                                         TCPIP_MAC_RX_FILTER_TYPE_BCAST_ACCEPT |\
                                                         TCPIP_MAC_RX_FILTER_TYPE_MCAST_ACCEPT |\
@@ -371,8 +370,8 @@ extern "C" {
 
 #define TCPIP_INTMAC_PERIPHERAL_CLK                 120000000
 
-#define DRV_GMAC_RX_CHKSM_OFFLOAD               (TCPIP_MAC_CHECKSUM_NONE)           
-#define DRV_GMAC_TX_CHKSM_OFFLOAD               (TCPIP_MAC_CHECKSUM_NONE)       
+#define DRV_GMAC_RX_CHKSM_OFFLOAD             (TCPIP_MAC_CHECKSUM_TCP | TCPIP_MAC_CHECKSUM_UDP | TCPIP_MAC_CHECKSUM_IPV4)
+#define DRV_GMAC_TX_CHKSM_OFFLOAD               (TCPIP_MAC_CHECKSUM_TCP | TCPIP_MAC_CHECKSUM_UDP | TCPIP_MAC_CHECKSUM_IPV4) 
 #define TCPIP_GMAC_TX_PRIO_COUNT                1
 #define TCPIP_GMAC_RX_PRIO_COUNT                1
 #define DRV_GMAC_NUMBER_OF_QUEUES               1

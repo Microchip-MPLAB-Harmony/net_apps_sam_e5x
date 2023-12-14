@@ -68,7 +68,7 @@
 // *****************************************************************************
 /* TIME PLIB API Set needed by the system service */
 
-typedef void (*SYS_TIME_PLIB_CALLBACK)(uint32_t , uintptr_t );
+typedef void (*SYS_TIME_PLIB_CALLBACK)(uint32_t data, uintptr_t context);
 typedef void (*SYS_TIME_PLIB_CALLBACK_REGISTER)(SYS_TIME_PLIB_CALLBACK callback, uintptr_t context);
 typedef uint32_t (*SYS_TIME_PLIB_FREQUENCY_GET)(void);
 typedef void (*SYS_TIME_PLIB_START)(void);
@@ -86,15 +86,13 @@ typedef struct
     SYS_TIME_PLIB_STOP                  timerStop;
     SYS_TIME_PLIB_FREQUENCY_GET         timerFrequencyGet;
     SYS_TIME_PLIB_PERIOD_SET            timerPeriodSet;
-    SYS_TIME_PLIB_COMPARE_SET           timerCompareSet;
-    SYS_TIME_PLIB_COUNTER_GET           timerCounterGet;
 } SYS_TIME_PLIB_INTERFACE;
 
 
 // *****************************************************************************
 /* TIME system service Initialization Data Declaration */
 
-struct _SYS_TIME_INIT
+struct SYS_TIME_INIT_
 {
     /* Identifies the PLIB API set to be used by the system service to access
      * the peripheral. */
