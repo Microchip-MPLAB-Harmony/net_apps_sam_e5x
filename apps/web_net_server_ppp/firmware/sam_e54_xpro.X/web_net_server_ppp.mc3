@@ -11069,7 +11069,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipNetConfig_1" name="TCPIP_NETWORK_INTERFACE_FLAG_DHCP_IDX1"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipNetConfig_1&gt;
   &lt;tcpipNetConfig_1 dnOrder=&quot;0&quot; id=&quot;TCPIP_NETWORK_INTERFACE_FLAG_DHCP_IDX1&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;3&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/tcpipNetConfig_1&gt;
 &lt;/tcpipNetConfig_1&gt;
 </value>
@@ -13656,7 +13658,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\configuration.h</file>
-         <hash>33b6a44ab3b92de4ba4646f4ee4110cc065d4f3e1f2d23f23fe9f5e2a2396e5e</hash>
+         <hash>ff30675794e8ef7925ad7ec54cc56b7f3afafb99913c1050a9ddb0916c152dce</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\udp_manager.h</file>

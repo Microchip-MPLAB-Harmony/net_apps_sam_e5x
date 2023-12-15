@@ -400,7 +400,6 @@ extern "C" {
 #define TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX1         "0.0.0.0"
 #define TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX1         "full"
 #define TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX1            \
-                                                    TCPIP_NETWORK_CONFIG_DHCP_CLIENT_ON |\
                                                     TCPIP_NETWORK_CONFIG_DNS_CLIENT_ON |\
                                                     TCPIP_NETWORK_CONFIG_IP_STATIC
                                                     
