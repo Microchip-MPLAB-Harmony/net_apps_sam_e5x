@@ -74,6 +74,7 @@
 
 APP_DATA appData;
 
+APP_LED_STATE LEDstate = APP_LED_STATE_OFF;
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
@@ -92,6 +93,7 @@ APP_DATA appData;
 
 /* TODO:  Add any necessary local functions.
 */
+
 
 // *****************************************************************************
 // *****************************************************************************
@@ -122,7 +124,6 @@ void APP_Initialize ( void )
   Remarks:
     See prototype in app.h.
  */
-
 void APP_Tasks ( void )
 {
     SYS_STATUS          tcpipStat;
@@ -205,6 +206,15 @@ void APP_Tasks ( void )
             if(SYS_TMR_TickCountGet() - startTick >= SYS_TMR_TickCounterFrequencyGet()/2ul)
             {
                 startTick = SYS_TMR_TickCountGet();
+                LEDstate ^= APP_LED_STATE_ON;
+                if(LEDstate == 1)
+                {
+                    APP_LED_1StateSet();
+                }
+                else if(LEDstate == 0)
+                {
+                    APP_LED_1StateClear();
+                }
             }
 
             // if the IP address of an interface has changed

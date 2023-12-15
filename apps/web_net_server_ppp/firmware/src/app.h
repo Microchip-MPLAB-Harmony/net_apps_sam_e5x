@@ -63,6 +63,34 @@
 // Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
+#if defined (__PIC32C__) || defined(__SAMA5D2__)        
+/* This section is highly customizable based on application's specific needs. */
+#define APP_SWITCH_1StateGet()      SWITCH_Get()
+#define APP_SWITCH_2StateGet()      SWITCH_Get()
+#define APP_SWITCH_3StateGet()      SWITCH_Get()
+#elif defined (__PIC32MZ__)
+/* This section is highly customizable based on application's specific needs. */
+#define APP_SWITCH_1StateGet()      SWITCH1_Get()
+#define APP_SWITCH_2StateGet()      SWITCH2_Get()
+#define APP_SWITCH_3StateGet()      SWITCH2_Get()
+#endif
+
+#define APP_LED_1StateSet()         LED1_Set()
+#define APP_LED_1StateGet()         LED1_Get()
+#define APP_LED_1StateClear()       LED1_Clear()
+#define APP_LED_1StateToggle()      LED1_Toggle()
+
+#if defined(__PIC32MZ__)
+#define APP_LED_2StateSet()         LED2_Set()
+#define APP_LED_2StateGet()         LED2_Get()
+#define APP_LED_2StateClear()       LED2_Clear()
+#define APP_LED_2StateToggle()      LED2_Toggle()
+
+#define APP_LED_3StateSet()         LED3_Set()
+#define APP_LED_3StateGet()         LED3_Get()
+#define APP_LED_3StateClear()       LED3_Clear()
+#define APP_LED_3StateToggle()      LED3_Toggle()
+#endif
 
 // Application SYS_FS mount points
 // Adjust as needed
@@ -91,8 +119,24 @@ typedef enum
        to complete. */
     APP_TCPIP_WAIT_INIT,
 
+    /* The application configures the Wi-Fi settings. */
+    APP_WIFI_CONFIG,
+
+    /* In this state, the application runs the Wi-Fi prescan. */
+    APP_WIFI_PRESCAN,
+
+    /* In this state, the application enables TCP/IP modules such as DHCP, NBNS and mDNS
+       in all available interfaces. */
+    APP_TCPIP_MODULES_ENABLE,
+
     /* In this state, the application can do TCP/IP transactions. */
     APP_TCPIP_TRANSACT,
+
+    /* In this state, the application performs module FW update over the air. */
+    APP_FW_OTA_UPDATE,
+
+    /* In this state, the application waits till FW update gets completed. */
+    APP_WAIT_FOR_FW_UPDATE,
 
     APP_TCPIP_ERROR,
 } APP_STATES;
