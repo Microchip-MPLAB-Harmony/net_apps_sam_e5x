@@ -52,6 +52,7 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "sys_tasks.h"
 
 
 
@@ -83,14 +84,14 @@ SYS_FS_Tasks();
 
 
     /* Maintain Device Drivers */
-       DRV_MIIM_Tasks(sysObj.drvMiim_0);
+       DRV_MIIM_OBJECT_BASE_Default.DRV_MIIM_Tasks(sysObj.drvMiim_0);
 
 
 
 
     /* Maintain Middleware & Other Libraries */
-    	/* USB Host Task Routine */ 
-     USB_HOST_Tasks(sysObj.usbHostObject0);
+        /* USB Host Task Routine */ 
+    USB_HOST_Tasks(sysObj.usbHostObject0);
 
     /* USB FS Driver Task Routine */ 
     DRV_USBFSV1_Tasks(sysObj.drvUSBFSV1Object);
