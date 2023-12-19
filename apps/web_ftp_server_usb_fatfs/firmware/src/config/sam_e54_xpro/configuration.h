@@ -384,23 +384,14 @@ extern "C" {
 #define DRV_USBFSV1_INSTANCES_NUMBER                        1
 
 
-/* Disable Device Support */
-#define DRV_USBFSV1_DEVICE_SUPPORT                          false
+/* Enables Device Support */
+#define DRV_USBFSV1_DEVICE_SUPPORT                          true
+	
+/* Disable Host Support */
+#define DRV_USBFSV1_HOST_SUPPORT                            false
 
-/* Enable Host Support */
-#define DRV_USBFSV1_HOST_SUPPORT                            true
-
-/* Number of NAKs to wait before returning transfer failure */ 
-#define DRV_USBFSV1_HOST_NAK_LIMIT                          2000 
-
-/* Maximum Number of pipes */
-#define DRV_USBFSV1_HOST_PIPES_NUMBER                       10  
-
-/* Attach Debounce duration in milli Seconds */ 
-#define DRV_USBFSV1_HOST_ATTACH_DEBOUNCE_DURATION           500
-
-/* Reset duration in milli Seconds */ 
-#define DRV_USBFSV1_HOST_RESET_DURATION                     100
+/* Enable usage of Dual Bank */
+#define DRV_USBFSV1_DUAL_BANK_ENABLE                        false
 
 /* Alignment for buffers that are submitted to USB Driver*/ 
 #define USB_ALIGN  __ALIGNED(CACHE_LINE_SIZE)
