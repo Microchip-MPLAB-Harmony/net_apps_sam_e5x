@@ -48,6 +48,7 @@ The following applications are provided to demonstrate the typical or interestin
 | [web_ftp_server_mpfs_fatfs](./docs/GUID-38E38B4A-FB31-4255-BED2-1ABC7D9ACC31.html)| This example application shows a Web server using NVM MPFS and FTP server using SDCARD FATFS|
 | [web_ftp_server_usb_fatfs](./docs/GUID-49B2B1BB-EE09-482D-9E34-B4C7AAEE8763.html)| This example application shows a Web server and FTP server with FAT FS file system on the USB flash device |
 | [web_net_server_nvm_mpfs](./docs/GUID-3BB2E2CC-A2C4-40CE-A62F-6654D529F641.html) | This example application shows a Web server with Microchip Proprietary File System (MPFS) in the Non-Volatile Memory (NVM) |
+| [web_net_server_ppp](./docs/GUID-6D221AB7-FFCE-47BD-8DDE-83C275ED22A1.html) | This example application shows creating an PPP interface and a Web server with Microchip Proprietary File System (MPFS) in the Non-Volatile Memory (NVM) |
 | [web_net_server_sdcard_fatfs](./docs/GUID-4156D7F7-CCE8-4EB0-8BD7-5BFDD8A03E54.html) | This example application shows a Web server with FAT FS file system on the external SD card |
 | [wolfmqtt_demo](./docs/GUID-D762E200-A0F5-4E17-9281-92D461CCB715.html) | This example application demonstrates a simple MQTT application using the 3rd party wolfMQTT library |
 | [wolfssl_tcp_client](./docs/GUID-B87BF4E5-DB14-4557-9D56-1EA7DB070F94.html) | This example application shows a connection to a Web server using TLS to encrypt the connection with wolfSSL |
