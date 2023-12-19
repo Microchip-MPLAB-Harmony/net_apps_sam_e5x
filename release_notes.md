@@ -8,6 +8,7 @@
 ### New Features
 - All applications with TCP/IP Configurator Plugin.
 - Support for MAC RX/TX Checksum offload feature
+- Addition of PPP demo for SAME54 XPRO.
 
 
 ### Improvements and Bug Fixes
