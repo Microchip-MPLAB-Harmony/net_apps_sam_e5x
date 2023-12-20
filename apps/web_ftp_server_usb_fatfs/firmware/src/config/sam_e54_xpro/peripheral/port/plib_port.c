@@ -106,7 +106,7 @@ void PORT_Initialize(void)
 
    PORT_REGS->GROUP[2].PORT_PMUX[5] = 0xb0U;
    PORT_REGS->GROUP[2].PORT_PMUX[6] = 0xbU;
-   PORT_REGS->GROUP[2].PORT_PMUX[9] = 0x70U;
+   PORT_REGS->GROUP[2].PORT_PMUX[9] = 0x0U;
    PORT_REGS->GROUP[2].PORT_PMUX[10] = 0xbU;
 
    /************************** GROUP 3 Initialization *************************/

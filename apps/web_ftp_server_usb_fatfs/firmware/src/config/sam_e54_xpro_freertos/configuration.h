@@ -449,7 +449,7 @@ extern "C" {
 
 /*** TCPIP Heap Configuration ***/
 #define TCPIP_STACK_USE_INTERNAL_HEAP
-#define TCPIP_STACK_DRAM_SIZE                       69960
+#define TCPIP_STACK_DRAM_SIZE                       69250
 #define TCPIP_STACK_DRAM_RUN_LIMIT                  2048
 
 #define TCPIP_STACK_MALLOC_FUNC                     malloc
@@ -507,6 +507,14 @@ extern "C" {
 #define TCPIP_RTOS_PRIORITY             1
 
 
+/* Number of MSD Function driver instances in the application */
+#define USB_HOST_MSD_INSTANCES_NUMBER         1
+
+/* Number of Logical Units */
+#define USB_HOST_SCSI_INSTANCES_NUMBER        1
+#define USB_HOST_MSD_LUN_NUMBERS              1
+
+
 /*** GMAC Configuration ***/
 #define DRV_GMAC
 #define DRV_SAME5x
@@ -555,14 +563,6 @@ extern "C" {
 #define DRV_GMAC_NUMBER_OF_QUEUES               1
 #define DRV_GMAC_RMII_MODE                      0
 
-
-
-/* Number of MSD Function driver instances in the application */
-#define USB_HOST_MSD_INSTANCES_NUMBER         1
-
-/* Number of Logical Units */
-#define USB_HOST_SCSI_INSTANCES_NUMBER        1
-#define USB_HOST_MSD_LUN_NUMBERS              1
 
 
 
