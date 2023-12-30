@@ -28,6 +28,7 @@
 #include <stddef.h>
 #include "device.h"
 #include "interrupts.h"
+#include "peripheral/mpu/plib_mpu.h"
 
 /*
  *  The MPLAB X Simulator does not yet support simulation of programming the
@@ -81,7 +82,7 @@ __STATIC_INLINE void __attribute__((optimize("-O1"))) CMCC_Configure(void)
     {
         /*Wait for the operation to complete*/
     }
-    CMCC_REGS->CMCC_CFG = CMCC_CFG_CSIZESW(2U)| CMCC_CFG_DCDIS_Msk;
+    CMCC_REGS->CMCC_CFG = CMCC_CFG_CSIZESW(2U);
     CMCC_REGS->CMCC_CTRL = (CMCC_CTRL_CEN_Msk);
 }
 
@@ -161,6 +162,9 @@ void __attribute__((optimize("-O1"), section(".text.Reset_Handler"), long_call, 
 
     /* Initialize the C library */
     __libc_init_array();
+
+    /* Initialize MPU */
+    MPU_Initialize();
 
     /* Call the optional application-provided _on_bootstrap() function. */
     _on_bootstrap();

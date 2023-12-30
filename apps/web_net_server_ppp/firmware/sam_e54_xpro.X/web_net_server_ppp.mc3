@@ -201,10 +201,6 @@
          <string>tcpipUdp</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
-      <entry>
-         <string>token_manager_lib</string>
-         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
-      </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.0"/>
@@ -1377,7 +1373,6 @@
         &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_fs&quot; x=&quot;650&quot; y=&quot;182&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;sys_time&quot; x=&quot;192&quot; y=&quot;180&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;tc0&quot; x=&quot;0&quot; y=&quot;214&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;19&quot; id=&quot;token_manager_lib&quot; x=&quot;590&quot; y=&quot;60&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -12805,19 +12800,6 @@
 &lt;/tcpipUdp&gt;
 </value>
       </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="token_manager_lib" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>__ROOTVIEW</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="token_manager_lib" name="CONFIG_USE_TM"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;token_manager_lib&gt;
-  &lt;token_manager_lib dnOrder=&quot;0&quot; id=&quot;CONFIG_USE_TM&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/token_manager_lib&gt;
-&lt;/token_manager_lib&gt;
-</value>
-      </entry>
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
@@ -13337,6 +13319,10 @@
          <hash>e73bc44e9dcd71d04fad4b7f08ef1292f5f4e76c6b22fef8cb557952f1fd0bf4</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e54_xpro\driver\ppp\lib\tm_l12_lib_same54.a</file>
+         <hash>1c15b873193150dd5286d25ddaf7d9ae28c4a6805b6c9524b5d4470d2b3d7efb</hash>
+      </entry>
+      <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\camellia.h</file>
          <hash>51cf9024a24a238a3e979a28c85f40d681d7c3357f54ccf00b36242422565590</hash>
       </entry>
@@ -13625,10 +13611,6 @@
          <hash>36690e50ccea7b3e9e3efdd045f6140cda310bb86c1964ae7e9eb35ad746af52</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro\tm_l12_sam_e5x_nfO0.a</file>
-         <hash>1c15b873193150dd5286d25ddaf7d9ae28c4a6805b6c9524b5d4470d2b3d7efb</hash>
-      </entry>
-      <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\zero_conf_multicast_dns.h</file>
          <hash>f0df8b849afed8c3258e3006621c74f16bfb1522d5aff7a835217a73593a5eae</hash>
       </entry>
@@ -13658,7 +13640,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\configuration.h</file>
-         <hash>ff30675794e8ef7925ad7ec54cc56b7f3afafb99913c1050a9ddb0916c152dce</hash>
+         <hash>dc293b927ad2ca4f65a9845ba31fbfd59cf813129721758d336076460c5ab927</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\udp_manager.h</file>
@@ -13926,7 +13908,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\ipv4.c</file>
-         <hash>5ff453e661ba6b6a9dd56b60a3cd423b067b80aac5bf81d7fbae7f59c76d2e13</hash>
+         <hash>a267bbbf54e48ce952155e9c4f502a94b655e1f4be197117b8da8e153bbd0c3d</hash>
       </entry>
       <entry>
          <file>..\src\web_pages\mchp.gif</file>
@@ -14242,7 +14224,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\tcp.c</file>
-         <hash>396fa95231f601f0291cc765e5413c1fe623eb555791e23eca7c1c66909e1725</hash>
+         <hash>d634f61a2796c02927a61e43312b0d94503b3988d4218d2f993f6ed45fd0e9b1</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\tcpip_helpers_private.h</file>
@@ -14861,10 +14843,6 @@
          <hash>b1a1fa21ea5cd4a8f8ef545e39b37c43e687c916ccc937960cbfce979c46a828</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro\tm\tm.h</file>
-         <hash>42322ad7b9fdf19f78e9136dc35f13d65c81244ad032bcdb8a29705e05dd2eb8</hash>
-      </entry>
-      <entry>
          <file>..\src\config\sam_e54_xpro\system\command\src\sys_command.c</file>
          <hash>e2e011b221d372dbb81cd7af594d7da29d7ae18966a99a3fd72b3c5772c237bf</hash>
       </entry>
@@ -15270,7 +15248,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\tcpip_commands.c</file>
-         <hash>67640c4c586d9328aa514eeed02861fed9fc541f41704629bf8f455e0eff0686</hash>
+         <hash>6b0979407f65fe3e4a0345b59551018c84bd9968de00716b10f5a51d4c47594a</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\curve448.h</file>

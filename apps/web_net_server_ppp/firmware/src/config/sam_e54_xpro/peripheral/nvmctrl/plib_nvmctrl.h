@@ -79,6 +79,9 @@ typedef uint16_t NVMCTRL_WRITEMODE;
 #define NVMCTRL_USERROW_SIZE              (0x200U)
 #define NVMCTRL_USERROW_PAGESIZE          (512U)
 #define NVMCTRL_USERROW_WQW_SIZE          (16U)
+#define NVMCTRL_START_ADDRESS              0x80000
+#define NVMCTRL_MEDIA_SIZE                 512
+#define NVMCTRL_ERASE_BUFFER_SIZE          8192
 
 
 
