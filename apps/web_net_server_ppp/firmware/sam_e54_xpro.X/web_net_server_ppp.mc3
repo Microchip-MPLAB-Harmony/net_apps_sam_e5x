@@ -13376,7 +13376,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\definitions.h</file>
-         <hash>e92f457f0e4263b0c739afcb5cd9231feb3bca1b57b776729613ba99b222e084</hash>
+         <hash>9532c41e95d4cb3de0370056cccd97adbb123819fb59643cd96d7079bb60e5ac</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\toolchain_specifics.h</file>
@@ -14556,7 +14556,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\initialization.c</file>
-         <hash>9282d2015c003e9b6f1dbb7aa3098c05636fd997de2ccced7c1a9f91b2bb236e</hash>
+         <hash>4faeab7aeff03beb2049cd7d9f6baced3514ebc2b90440c5663a0ede75b2d607</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\library\tcpip\src\snmp_private.h</file>
