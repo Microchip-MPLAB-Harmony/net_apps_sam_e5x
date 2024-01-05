@@ -22,7 +22,9 @@
 ### Known Issues
 - Build warnings for third_party/wolfMQTT/mqtt_socket.c in wolfMQTT demo.
     - Workaround is to uncheck 'Make warnings into errors' in xc32 options for this file.
-- PPP demo needs to run on a Curiosity board containing special hardware token support.
+- PPP protocol which is part of Net v3.11 release is supported on following board with date code label of A09-2720/18 or higher. 
+    - Here is the website with board information: (https://www.microchip.com/en-us/development-tool/atsame54-xpro)
+
 
 ### Development Tools
 
